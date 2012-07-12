@@ -1,0 +1,337 @@
+// Custom Styles
+// --------------------------------------------------
+
+body {
+	background-color: $grayLighter;
+	text-rendering:optimizeLegibility;
+}
+.logo {
+	@include rem(font-size, 72px);
+	@include rem(margin, 40px auto);
+	@include rem(width, 300px);
+}
+
+.logo-type {
+ 	-moz-font-feature-settings:"liga=1, dlig=1"; 
+    -moz-font-feature-settings:"liga", "dlig"; /* EDIT: new syntax for FF 15+ */ 
+    -ms-font-feature-settings:"liga", "dlig"; 
+    -o-font-feature-settings:"liga", "dlig"; 
+    -webkit-font-feature-settings:"liga", "dlig"; 
+    font-feature-settings:"liga", "dlig";
+    
+	@include serif;
+	@include rem(font-size, 72px);
+
+//	font-weight: 600;
+	line-height: 1.125em;
+	text-align: center;
+	width: 100%;
+}
+
+.tag-line {
+	@include rem(font-size, 14px);
+	
+	font-weight: 400;
+	line-height: 1.125em;
+	text-align: right;
+	position: relative;
+	top: -12px;
+	right: 5px;
+}
+
+.phone {
+	@include rem(margin, 140px auto 0);
+
+	background-color: $black;
+	max-width: 382px;
+	position: relative;
+	width: 100%;
+	
+	#slider {
+		
+		background-color: $black;
+		border: none;
+		height: 468px;
+		margin: 0 auto;
+		padding-top: 4px;
+		position: relative;
+		
+		width: 320px;
+	}
+	.card-nav {
+		top: 50%;
+		margin: 11px 0 0;
+	
+		#prev {
+			left: 2px;
+			top: -30px;
+		}
+		
+		#next {
+			right: 2px;
+			top: -30px;
+		}
+	}
+}
+
+.try {
+	@include hand;
+	@include rem(font-size, 24px);
+	@include rem(height, 120px);
+	@include rem(width, 260px);
+	
+	background: url('../img/curved-arrow.png') no-repeat 22px 36px;
+	font-weight: 800;
+	left: 50px;
+	position: absolute;;
+	top: -120px;
+	opacity: .8;
+	
+	&::before {
+		content: 'Tap & Slide to Try Me';
+	}
+}
+
+.no-touch .try::before {
+	content: 'Click to Flip & Navigate Me';
+}
+
+.signup {
+	@include rem(margin, 40px 0 80px);
+
+	width: 100%;
+	
+	.twitter {
+		margin-top: 12px;
+		
+		a {
+			font-weight: 500;
+		}
+	}
+}
+#mc_embed_signup {
+	
+	input {
+		@include sansSerif;
+		@include rem(font-size, 20px);
+	}
+	::-webkit-input-placeholder {
+		color: $grayLight;
+	}
+	input:-moz-placeholder {
+		color: $grayLight;
+	}
+	
+	p {
+		@include rem(font-size, 20px);
+		@include rem(margin-bottom, 12px);
+		
+		line-height: 1.125;
+		text-align: center;
+	}
+	.email {
+		@include border-radius(4px);
+		@include rem(height, 40px);
+		@include rem(margin, 0 auto 12px);
+		@include rem(padding, 6px);
+		@include rem(width, 280px);
+		
+		//webkit default reset
+		border: 1px solid $grayLight;
+		-webkit-appearance: none;
+		
+		display: block;
+		outline-color: $red;
+	}
+	div {
+		@include rem(width, 160px);
+		margin: 0 auto;
+		vertical-align: top;
+	}
+	.button {
+		@include border-radius(4px);
+		@include rem(height, 40px);
+		@include rem(padding, 6px);
+		@include rem(width, 160px);
+		
+		//webkit default reset
+		-webkit-appearance: none;
+		border: 1px solid $red;
+		
+		background-color: $red;
+		color: $white;
+		font-weight: 500;
+		
+		&:hover {
+			@include box-shadow(0 1px 2px $gray);
+			@include gradient-vertical(tint($red, 20%), $red);
+			
+			background-color: $red;
+			border: 1px solid shade($red, 15%);
+		}
+	}
+}
+
+.touch #mc_embed_signup .button {
+	@include box-shadow(0 1px 2px $gray);
+	@include gradient-vertical(tint($red, 20%), $red);
+	
+	background-color: $red;
+	border: 1px solid shade($red, 15%);
+}
+
+.main-footer span {
+	@include rem(font-size, 18px);
+	color: $gray;
+	display: block;
+	margin: 0 auto 40px;
+	max-width: 530px;
+	padding: 0 20px;
+	width: 100%;
+	
+	a {
+		font-weight: 500;
+	}
+}
+.boston {
+	display: block;
+	margin: 40px auto;
+	width: 63px;
+}
+
+@media screen and (min-width: 420px) {
+
+.phone {
+	background: url('../img/iphone-black.png') no-repeat center center;
+	height: 840px;
+	
+	#slider {
+		background: $black url('../img/bar.png') no-repeat top center;
+		height: 482px;
+		padding-top: 22px;
+		top: 131px;
+	}
+}
+
+}
+
+
+@media screen and (min-width: 820px) {
+
+#main {
+	@include clearFix;
+}
+.logo {
+	@include rem(margin-top, 240px);
+	
+	float: left;
+	margin-left: 10%;
+}
+
+.phone {
+	@include rem(margin-bottom, 80px);
+	
+	float: right;
+	margin-right: 5%;
+}
+
+.try {
+	left: -50px;
+}
+
+.signup {
+	@include rem(width, 288px);
+	
+	float: left;
+	margin-left: 10%;
+	margin-top: 0;
+
+	#mc_embed_signup {
+		p {
+			text-align: right;
+		}
+		
+		.email, div {
+			margin-right: 0;
+		}
+	}
+}
+
+.main-footer {
+	clear: both;
+}
+
+}
+
+@media screen and (min-width: 920px) {
+
+.logo {
+	@include rem(width, 376px);
+}
+.logo-type {
+	@include rem(font-size, 92px);
+}
+.tag-line {
+	@include rem(font-size, 17px);
+	
+	top: -13px;
+}
+.signup {
+	@include rem(width, 360px);
+}
+
+.main-footer span {
+	float: left;
+}
+.boston {
+	float: right;
+	margin-top: 0;
+	margin-right: 5%;
+}
+
+}
+
+@media screen and (min-width: 1020px) {
+
+.logo {
+	@include rem(width, 460px);
+}
+.logo-type {
+	@include rem(font-size, 112px);
+
+}
+
+.tag-line {
+	@include rem(font-size, 21px);
+	top: -18px;
+//	right: 16px;
+}
+
+.signup {
+	@include rem(width, 450px);
+}
+	
+}
+
+@media screen and (min-width: 1130px) {
+
+body {
+	max-width: 1165px;
+	margin: 0 auto;
+}
+
+.logo {
+	@include rem(width, 552px);
+}
+.logo-type {
+	@include rem(font-size, 136px);
+}
+.tag-line {
+	@include rem(font-size, 25px);
+	top: -19px;
+}
+.signup {
+	@include rem(width, 530px);
+}
+
+}

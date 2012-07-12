@@ -1,0 +1,41 @@
+CACHE MANIFEST
+
+#version 1.023 6-20-2012
+
+CACHE:
+
+#Typekit JS
+http://use.typekit.com/fhw4ytw.js
+
+#images
+http://jimmynotjim.com/typecards/wp-content/uploads/2012/06/arm.png
+http://jimmynotjim.com/typecards/wp-content/uploads/2012/06/ascender.png
+http://jimmynotjim.com/typecards/wp-content/uploads/2012/06/bowl1.png
+http://jimmynotjim.com/typecards/wp-content/uploads/2012/06/counter.png
+http://jimmynotjim.com/typecards/wp-content/uploads/2012/06/crossbar.png
+http://jimmynotjim.com/typecards/wp-content/uploads/2012/06/descender.png
+http://jimmynotjim.com/typecards/wp-content/uploads/2012/06/spur.png
+http://jimmynotjim.com/typecards/wp-content/uploads/2012/06/stem.png
+
+#internal HTML documents
+http://jimmynotjim.com/typecards/
+
+#style sheets
+http://jimmynotjim.com/typecards/wp-content/themes/sm-theme/assets/css/style.css
+http://jimmynotjim.com/typecards/wp-content/themes/sm-theme/style.css
+
+#style sheet images
+
+
+#javascript files
+http://jimmynotjim.com/typecards/wp-content/themes/sm-theme/assets/js/libs/modernizr-2.5.2.min.js
+chrome-extension://cpngackimfmofbokmjmljamhdncknpmg/page_context.js
+http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js
+http://jimmynotjim.com/typecards/wp-content/themes/sm-theme/assets/js/swipejs/swipe.min.js
+http://jimmynotjim.com/typecards/wp-content/themes/sm-theme/assets/js/scripts.js
+
+#Typekit Styles
+http://use.typekit.com/k/fhw4ytw-d.css?3bb2a6e53c9684ffdc9a9bf6135b2a629dfd401408a09a37c12b613ac32a310533a129c2c1541235c2487ce81017cd3cb7500352b93ee9f03a6840badb7947b1f8c4931590b4a76a480e98fc954f5062b07f61645f379d289d753ae442019aea5ec9e5d9c67d2316ef140885d1
+
+NETWORK:
+*
