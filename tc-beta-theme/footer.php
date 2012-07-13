@@ -6,7 +6,6 @@
 	<script>
 		window.mySwipe = new Swipe(document.getElementById('slider'));
 	</script>
-	
 
 	<!-- custom scripts -->
 	<script src="<?php bloginfo( 'template_url' ); ?>/assets/js/scripts.js"></script>

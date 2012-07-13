@@ -3,7 +3,7 @@
 	<?php 
 		$anatomyArgs = array(
 			'post_type'			=> 'anatomy',
-			'posts_per_page'	=> -1,
+			'posts_per_page'	=> 10,
 			'orderby'			=> 'rand'
 		);
 		query_posts($anatomyArgs);
@@ -20,10 +20,11 @@
 					<div class="card-body">
 						<h1 class="card-title">Type Anatomy</h1>
 						<?php
-							if( has_post_thumbnail( $page->ID ) ) {
-								echo get_the_post_thumbnail( $page->ID, 'lg' );
+							if( has_post_thumbnail($post->ID) ) {
+								echo get_the_post_thumbnail( $post->ID, 'lg' );
 							}
 						?>
+						<a href="#" class="menu-btn">Menu</a>
 					</div>
 				</article>
 				<article class="card-back hidden">
@@ -66,5 +67,10 @@
 	<nav class="card-nav">
 		<a href="#" id="prev" onclick="mySwipe.prev(); return false;">Prev</a>
 		<a href="#" id="next" onclick="mySwipe.next(); return false;">Next</a>
+	</nav>
+	<nav class="site-nav inactive">
+		<a href="#" class="search">Search</a>
+		<a href="#" class="anatomy">Anatomy</a>
+		<a href="#" class="quiz">Quiz</a>
 	</nav>
 </div>
