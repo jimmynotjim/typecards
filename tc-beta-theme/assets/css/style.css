@@ -776,25 +776,35 @@ body {
 .card-back {
   -webkit-transform: rotateY(180deg);
   -moz-transform: rotateY(180deg); }
-  .card-back * {
-    -webkit-transform: translate3d(0, 0, 0); }
   .card-back.hidden .card-body {
     overflow-y: hidden; }
   .card-back.visible .card-body {
     -webkit-overflow-scrolling: touch;
     overflow-y: auto;
-    background: -webkit-linear-gradient(#f7f7f7 30%, #f7f7f7), -webkit-linear-gradient(#f7f7f7, #f7f7f7 70%) 0 100%, -webkit-radial-gradient(50% 0, farthest-side, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0)), -webkit-radial-gradient(50% 100%, farthest-side, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0)) 0 100%;
-    background-repeat: no-repeat;
-    background-color: #f7f7f7;
-    background-size: 100% 40px, 100% 40px, 100% 14px, 100% 14px;
-    background-attachment: local, local, scroll, scroll; }
+    /* Shadow covers */
+    /* Shadows */ }
+
+.top-shadow, .bottom-shadow {
+  display: block;
+  width: 260px;
+  height: 30px;
+  position: absolute;
+  left: 30px; }
+
+.top-shadow {
+  top: 0px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#f7f7f7), to(rgba(247, 247, 247, 0.1))); }
+
+.bottom-shadow {
+  bottom: 0px;
+  background: -webkit-gradient(linear, left bottom, left top, from(#f7f7f7), to(rgba(247, 247, 247, 0.1))); }
 
 .card-body {
-  margin: 30px 0;
-  margin: 1.875rem 0;
-  padding: 0 30px;
-  padding: 0 1.875rem;
-  height: 400px; }
+  margin: 0px 0;
+  margin: 0rem 0;
+  padding: 30px;
+  padding: 1.875rem;
+  height: 458px; }
 
 .card-title {
   font-size: 22px;

@@ -59,6 +59,8 @@
 							}
 						?>
 					</div>
+					<div class="top-shadow"></div>
+					<div class="bottom-shadow"></div>
 				</article>
 			</section>
 		</li>
