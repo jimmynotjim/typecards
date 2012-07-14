@@ -15,6 +15,15 @@ $('.card article').click(function() {
 	$(this).parent().children('.card-back').toggleClass('hidden visible');
 });
 
+$('a').click(function(event){
+	event.stopPropagation();
+});
+
+$('.menu-btn').click(function() {
+	$('.site-nav').toggleClass('inactive');
+	$('.cards').toggleClass('inactive');
+});
+
 $('.phone').mouseenter(function() {
 	$('.card-nav').addClass('active');
 }).mouseleave(function() {
