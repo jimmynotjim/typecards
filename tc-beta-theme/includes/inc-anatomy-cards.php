@@ -71,8 +71,10 @@
 		<a href="#" id="next" onclick="mySwipe.next(); return false;">Next</a>
 	</nav>
 	<nav class="site-nav inactive">
-		<a href="#" class="search">Search</a>
-		<a href="#" class="anatomy">Anatomy</a>
-		<a href="#" class="quiz">Quiz</a>
+		<ul>
+			<li><input class="search-box"><a href="#" class="search"></a></li>
+			<li><a href="#" class="anatomy">Anatomy</a></li>
+			<li><a href="#" class="quiz">Quiz</a></li>
+		</ul>
 	</nav>
 </div>

@@ -15,7 +15,8 @@
 .site-nav {
 	@include border-radius(8px);
 	
-	background-color: white;
+	background-color: $white;
+	border: 1px solid shade($white, 10%);
 	height: 460px;
 	width: 320px;
 	padding: 30% 30px 30px;
@@ -26,14 +27,40 @@
 	&.inactive {
 		display: none;
 	}
+	
+	ul {
+		list-style: none;
+		font-size: 20px;
+		padding: 0;
+	}
+	
+	li {
+		padding: 4px;
+	}
+	.search-box {
+		@include border-radius(6px);
+		@include sansSerif;
+		
+		border: 1px solid shade($white, 10%);
+		font-size: 17px;
+		padding: 2px 8px;
+		
+		&:focus {
+			outline-color: $grayLighter;
+		}
+	}
 }
 
 
 .menu-btn {
+	@include hiddenText;
+	
 	display: block;
 	padding: 10px;
-	background: $red;
+	margin: 30px auto 0;
+	background: url(../img/menu-btn.png) 50% 50% no-repeat;
 	color: $white;
+	width: 60%;
 }
 #slider {
 	background-color: black;
@@ -58,7 +85,16 @@
 	position: relative;
 	
 	&.inactive {
-		top: -80%;
+		top: -85%;
+	}
+	
+	&:after {
+		display: block;
+		width: 100%;
+//		margin-left: 10px;
+		height: 10px;
+		background: -webkit-gradient(linear,left top,left bottom,from(rgba($gray,.2)),to(rgba($gray,0)));
+		-webkit-mask-box-image: -webkit-gradient(linear,left bottom,320 bottom,color-stop(0.0,rgba(0,0,0,0)),color-stop(0.5,rgba(0,0,0,.8)),color-stop(1.0,rgba(0,0,0,0)));
 	}
 	
 	p {
