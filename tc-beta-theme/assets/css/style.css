@@ -773,6 +773,28 @@ body {
   -webkit-transform: rotateY(180deg);
   -moz-transform: rotateY(180deg); }
 
+.card-body {
+  margin: 10px 0;
+  margin: 0.625rem 0;
+  padding: 20px 30px;
+  padding: 1.25rem 1.875rem;
+  height: 438px; }
+
+.top-shadow, .bottom-shadow {
+  display: block;
+  width: 260px;
+  height: 28px;
+  position: absolute;
+  left: 30px; }
+
+.top-shadow {
+  top: 2px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#f7f7f7), to(rgba(247, 247, 247, 0.1))); }
+
+.bottom-shadow {
+  bottom: 2px;
+  background: -webkit-gradient(linear, left bottom, left top, from(#f7f7f7), to(rgba(247, 247, 247, 0.1))); }
+
 .card-back {
   -webkit-transform: rotateY(180deg);
   -moz-transform: rotateY(180deg); }
@@ -780,31 +802,7 @@ body {
     overflow-y: hidden; }
   .card-back.visible .card-body {
     -webkit-overflow-scrolling: touch;
-    overflow-y: auto;
-    /* Shadow covers */
-    /* Shadows */ }
-
-.top-shadow, .bottom-shadow {
-  display: block;
-  width: 260px;
-  height: 30px;
-  position: absolute;
-  left: 30px; }
-
-.top-shadow {
-  top: 0px;
-  background: -webkit-gradient(linear, left top, left bottom, from(#f7f7f7), to(rgba(247, 247, 247, 0.1))); }
-
-.bottom-shadow {
-  bottom: 0px;
-  background: -webkit-gradient(linear, left bottom, left top, from(#f7f7f7), to(rgba(247, 247, 247, 0.1))); }
-
-.card-body {
-  margin: 0px 0;
-  margin: 0rem 0;
-  padding: 30px;
-  padding: 1.875rem;
-  height: 458px; }
+    overflow-y: auto; }
 
 .card-title {
   font-size: 22px;
