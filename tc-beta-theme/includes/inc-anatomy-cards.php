@@ -1,5 +1,5 @@
 <div id="slider">
-	<ul class="cards">
+	<ul class="cards anatomy">
 	<?php 
 		$anatomyArgs = array(
 			'post_type'			=> 'anatomy',
@@ -24,8 +24,8 @@
 								echo get_the_post_thumbnail( $post->ID, 'lg' );
 							}
 						?>
-						<a href="#" class="menu-btn">Menu</a>
 					</div>
+					<a href="#" class="menu-btn">Menu</a>
 				</article>
 				<article class="card-back hidden">
 					<div class="card-body">
@@ -70,11 +70,5 @@
 		<a href="#" id="prev" onclick="mySwipe.prev(); return false;">Prev</a>
 		<a href="#" id="next" onclick="mySwipe.next(); return false;">Next</a>
 	</nav>
-	<nav class="site-nav inactive">
-		<ul>
-			<li><input class="search-box"><a href="#" class="search"></a></li>
-			<li><a href="#" class="anatomy">Anatomy</a></li>
-			<li><a href="#" class="quiz">Quiz</a></li>
-		</ul>
-	</nav>
+	<?php include_once( 'inc-site-nav.php' ); ?>
 </div>
