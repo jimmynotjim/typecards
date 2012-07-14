@@ -126,8 +126,8 @@ add_filter('next_post_link', 'add_class_next_link');
 
 add_theme_support( 'post-thumbnails' );
 set_post_thumbnail_size( 50, 50, true );
-add_image_size( 'lg', 640, 640, true );
-add_image_size( 'sm', 320, 320, true );
+add_image_size( 'lg', 512,512, true );
+add_image_size( 'sm', 258,258, true );
 
 
  /* BEGIN: Catch the First Image in a Post
@@ -251,7 +251,7 @@ function pagination($pages = '', $range = 2)
 
 require_once ( get_template_directory() . '/user_avatar.php' );
 require_once ( get_template_directory() . '/cpt_anatomy.php' );
-require_once ( get_template_directory() . '/cpt_color.php' );
+require_once ( get_template_directory() . '/cpt_quizes.php' );
 
 /* End External Functions */
 
