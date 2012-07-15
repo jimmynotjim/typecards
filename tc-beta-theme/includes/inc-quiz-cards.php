@@ -17,6 +17,7 @@
 			<section class="card">
 				<article class="card-front">
 					<div class="card-body">
+						<h1 class="card-title">Type Anatomy</h1>
 						<?php
 							if( has_post_thumbnail($post->ID) ) {
 								echo get_the_post_thumbnail( $post->ID, 'sm' );

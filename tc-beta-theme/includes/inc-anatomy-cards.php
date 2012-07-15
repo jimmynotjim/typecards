@@ -29,7 +29,7 @@
 				</article>
 				<article class="card-back hidden">
 					<div class="card-body">
-						<h1 class="card-title"><?php the_title(); ?></h1>
+						<h1 class="term-title"><?php the_title(); ?></h1>
 						<?php
 							if( has_post_thumbnail($post->ID) ) {
 								echo get_the_post_thumbnail( $post->ID, 'sm' );
