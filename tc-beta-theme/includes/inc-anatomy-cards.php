@@ -1,5 +1,5 @@
-<div id="slider">
-	<ul class="cards anatomy">
+<div class="slider" id="slider2">
+	<ul class="cards flashcards">
 	<?php 
 		$anatomyArgs = array(
 			'post_type'			=> 'anatomy',
@@ -30,6 +30,11 @@
 				<article class="card-back hidden">
 					<div class="card-body">
 						<h1 class="card-title"><?php the_title(); ?></h1>
+						<?php
+							if( has_post_thumbnail($post->ID) ) {
+								echo get_the_post_thumbnail( $post->ID, 'sm' );
+							}
+						?>
 						<h2 class="meta-title">Definition:</h2>
 						<?php
 							the_content(); 
@@ -70,5 +75,4 @@
 		<a href="#" id="prev" onclick="mySwipe.prev(); return false;">Prev</a>
 		<a href="#" id="next" onclick="mySwipe.next(); return false;">Next</a>
 	</nav>
-	<?php include_once( 'inc-site-nav.php' ); ?>
 </div>

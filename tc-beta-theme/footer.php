@@ -4,7 +4,8 @@
 	<!-- swipe.js -->
 	<script src="<?php bloginfo( 'template_url' ); ?>/assets/js/swipe.js"></script>
 	<script>
-		window.mySwipe = new Swipe(document.getElementById('slider'));
+		window.mySwipe = new Swipe(document.getElementById('slider1'));
+		window.mySwipe = new Swipe(document.getElementById('slider2'));
 	</script>
 
 	<!-- custom scripts -->
