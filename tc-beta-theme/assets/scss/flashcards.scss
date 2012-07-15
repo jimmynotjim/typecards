@@ -38,24 +38,43 @@
 	
 	ul {
 		list-style: none;
-		font-size: 20px;
+		font-size: 22px;
 		padding: 0;
 	}
 	
 	li {
-		padding: 4px;
+		border-bottom: 1px solid shade($white, 9%);
+		padding: 10px 4px;
+		
+		&:last-child {
+			border: none;
+		}
+	}
+	input[type="search"]::-webkit-search-decoration,
+	input[type="search"]::-webkit-search-cancel-button,
+	input[type="search"]::-webkit-search-results-button,
+	input[type="search"]::-webkit-search-results-decoration {
+		display: none;
 	}
 	.search-box {
+		-webkit-appearance: none;
 		@include border-radius(6px);
 		@include sansSerif;
 		
-		border: 1px solid shade($white, 10%);
-		font-size: 17px;
-		padding: 2px 8px;
+		border: none;
+		background: none;
+		font-size: 22px;
+		width: 100%;
+		outline: none;
+		padding: 0;
 		
-		&:focus {
-			outline-color: $grayLighter;
+		&:-webkit-input-placeholder {
+			font-weight: 300;
 		}
+	}
+	
+	a {
+		line-height: 32px;
 	}
 }
 
@@ -212,6 +231,12 @@
 	-webkit-transform: rotateY( 180deg );
 	-moz-transform: rotateY( 180deg );
 	
+	img {
+		display: block;
+		margin: 0 auto 16px;
+		width: 50%;
+	}
+	
 	.card-body {
 		height:438px;
 	}
@@ -228,7 +253,7 @@
 
 .card-title {
 	@include rem(font-size, 22px);
-	@include rem(margin-bottom, 40px);
+	@include rem(margin-bottom, 16px);
 	@include rem(padding-bottom, 8px);
 	
 	border-bottom: 2px solid $red;
@@ -268,7 +293,8 @@
 }
 
 .single-answer {
-	padding: 5px 0;
+	font-size: 22px;
+	padding: 12px 30px;
 }
 
 .no-touch .card-nav {

@@ -707,21 +707,35 @@ body {
   top: 0; }
   .site-nav ul {
     list-style: none;
-    font-size: 20px;
+    font-size: 22px;
     padding: 0; }
   .site-nav li {
-    padding: 4px; }
+    border-bottom: 1px solid #e0e0e0;
+    padding: 10px 4px; }
+    .site-nav li:last-child {
+      border: none; }
+  .site-nav input[type="search"]::-webkit-search-decoration,
+  .site-nav input[type="search"]::-webkit-search-cancel-button,
+  .site-nav input[type="search"]::-webkit-search-results-button,
+  .site-nav input[type="search"]::-webkit-search-results-decoration {
+    display: none; }
   .site-nav .search-box {
+    -webkit-appearance: none;
     -webkit-border-radius: 6px;
     -moz-border-radius: 6px;
     border-radius: 6px;
     font-family: "brandon-grotesque", "Futura", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
     font-weight: normal;
-    border: 1px solid #dedede;
-    font-size: 17px;
-    padding: 2px 8px; }
-    .site-nav .search-box:focus {
-      outline-color: #eeeeee; }
+    border: none;
+    background: none;
+    font-size: 22px;
+    width: 100%;
+    outline: none;
+    padding: 0; }
+    .site-nav .search-box:-webkit-input-placeholder {
+      font-weight: 300; }
+  .site-nav a {
+    line-height: 32px; }
 
 .top-level-cards {
   display: block;
@@ -844,6 +858,10 @@ body {
 .card-back {
   -webkit-transform: rotateY(180deg);
   -moz-transform: rotateY(180deg); }
+  .card-back img {
+    display: block;
+    margin: 0 auto 16px;
+    width: 50%; }
   .card-back .card-body {
     height: 438px; }
   .card-back.hidden .card-body {
@@ -855,8 +873,8 @@ body {
 .card-title {
   font-size: 22px;
   font-size: 1.375rem;
-  margin-bottom: 40px;
-  margin-bottom: 2.5rem;
+  margin-bottom: 16px;
+  margin-bottom: 1rem;
   padding-bottom: 8px;
   padding-bottom: 0.5rem;
   border-bottom: 2px solid #db0901;
@@ -890,7 +908,8 @@ body {
   padding: 0; }
 
 .single-answer {
-  padding: 5px 0; }
+  font-size: 22px;
+  padding: 12px 30px; }
 
 .no-touch .card-nav {
   display: block;

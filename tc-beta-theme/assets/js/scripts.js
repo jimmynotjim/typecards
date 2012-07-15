@@ -24,7 +24,7 @@ for(var i=0;i<a.length;i++) {
     }
 }
 
-$('.anatomy .card article').click(function() {
+$('.flashcards .card article').click(function() {
 	$(this).parent().toggleClass('flipped');
 	$(this).parent().children('.card-back').toggleClass('hidden visible');
 });
@@ -36,6 +36,7 @@ $('a').click(function(event){
 $('.menu-btn').click(function() {
 //	$('.site-nav').toggleClass('inactive');
 	$('.top-level-cards').toggleClass('inactive');
+	return false;
 });
 
 $('.phone').mouseenter(function() {
