@@ -1,4 +1,4 @@
-<div id="slider">
+<div class="slider" id="slider2">
 	<ul class="cards anatomy">
 	<?php 
 		$anatomyArgs = array(
@@ -70,5 +70,4 @@
 		<a href="#" id="prev" onclick="mySwipe.prev(); return false;">Prev</a>
 		<a href="#" id="next" onclick="mySwipe.next(); return false;">Next</a>
 	</nav>
-	<?php include_once( 'inc-site-nav.php' ); ?>
 </div>

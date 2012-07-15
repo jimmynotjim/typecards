@@ -34,8 +34,8 @@ $('a').click(function(event){
 });
 
 $('.menu-btn').click(function() {
-	$('.site-nav').toggleClass('inactive');
-	$('.cards').toggleClass('inactive');
+//	$('.site-nav').toggleClass('inactive');
+	$('.top-level-cards').toggleClass('inactive');
 });
 
 $('.phone').mouseenter(function() {
