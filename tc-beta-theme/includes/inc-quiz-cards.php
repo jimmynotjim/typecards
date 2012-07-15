@@ -1,4 +1,4 @@
-<div class="slider" id="slider1">
+<div class="slider" id="slider">
 	<ul class="cards quiz">
 	<?php 
 		$quizArgs = array(

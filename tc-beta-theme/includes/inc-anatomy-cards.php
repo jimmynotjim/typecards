@@ -1,4 +1,4 @@
-<div class="slider" id="slider2">
+<div class="slider" id="slider">
 	<ul class="cards flashcards">
 	<?php 
 		$anatomyArgs = array(
