@@ -1,5 +1,5 @@
-<div class="slider inactive" id="slider1">
-	<ul class="cards">
+<div class="slider" id="slider1">
+	<ul class="cards quiz">
 	<?php 
 		$quizArgs = array(
 			'post_type'			=> 'quiz',

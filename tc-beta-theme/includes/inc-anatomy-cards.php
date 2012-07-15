@@ -1,5 +1,5 @@
 <div class="slider" id="slider2">
-	<ul class="cards anatomy">
+	<ul class="cards flashcards">
 	<?php 
 		$anatomyArgs = array(
 			'post_type'			=> 'anatomy',
@@ -30,6 +30,11 @@
 				<article class="card-back hidden">
 					<div class="card-body">
 						<h1 class="card-title"><?php the_title(); ?></h1>
+						<?php
+							if( has_post_thumbnail($post->ID) ) {
+								echo get_the_post_thumbnail( $post->ID, 'sm' );
+							}
+						?>
 						<h2 class="meta-title">Definition:</h2>
 						<?php
 							the_content(); 
