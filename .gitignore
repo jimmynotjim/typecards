@@ -1,0 +1,46 @@
+# Numerous always-ignore extensions
+*.diff
+*.err
+*.orig
+*.log
+*.rej
+*.swo
+*.swp
+*.vi
+*~
+*.sass-cache
+
+# OS or Editor folders
+.DS_Store
+Thumbs.db
+.cache
+.project
+.settings
+.tmproj
+*.esproj
+nbproject
+*.sublime-project
+*.sublime-workspace
+
+# Komodo
+*.komodoproject
+.komodotools
+
+# Folders to ignore
+.hg
+.svn
+.CVS
+.idea
+
+# Custom items to ignore
+.vagrant
+error_log
+wp-config.php
+advanced-cache.php
+wp-cache-config.php
+web/cgi-bin
+web/wp-content/cache
+web/wp-content/upgrade
+web/wp-content/uploads
+
+web/wp-config.php
