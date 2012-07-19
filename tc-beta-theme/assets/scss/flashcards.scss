@@ -2,9 +2,9 @@
 	background-color: black;
 	display: block;
 	height: 460px;
+	overflow: hidden;
 	position: relative;
 	width: 320px;
-		overflow: hidden;
 }
 .home-menu {
 	@include border-radius(8px);
@@ -24,13 +24,11 @@
 	@include border-radius(8px);
 	
 	background-color: shade($white, 1%);
-//	border: 1px solid shade($white, 11%);
 	height: 460px;
-	width: 320px;
 	padding: 66px 30px 30px;
 	position: absolute;
 	top: 0;
-//	z-index: 1;
+	width: 320px;
 	
 	&.inactive {
 //		display: none;
@@ -61,12 +59,12 @@
 		@include border-radius(6px);
 		@include sansSerif;
 		
-		border: none;
 		background: none;
+		border: none;
 		font-size: 22px;
-		width: 100%;
 		outline: none;
 		padding: 0;
+		width: 100%;
 		
 		&:-webkit-input-placeholder {
 			font-weight: 300;
@@ -81,26 +79,25 @@
 .top-level-cards {
 	display: block;
 	height: 460px;
-	width: 320px;
 	position: absolute;
 	top: 0;
 	-webkit-transition: top .7s;
+	width: 320px;
 		
 	&.inactive {
 		top: -88%;
 	}
 	
 	&:after {
+		-webkit-mask-box-image: -webkit-gradient(linear,left bottom,320 bottom,color-stop(0.0,rgba(0,0,0,0)),color-stop(0.1,rgba(0,0,0,.8)),color-stop(0.9,rgba(0,0,0,.8)),color-stop(1.0,rgba(0,0,0,0)));
+	
+		background: -webkit-gradient(linear,left top,left bottom,from(rgba($gray,.25)),to(rgba($gray,0)));
+		bottom: -12px;
 		content: '';
 		display: block;
-		width: 100%;
-//		margin-left: 10px;
 		height: 12px;
-		background: -webkit-gradient(linear,left top,left bottom,from(rgba($gray,.25)),to(rgba($gray,0)));
-		-webkit-mask-box-image: -webkit-gradient(linear,left bottom,320 bottom,color-stop(0.0,rgba(0,0,0,0)),color-stop(0.1,rgba(0,0,0,.8)),color-stop(0.9,rgba(0,0,0,.8)),color-stop(1.0,rgba(0,0,0,0)));
 		position: absolute;
-		bottom: -12px;
-		
+		width: 100%;
 	}
 }
 
@@ -108,17 +105,16 @@
 .menu-btn {
 	@include hiddenText;
 	
-	display: block;
-	padding: 10px;
 	background: url(../img/menu-btn.png) 50% 50% no-repeat;
 	color: $white;
+	display: block;
 	margin: 0 auto;
+	padding: 10px;
 	width: 260px;
 }
 .slider {
-	width: 320px;
 	height: 460px;
-//	display: none;
+	width: 320px;
 	
 	//swipe styles
 	overflow: hidden;
@@ -159,10 +155,9 @@
 	width: 100%;
 	
 	//flip styles
-//	display: block;
-	width: 320px;
 	height: 460px;
 	position: relative;
+	width: 320px;
 	-webkit-perspective: 800px;
 	-moz-perspective: 800px;
 }
@@ -170,9 +165,9 @@
 .card {
 
 	//flip styles
-	width: 100%;
 	height: 100%;
 	position: absolute;
+	width: 100%;
 	-webkit-transform-style: preserve-3d;
 	-moz-transform-style: preserve-3d;
 	-webkit-transition: -webkit-transform 1s;
@@ -181,7 +176,6 @@
 
 .card article {
 	@include border-radius(8px);
-//	@include rem(padding, 30px 0);
 	
 	background-color: $white;
 	border: 1px solid shade($white, 10%);
@@ -189,9 +183,9 @@
 	
 	//flip styles
 	display: block;
+	height: 100%;
 	position: absolute;
 	width: 100%;
-	height: 100%;
 	-webkit-backface-visibility: hidden;
 	-moz-backface-visibility: hidden;
 }
@@ -211,18 +205,18 @@
 
 .top-shadow, .bottom-shadow {
 	display: block;
-	width: 260px;
 	height: 28px;
-	position: absolute;
 	left: 30px;
+	position: absolute;
+	width: 260px;
 }
 .top-shadow {
 	top: 2px;
 	background: -webkit-gradient(linear,left top,left bottom,from(rgba(247,247,247,1)),to(rgba(247,247,247,.1)));	
 }
-.bottom-shadow {
-	bottom: 2px;
+.bottom-shadow {	
 	background: -webkit-gradient(linear,left bottom,left top,from(rgba(247,247,247,1)),to(rgba(247,247,247,.1)));
+	bottom: 2px;
 }
 
 .card-back {
