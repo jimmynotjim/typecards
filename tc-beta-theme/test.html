@@ -33,24 +33,21 @@
 		//document.addEventListener( 'touchmove' , stopScrolling , false );
 		
 		$(document).delegate('#main', 'pageshow', function(){
-			//window.mySwipe = new Swipe(document.getElementById('slider'));
+			window.mySwipe = new Swipe(document.getElementById('slider'));
 
 			$('.flashcards .card-body').bind('tap', function(event) {
-				if( !$(this).parents('.card').is('flipped')) {
-					$(this).parents('.card').addClass('flipped');
-				}
-				else if( $(this).parents('.card').is('flipped')) {
-					$(this).parents('.card').removeClass('flipped');
-				};
-				//$(this).parents('.card').children('.card-back').toggleClass('hidden visible');
+			    $(this).parents('.card').toggleClass('flipped');
+				$(this).parents('.card').children('.card-back').toggleClass('hidden visible');
+				return false;
 			});
 
-			$('a').bind('tap', function(event){
-				event.stopPropagation();
-			});
+		//	$('a').bind('tap', function(event){
+		//		event.stopPropagation();
+		//	});
 
 			$('a.menu-btn').bind('tap', function(event){
 				$('.top-level-cards').toggleClass('inactive');
+				return false;
 			});
 			
 		});

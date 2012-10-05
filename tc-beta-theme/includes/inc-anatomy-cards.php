@@ -1,20 +1,21 @@
-<div class="slider" id="slider">
-	<ul class="cards flashcards">
-	<?php 
+<div class="slider swipe" id="slider">
+	<ul class="cards swipe-wrap">
+	<?php
 		$anatomyArgs = array(
 			'post_type'			=> 'anatomy',
-			'posts_per_page'	=> 10,
-			'orderby'			=> 'rand'
+			'posts_per_page'	=> -1,
+			'orderby'			=> 'title',
+			'order'				=> 'ASC'
 		);
 		query_posts($anatomyArgs);
-		if( have_posts() ) while( have_posts() ) : the_post(); 
+		if( have_posts() ) while( have_posts() ) : the_post();
 		$aka = get_post_meta( $post->ID, 'anatomy-aka', true );
 		$altSpell = get_post_meta( $post->ID, 'anatomy-alt-spell', true );
 		$example = get_post_meta( $post->ID, 'anatomy-examples', true );
 		$references = get_post_meta( $post->ID, 'anatomy-references', true );
 		$refArray = explode( ',', $references );
 	?>
-		<li class="<?php the_title(); ?> card-holder">
+		<li class="card-holder">
 			<section class="card">
 				<article class="card-front">
 					<div class="card-body">
@@ -25,7 +26,7 @@
 							}
 						?>
 					</div>
-					<a href="#" class="menu-btn">Menu</a>
+					<!--<a href="#" class="menu-btn">Menu</a>-->
 				</article>
 				<article class="card-back hidden">
 					<div class="card-body">
@@ -37,35 +38,36 @@
 						?>
 						<h2 class="meta-title">Definition:</h2>
 						<?php
-							the_content(); 
-							
+							the_content();
+
 							if( $aka ) {
 							echo '<h2 class="meta-title">Also Known As:</h2>';
 							echo '<p>'. $aka .'</p>';
 							}
-							
+
 							if( $altSpell ) {
 							echo '<h2 class="meta-title">Alternate Spelling:</h2>';
 							echo '<p>'. $altSpell .'</p>';
 							}
-							
+
 							if( $example ) {
 							echo '<h2 class="meta-title">Examples:</h2>';
 							echo '<p>'. $example .'</p>';
 							}
-							
+
 							if( $references ) {
 									echo '<h2 class="meta-title">References:</h2>';
 									echo '<p>';
 									foreach( $refArray as $reference ):
-										echo '<a href="'. $reference .'" title="'. $reference. '" class="ref-link">'. $reference .'</a>';
+										$refURL = preg_replace('/([A-Za-z.]*-)/', '', $reference);
+										$refTitle = preg_replace('/(-[A-Za-z.:\/]*)/', '', $reference);
+										echo '<a href="'. $refURL .'" title="'. $refTitle. '" class="ref-link">'. $refTitle .'</a>';
+										//echo '<span>'. $refURL .'</span>';
 									endforeach;
 									echo '</p>';
 							}
 						?>
 					</div>
-					<div class="top-shadow"></div>
-					<div class="bottom-shadow"></div>
 				</article>
 			</section>
 		</li>
