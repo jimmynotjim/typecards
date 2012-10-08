@@ -402,14 +402,15 @@ div[role="main"] {
   width: 320px; }
 
 .slider {
+  background: transparent;
   height: 460px;
   width: 320px;
   overflow: hidden;
-  position: absolute;
-  visibility: hidden; }
+  position: absolute; }
 
 .cards {
   *zoom: 1;
+  background: transparent;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -427,6 +428,7 @@ div[role="main"] {
       font-weight: 500; }
 
 .card-holder {
+  background: transparent;
   float: left;
   position: relative;
   width: 100%;
@@ -442,6 +444,7 @@ div[role="main"] {
   -webkit-overflow-scrolling: touch; }
 
 .card {
+  background: transparent;
   height: 100%;
   position: absolute;
   width: 100%;
@@ -484,19 +487,20 @@ div[role="main"] {
     -moz-border-radius: 8px 8px 0 0;
     border-radius: 8px 8px 0 0;
     background-image: -webkit-gradient(linear, left top, left bottom, from(#f7f7f7), to(rgba(247, 247, 247, 0)));
-    top: 0; }
+    top: 4px; }
   .card-back:after {
     -webkit-border-radius: 0 0 8px 8px;
     -moz-border-radius: 0 0 8px 8px;
     border-radius: 0 0 8px 8px;
     background-image: -webkit-gradient(linear, left bottom, left top, from(#f7f7f7), to(rgba(247, 247, 247, 0.1)));
-    bottom: 0; }
+    bottom: 4px; }
   .card-back img {
     display: block;
     margin: 0 auto 16px;
     width: 50%; }
   .card-back .card-body {
-    height: 450px; }
+    height: 450px;
+    overflow: auto; }
   .card-back.hidden .card-body {
     overflow-y: hidden; }
   .card-back.visible .card-body {
@@ -567,3 +571,19 @@ div[role="main"] {
     right: 0;
     top: 30px;
     position: absolute; }
+
+@media screen and (min-height: 548px) {
+  div[role="main"],
+  .slider,
+  .card-holder {
+    height: 548px; }
+
+  .card-body {
+    height: 488px; }
+
+  .card-back .card-body {
+    height: 538px; }
+
+  .card-title {
+    margin-bottom: 92px;
+    margin-bottom: 5.75rem; } }

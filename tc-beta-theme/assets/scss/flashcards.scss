@@ -27,13 +27,14 @@ div[role="main"] {
 //	@include border-radius(8px);
 
 //	background-color: black;
+	background: transparent;
 	height: 460px;
 	width: 320px;
 
 	//swipe styles
 	overflow: hidden;
 	position: absolute;
-	visibility: hidden;
+//	visibility: hidden;
 
 	&.inactive {
 //		display: none;
@@ -43,6 +44,7 @@ div[role="main"] {
 .cards {
 	@include clearFix;
 
+	background: transparent;
 	list-style: none;
 	margin: 0;
 	padding: 0;
@@ -61,6 +63,7 @@ div[role="main"] {
 }
 
 .card-holder {
+	background: transparent;
 
 	//swipe styles
 	float: left;
@@ -87,6 +90,7 @@ div[role="main"] {
 }
 
 .card {
+	background: transparent;
 
 	//flip styles
 	height: 100%;
@@ -150,14 +154,14 @@ div[role="main"] {
 			@include border-radius(8px 8px 0 0);
 
 			background-image: -webkit-gradient(linear,left top,left bottom,from(rgba(247,247,247,1)),to(rgba(247,247,247,0)));
-			top: 0;
+			top: 4px;
 		}
 
 		&:after {
 			@include border-radius(0 0 8px 8px);
 
 			background-image: -webkit-gradient(linear,left bottom,left top,from(rgba(247,247,247,1)),to(rgba(247,247,247,.1)));
-			bottom: 0;
+			bottom: 4px;
 		}
 
 	img {
@@ -168,7 +172,7 @@ div[role="main"] {
 
 	.card-body {
 		height: 450px;
-//		overflow: auto;
+		overflow: auto;
 	}
 
 	&.hidden .card-body {
@@ -251,3 +255,23 @@ div[role="main"] {
 	}
 }
 
+@media screen and (min-height: 548px) {
+	div[role="main"],
+	.slider,
+	.card-holder {
+		height: 548px;
+	}
+
+	.card-body {
+		height: 488px;
+	}
+
+	.card-back .card-body {
+		height: 538px;
+	}
+
+	.card-title {
+		@include rem(margin-bottom, 92px);
+	}
+
+}

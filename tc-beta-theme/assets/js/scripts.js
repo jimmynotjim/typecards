@@ -29,7 +29,7 @@ $('#slider li:nth-child(1), #slider li:nth-child(2)').addClass('on');
 
 $('.card-body').click(function() {
 	$(this).parents('.card').toggleClass('flipped');
-	$(this).parents('.card').children('.card-back').toggleClass('hidden visible');
+//	$(this).parents('.card').children('.card-back').toggleClass('hidden visible');
 });
 /*
 $('a').click(function(event){
