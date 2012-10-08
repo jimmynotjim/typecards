@@ -1,7 +1,5 @@
 <?php get_header(); ?>
-<div role="main" id="main" class="wrap">
-	<?php include_once( 'includes/inc-site-nav.php' ); ?>
-	<div class="top-level-cards">
+<div role="main">
 	<?php
 		if ( is_page( 'anatomy' ) ) {
 			include_once( 'includes/inc-anatomy-cards.php' );
@@ -13,6 +11,5 @@
 			echo '<p>Nothing here</p>';
 		}
 	?>
-	</div>
 </div><!--main-->
 <?php get_footer(); ?>
