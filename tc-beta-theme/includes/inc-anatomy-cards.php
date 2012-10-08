@@ -15,7 +15,7 @@
 		$references = get_post_meta( $post->ID, 'anatomy-references', true );
 		$refArray = explode( ',', $references );
 	?>
-		<li class="card-holder">
+		<li class="card-holder" id="<?php the_title(); ?>">
 			<section class="card">
 				<article class="card-front">
 					<div class="card-body">
@@ -28,7 +28,7 @@
 					</div>
 					<!--<a href="#" class="menu-btn">Menu</a>-->
 				</article>
-				<article class="card-back hidden">
+				<article class="card-back">
 					<div class="card-body">
 						<h1 class="term-title"><?php the_title(); ?></h1>
 						<?php
@@ -59,8 +59,8 @@
 									echo '<h2 class="meta-title">References:</h2>';
 									echo '<p>';
 									foreach( $refArray as $reference ):
-										$refURL = preg_replace('/([A-Za-z.]*-)/', '', $reference);
-										$refTitle = preg_replace('/(-[A-Za-z.:\/]*)/', '', $reference);
+										$refURL = preg_replace('/([A-Za-z0-9.]*-http)/', 'http', $reference);
+										$refTitle = preg_replace('/(-http[A-Za-z0-9.:\/\(\)\_\-)]*)/', '', $reference);
 										echo '<a href="'. $refURL .'" title="'. $refTitle. '" class="ref-link">'. $refTitle .'</a>';
 										//echo '<span>'. $refURL .'</span>';
 									endforeach;
