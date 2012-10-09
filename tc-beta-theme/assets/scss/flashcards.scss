@@ -131,6 +131,12 @@ div[role="main"] {
 	height: 400px;
 }
 
+.card-front {
+	img {
+		margin-top: 74px;
+	}
+}
+
 .card-back {
 
 	position: relative;
@@ -211,6 +217,57 @@ div[role="main"] {
 	display: block;
 }
 
+#cover {
+	.term-title {
+		@include rem(margin-bottom, 42px);
+	}
+	.instructions {
+		@include border-radius(6px);
+
+		background-color: rgba(0,0,0,.8);
+		color: #eee;
+		display: block;
+		font-weight: 300;
+		width: 260px;
+
+		span {
+			display: block;
+		}
+
+		&.hidden {
+			display: none;
+		}
+	}
+
+	.details {
+		@include rem(padding, 18px);
+	}
+	.dismiss {
+		@include border-radius(0 0 6px 6px);
+		@include rem(font-size, 16px);
+		@include rem(padding, 12px);
+
+		background-color: #222;
+		border-top: 1px solid #000;
+		color: #fff;
+		display: block;
+		font-weight: 400;
+		text-align: center;
+		text-transform: uppercase;
+	}
+}
+
+.beta-logo {
+	@include hiddenText;
+
+	background: url('../img/beta-logo.png') no-repeat 0 0;
+	background-size: 256px;
+	display: block;
+	height: 100px;
+	margin: 74px auto 48px;
+	width: 256px;
+}
+
 .card-nav {
 	display: none;
 }
@@ -266,12 +323,10 @@ div[role="main"] {
 		height: 488px;
 	}
 
+	.card-front img {
+		margin-top: 118px;
+	}
 	.card-back .card-body {
 		height: 538px;
 	}
-
-	.card-title {
-		@include rem(margin-bottom, 92px);
-	}
-
 }

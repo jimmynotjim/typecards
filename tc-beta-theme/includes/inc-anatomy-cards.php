@@ -1,5 +1,25 @@
 <div class="slider swipe" id="slider">
 	<ul class="cards swipe-wrap">
+		<li class="card-holder" id="cover">
+			<section class="card">
+				<article class="card-front">
+					<div class="card-body">
+						<h1 class="beta-logo">typecards &beta;1.0</h1>
+						<div class="instructions">
+							<span class="details">Swipe to navigate navigate through the cards, tap to flip a card and view it's details.</span>
+							<span class="dismiss">Dismiss</span>
+						</div>
+					</div>
+				</article>
+				<article class="card-back">
+					<div class="card-body">
+						<h1 class="term-title">Type Anatomy</h1>
+						<p>typecards began as a tool to help me better understand typography. With a little help from some good friends it's grown into a tool I hope you find useful too. Over time it will grow to include more than just Anatomy Terms and hopefully become your goto source on all things type.</p>
+						<p>This is a beta release, there's sure to be bugs and incomplete information. Please report any inconcistencies to help@typecardsapp.com.</p>
+					</div>
+				</article>
+			</section>
+		</li>
 	<?php
 		$anatomyArgs = array(
 			'post_type'			=> 'anatomy',
@@ -19,7 +39,6 @@
 			<section class="card">
 				<article class="card-front">
 					<div class="card-body">
-						<h1 class="card-title">Type Anatomy</h1>
 						<?php
 							if( has_post_thumbnail($post->ID) ) {
 								echo get_the_post_thumbnail( $post->ID, 'lg' );

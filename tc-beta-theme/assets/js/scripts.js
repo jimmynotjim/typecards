@@ -44,6 +44,12 @@ $('.menu-btn').click(function() {
 });
  */
 
+$('.dismiss').click(function() {
+    $(this).parents('.instructions').toggleClass('hidden');
+}).click(function(event){
+    event.stopPropagation();
+});
+
 $('.phone').mouseenter(function() {
 	$('.card-nav').addClass('active');
 }).mouseleave(function() {

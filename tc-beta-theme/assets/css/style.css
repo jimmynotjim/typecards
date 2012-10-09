@@ -115,42 +115,42 @@ textarea {
 	font-size: @baseLine*.8;
 	font-style: italic;
 	font-weight: 600;
-			
+
 	.author-portrait {
 		.baseShadow;
-		
+
 		float: left;
 		margin-top: 4px;
 		margin-right: @baseLine;
 		width: 36px;
 	}
-	
+
 	ul {
 		float: left;
 	}
-	
+
 	li {
 		margin-bottom: 0;
 	}
-	
+
 	h2 {
-		clear: both;		
+		clear: both;
 		font-weight: 600;
 		line-height: @baseLine*1.2;
-		
+
 		a {
-			color: @grayDark;	
-		
+			color: @grayDark;
+
 			&:hover {
 				color: @gray;
 			}
 		}
-	}	
-	
+	}
+
 	.topic-category, .author-name, .pub-date {
 		clear: both;
 	}
-	
+
 	.pub-category {
 		color: @grayLight;
 		font-weight: 500;
@@ -472,6 +472,9 @@ div[role="main"] {
   padding: 1.375rem 1.875rem;
   height: 400px; }
 
+.card-front img {
+  margin-top: 74px; }
+
 .card-back {
   position: relative; }
   .card-back:before, .card-back:after {
@@ -532,6 +535,52 @@ div[role="main"] {
 .ref-link {
   display: block; }
 
+#cover .term-title {
+  margin-bottom: 42px;
+  margin-bottom: 2.625rem; }
+#cover .instructions {
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #eee;
+  display: block;
+  font-weight: 300;
+  width: 260px; }
+  #cover .instructions span {
+    display: block; }
+  #cover .instructions.hidden {
+    display: none; }
+#cover .details {
+  padding: 18px;
+  padding: 1.125rem; }
+#cover .dismiss {
+  -webkit-border-radius: 0 0 6px 6px;
+  -moz-border-radius: 0 0 6px 6px;
+  border-radius: 0 0 6px 6px;
+  font-size: 16px;
+  font-size: 1rem;
+  padding: 12px;
+  padding: 0.75rem;
+  background-color: #222;
+  border-top: 1px solid #000;
+  color: #fff;
+  display: block;
+  font-weight: 400;
+  text-align: center;
+  text-transform: uppercase; }
+
+.beta-logo {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  background: url("../img/beta-logo.png") no-repeat 0 0;
+  background-size: 256px;
+  display: block;
+  height: 100px;
+  margin: 74px auto 48px;
+  width: 256px; }
+
 .card-nav {
   display: none; }
 
@@ -581,9 +630,8 @@ div[role="main"] {
   .card-body {
     height: 488px; }
 
-  .card-back .card-body {
-    height: 538px; }
+  .card-front img {
+    margin-top: 118px; }
 
-  .card-title {
-    margin-bottom: 92px;
-    margin-bottom: 5.75rem; } }
+  .card-back .card-body {
+    height: 538px; } }

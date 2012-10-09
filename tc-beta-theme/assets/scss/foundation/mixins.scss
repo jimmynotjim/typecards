@@ -212,7 +212,7 @@ $px-per-rem: $base-font-size / 1rem;
     counter-reset: item;
     list-style-type: none;
     *list-style-type: decimal; /*Conditional hack for ie7*/
-    
+
     & > li:before {
         content: counter(item) ". ";
         counter-increment: item;
@@ -222,10 +222,10 @@ $px-per-rem: $base-font-size / 1rem;
 // Styles the counter to act more like an order list ie. hanging punctuation
 @mixin hangList {
     padding-left: 52px;
-    
+
     & > li {
         position: relative;
-    
+
         &:before {
             content: counter(item);
             left: -32px;
@@ -511,18 +511,18 @@ $px-per-rem: $base-font-size / 1rem;
 	font-style: italic;
 	height: $baseLine*3.25;
 	line-height: $baseLine*3.25;
-			
+
 	em {
 		font-weight: 800;
 	}
-	
+
 	@include base-grad-colors($base-color);
 }
 
 @mixin base-grad-colors($base-color) {
 		$light-base-color: lighten($base-color, 15%);
 		$dark-base-color: darken($base-color, 15%);
-		
+
 		@include gradient-vertical($light-base-color, $base-color);
 		text-shadow: 0 1px 1px $dark-base-color;
 }
@@ -538,14 +538,14 @@ $px-per-rem: $base-font-size / 1rem;
 		/* Shadow covers */
 		linear-gradient(white 30%, rgba(255,255,255,0)),
 		linear-gradient(rgba(255,255,255,0), white 70%) 0 100%,
-		
+
 		/* Shadows */
 		radial-gradient(50% 0, farthest-side, rgba(0,0,0,.2), rgba(0,0,0,0)),
 		radial-gradient(50% 100%,farthest-side, rgba(0,0,0,.2), rgba(0,0,0,0)) 0 100%;
 	background-repeat: no-repeat;
 	background-color: white;
 	background-size: 100% 40px, 100% 40px, 100% 14px, 100% 14px;
-	
+
 	/* Opera doesn't support this in the shorthand */
 	background-attachment: local, local, scroll, scroll;
 }
@@ -557,42 +557,42 @@ $px-per-rem: $base-font-size / 1rem;
 	font-size: @baseLine*.8;
 	font-style: italic;
 	font-weight: 600;
-			
+
 	.author-portrait {
 		.baseShadow;
-		
+
 		float: left;
 		margin-top: 4px;
 		margin-right: @baseLine;
 		width: 36px;
 	}
-	
+
 	ul {
 		float: left;
 	}
-	
+
 	li {
 		margin-bottom: 0;
 	}
-	
+
 	h2 {
-		clear: both;		
+		clear: both;
 		font-weight: 600;
 		line-height: @baseLine*1.2;
-		
+
 		a {
-			color: @grayDark;	
-		
+			color: @grayDark;
+
 			&:hover {
 				color: @gray;
 			}
 		}
-	}	
-	
+	}
+
 	.topic-category, .author-name, .pub-date {
 		clear: both;
 	}
-	
+
 	.pub-category {
 		color: @grayLight;
 		font-weight: 500;
