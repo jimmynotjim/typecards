@@ -1,5 +1,11 @@
 <?php
 
+/* Disable WordPress Admin Bar for all users but admins. */
+if (!current_user_can('administrator')):
+  show_admin_bar(false);
+endif;
+
+
 /* BEGIN: Remove wlwmanifest and rsd
   ------------------------------------------------------------------------------------------------------ */
 

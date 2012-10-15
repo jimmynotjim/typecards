@@ -36,7 +36,7 @@
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
 	<!-- iOS Detection -->
-	<?php if( is_home() ) { ?>
+	<?php if (!current_user_can( 'manage_options' )) { ?>
 	<script>
 		if (window.navigator.userAgent.indexOf('iPhone') != -1) {
 			if (window.navigator.standalone == true) {
