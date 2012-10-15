@@ -24,9 +24,6 @@ div[role="main"] {
 }
 
 .slider {
-//	@include border-radius(8px);
-
-//	background-color: black;
 	background: transparent;
 	height: 460px;
 	width: 320px;
@@ -34,7 +31,6 @@ div[role="main"] {
 	//swipe styles
 	overflow: hidden;
 	position: absolute;
-//	visibility: hidden;
 
 	&.inactive {
 //		display: none;
@@ -75,15 +71,20 @@ div[role="main"] {
 	position: relative;
 	width: 320px;
 	-webkit-perspective: 800px;
-//	-moz-perspective: 800px;
+	-moz-perspective: 800px;
 }
 
 .card-holder.on {
+
 	.card article {
-		-webkit-backface-visibility: hidden;
+		//flip styles
+		@include backface-visibility(hidden);
 	}
 	.card-back {
-		-webkit-transform: rotateY( 180deg );
+		//flip styles
+		-webkit-transform: rotateY(180deg);
+		-moz-transform: rotateY(180deg);
+
 		-webkit-overflow-scrolling: touch;
 
 	}
@@ -97,16 +98,15 @@ div[role="main"] {
 	position: absolute;
 	width: 100%;
 	-webkit-transform-style: preserve-3d;
-//	-moz-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
 	-webkit-transition: -webkit-transform 1s;
-//	-moz-transition: -webkit-transform 1s;
+	-moz-transition: -moz-transform 1s;
 }
 
 .card article {
 	@include border-radius(8px);
 
 	background-color: $white;
-//	border: 1px solid shade($white, 10%);
 	cursor: pointer;
 
 	//flip styles
@@ -114,14 +114,12 @@ div[role="main"] {
 	height: 100%;
 	position: absolute;
 	width: 100%;
-//	-webkit-backface-visibility: hidden;
-//	-moz-backface-visibility: hidden;
 }
 
 .card.flipped {
 	//flip styles
 	-webkit-transform: rotateY( 180deg );
-//	-moz-transform: rotateY( 180deg );
+	-moz-transform: rotateY( 180deg );
 }
 
 .card-body {
@@ -138,15 +136,9 @@ div[role="main"] {
 }
 
 .card-back {
-
 	position: relative;
 
-	//flip styles
-//	-webkit-transform: rotateY( 180deg );
-//	-moz-transform: rotateY( 180deg );
-
 		&:before, &:after {
-//			background-color: orange;
 			content: '';
 			display: block;
 			height: 12px;
@@ -159,14 +151,16 @@ div[role="main"] {
 		&:before {
 			@include border-radius(8px 8px 0 0);
 
-			background-image: -webkit-gradient(linear,left top,left bottom,from(rgba(247,247,247,1)),to(rgba(247,247,247,0)));
+			@include gradient-vertical(rgba(247,247,246,1), rgba(247,247,247,0));
+//			background-image: -webkit-gradient(linear,left top,left bottom,from(rgba(247,247,247,1)),to(rgba(247,247,247,0)));
 			top: 4px;
 		}
 
 		&:after {
 			@include border-radius(0 0 8px 8px);
 
-			background-image: -webkit-gradient(linear,left bottom,left top,from(rgba(247,247,247,1)),to(rgba(247,247,247,.1)));
+			@include gradient-vertical(rgba(247,247,247,0), rgba(247,247,247,1));
+//			background-image: -webkit-gradient(linear,left bottom,left top,from(rgba(247,247,247,1)),to(rgba(247,247,247,.1)));
 			bottom: 4px;
 		}
 

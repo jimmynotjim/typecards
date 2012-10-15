@@ -9,7 +9,7 @@
  * Fully installable fonts can be purchased at http://www.fontspring.com
  *
  * The fonts included in this stylesheet are subject to the End User License you purchased
- * from Fontspring. The fonts are protected under domestic and international trademark and 
+ * from Fontspring. The fonts are protected under domestic and international trademark and
  * copyright law. You are prohibited from modifying, reverse engineering, duplicating, or
  * distributing this font software.
  *
@@ -30,30 +30,6 @@
     font-family: 'cala-web';
     src: url('../fonts/cala/calamed-webfont.woff') format('woff');
     font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'brandon-grotesque';
-    src: url('../fonts/brandon/brandon_bld.woff') format('woff');
-    font-weight: 700;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'brandon-grotesque';
-    src: url('../fonts/brandon/brandon_light.woff') format('woff');
-    font-weight: 300;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'brandon-grotesque';
-    src: url('../fonts/brandon/brandon_med.woff') format('woff');
-    font-weight: 500;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'brandon-grotesque';
-    src: url('../fonts/brandon/brandon_reg.woff') format('woff');
-    font-weight: 400;
     font-style: normal;
 }
 
@@ -156,7 +132,7 @@ p {
 a {
 	color: $linkColor;
 	text-decoration: none;
-	
+
 	&:hover {
 		color: $linkColorHover;
 	}
@@ -262,7 +238,7 @@ blockquote {
 // Quotes
 q:before,
 q:after,
-blockquote:before, 
+blockquote:before,
 blockquote:after {
   content: "";
 }

@@ -164,7 +164,7 @@ textarea {
  * Fully installable fonts can be purchased at http://www.fontspring.com
  *
  * The fonts included in this stylesheet are subject to the End User License you purchased
- * from Fontspring. The fonts are protected under domestic and international trademark and 
+ * from Fontspring. The fonts are protected under domestic and international trademark and
  * copyright law. You are prohibited from modifying, reverse engineering, duplicating, or
  * distributing this font software.
  *
@@ -184,30 +184,6 @@ textarea {
   font-family: 'cala-web';
   src: url("../fonts/cala/calamed-webfont.woff") format("woff");
   font-weight: normal;
-  font-style: normal; }
-
-@font-face {
-  font-family: 'brandon-grotesque';
-  src: url("../fonts/brandon/brandon_bld.woff") format("woff");
-  font-weight: 700;
-  font-style: normal; }
-
-@font-face {
-  font-family: 'brandon-grotesque';
-  src: url("../fonts/brandon/brandon_light.woff") format("woff");
-  font-weight: 300;
-  font-style: normal; }
-
-@font-face {
-  font-family: 'brandon-grotesque';
-  src: url("../fonts/brandon/brandon_med.woff") format("woff");
-  font-weight: 500;
-  font-style: normal; }
-
-@font-face {
-  font-family: 'brandon-grotesque';
-  src: url("../fonts/brandon/brandon_reg.woff") format("woff");
-  font-weight: 400;
   font-style: normal; }
 
 body {
@@ -435,12 +411,17 @@ div[role="main"] {
   height: 460px;
   position: relative;
   width: 320px;
-  -webkit-perspective: 800px; }
+  -webkit-perspective: 800px;
+  -moz-perspective: 800px; }
 
 .card-holder.on .card article {
-  -webkit-backface-visibility: hidden; }
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden; }
 .card-holder.on .card-back {
   -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
   -webkit-overflow-scrolling: touch; }
 
 .card {
@@ -449,7 +430,9 @@ div[role="main"] {
   position: absolute;
   width: 100%;
   -webkit-transform-style: preserve-3d;
-  -webkit-transition: -webkit-transform 1s; }
+  -moz-transform-style: preserve-3d;
+  -webkit-transition: -webkit-transform 1s;
+  -moz-transition: -moz-transform 1s; }
 
 .card article {
   -webkit-border-radius: 8px;
@@ -463,7 +446,8 @@ div[role="main"] {
   width: 100%; }
 
 .card.flipped {
-  -webkit-transform: rotateY(180deg); }
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg); }
 
 .card-body {
   margin: 4px 0;
@@ -489,13 +473,27 @@ div[role="main"] {
     -webkit-border-radius: 8px 8px 0 0;
     -moz-border-radius: 8px 8px 0 0;
     border-radius: 8px 8px 0 0;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#f7f7f7), to(rgba(247, 247, 247, 0)));
+    background-color: rgba(247, 247, 246, 0.6);
+    background: transparent -moz-linear-gradient(top, #f7f7f6, rgba(247, 247, 247, 0));
+    background: transparent -ms-linear-gradient(top, #f7f7f6, rgba(247, 247, 247, 0));
+    background: transparent -webkit-gradient(linear, 0 0, 0 100%, from(#f7f7f6), to(rgba(247, 247, 247, 0)));
+    background: transparent -webkit-linear-gradient(top, #f7f7f6, rgba(247, 247, 247, 0));
+    background: transparent -o-linear-gradient(top, #f7f7f6, rgba(247, 247, 247, 0));
+    background: transparent linear-gradient(top, #f7f7f6, rgba(247, 247, 247, 0));
+    background-repeat: repeat-x;
     top: 4px; }
   .card-back:after {
     -webkit-border-radius: 0 0 8px 8px;
     -moz-border-radius: 0 0 8px 8px;
     border-radius: 0 0 8px 8px;
-    background-image: -webkit-gradient(linear, left bottom, left top, from(#f7f7f7), to(rgba(247, 247, 247, 0.1)));
+    background-color: rgba(247, 247, 247, 0.4);
+    background: transparent -moz-linear-gradient(top, rgba(247, 247, 247, 0), #f7f7f7);
+    background: transparent -ms-linear-gradient(top, rgba(247, 247, 247, 0), #f7f7f7);
+    background: transparent -webkit-gradient(linear, 0 0, 0 100%, from(rgba(247, 247, 247, 0)), to(#f7f7f7));
+    background: transparent -webkit-linear-gradient(top, rgba(247, 247, 247, 0), #f7f7f7);
+    background: transparent -o-linear-gradient(top, rgba(247, 247, 247, 0), #f7f7f7);
+    background: transparent linear-gradient(top, rgba(247, 247, 247, 0), #f7f7f7);
+    background-repeat: repeat-x;
     bottom: 4px; }
   .card-back img {
     display: block;
