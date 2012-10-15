@@ -19,7 +19,7 @@
 					cards[c].className = 'card-holder on';
 					if( cards[p] != null) cards[p].className = 'card-holder on';
 					if( cards[n] != null) cards[n].className = 'card-holder on';
-				}, 1);
+				}, 20);
 			}
 		}),
 		cards = document.getElementById('slider').getElementsByTagName('li');
