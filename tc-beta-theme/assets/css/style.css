@@ -718,7 +718,7 @@ div[role="main"] {
   background-color: #db0901;
   border: 1px solid #ba0700; }
 
-@media screen and (min-height: 548px) {
+@media screen and (min-height: 500px) {
   .safari-message {
     height: 548px; }
 
