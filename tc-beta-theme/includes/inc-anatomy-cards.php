@@ -40,51 +40,49 @@
 				<article class="card-front">
 					<div class="card-body">
 						<?php
-							if( has_post_thumbnail($post->ID) ) {
-								echo get_the_post_thumbnail( $post->ID, 'lg' );
-							}
+						if( has_post_thumbnail($post->ID) ) {
+							echo get_the_post_thumbnail( $post->ID, 'lg' );
+						}
 						?>
 					</div>
-					<!--<a href="#" class="menu-btn">Menu</a>-->
 				</article>
 				<article class="card-back">
 					<div class="card-body">
 						<h1 class="term-title"><?php the_title(); ?></h1>
 						<?php
-							if( has_post_thumbnail($post->ID) ) {
-								echo get_the_post_thumbnail( $post->ID, 'sm' );
-							}
+						if( has_post_thumbnail($post->ID) ) {
+							echo get_the_post_thumbnail( $post->ID, 'lg' );
+						}
 						?>
 						<h2 class="meta-title">Definition:</h2>
 						<?php
-							the_content();
+						the_content();
 
-							if( $aka ) {
-							echo '<h2 class="meta-title">Also Known As:</h2>';
-							echo '<p>'. $aka .'</p>';
-							}
+						if( $aka ) {
+						echo '<h2 class="meta-title">Also Known As:</h2>';
+						echo '<p>'. $aka .'</p>';
+						}
 
-							if( $altSpell ) {
-							echo '<h2 class="meta-title">Alternate Spelling:</h2>';
-							echo '<p>'. $altSpell .'</p>';
-							}
+						if( $altSpell ) {
+						echo '<h2 class="meta-title">Alternate Spelling:</h2>';
+						echo '<p>'. $altSpell .'</p>';
+						}
 
-							if( $example ) {
-							echo '<h2 class="meta-title">Examples:</h2>';
-							echo '<p>'. $example .'</p>';
-							}
+						if( $example ) {
+						echo '<h2 class="meta-title">Examples:</h2>';
+						echo '<p>'. $example .'</p>';
+						}
 
-							if( $references ) {
-									echo '<h2 class="meta-title">References:</h2>';
-									echo '<p>';
-									foreach( $refArray as $reference ):
-										$refURL = preg_replace('/([A-Za-z0-9.]*-http)/', 'http', $reference);
-										$refTitle = preg_replace('/(-http[A-Za-z0-9.:\/\(\)\_\-)]*)/', '', $reference);
-										echo '<a href="'. $refURL .'" title="'. $refTitle. '" class="ref-link">'. $refTitle .'</a>';
-										//echo '<span>'. $refURL .'</span>';
-									endforeach;
-									echo '</p>';
-							}
+						if( $references ) {
+						echo '<h2 class="meta-title">References:</h2>';
+						echo '<p>';
+						foreach( $refArray as $reference ):
+							$refURL = preg_replace('/([A-Za-z0-9.]*-http)/', 'http', $reference);
+							$refTitle = preg_replace('/(-http[A-Za-z0-9.:\/\(\)\_\-)]*)/', '', $reference);
+							echo '<a href="'. $refURL .'" title="'. $refTitle. '" class="ref-link">'. $refTitle .'</a>';
+						endforeach;
+						echo '</p>';
+						}
 						?>
 					</div>
 				</article>
