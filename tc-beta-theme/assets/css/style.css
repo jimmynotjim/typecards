@@ -189,11 +189,11 @@ textarea {
 body {
   color: #1a1a1a;
   font-family: "brandon-grotesque", "Futura", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  font-size: 16px;
+  font-size: 20px;
   line-height: 1.4em;
   margin: 0; }
   body small {
-    font-size: 12.8px;
+    font-size: 16px;
     color: #cccccc; }
 
 .lead {
@@ -401,8 +401,8 @@ div[role="main"] {
   .cards:after {
     clear: both; }
   .cards p {
-    font-size: 18px;
-    font-size: 1.125rem; }
+    font-size: 20px;
+    font-size: 1.25rem; }
     .cards p a {
       font-weight: 500; }
 
@@ -528,8 +528,8 @@ div[role="main"] {
   margin-bottom: 3rem; }
 
 .meta-title {
-  font-size: 18px;
-  font-size: 1.125rem;
+  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 500;
   line-height: 1.25em; }
 
