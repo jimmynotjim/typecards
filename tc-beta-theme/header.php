@@ -12,7 +12,7 @@
 	<meta name="description" content="Master the finer details of typography">
 	<meta name="keywords" content="type, typography, study, cards">
 
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<meta name="viewport" initial-scale=1, user-scalable=no">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
 <!--	<link href="<?php bloginfo( 'template_url' ); ?>/assets/img/iphone-splash.png" media="(device-width: 320px)" rel="apple-touch-startup-image">
