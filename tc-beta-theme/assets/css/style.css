@@ -630,6 +630,8 @@ div[role="main"] {
     position: absolute; }
 
 #loginform {
+  font-size: 16px;
+  font-size: 1rem;
   margin: -20px 30px 0;
   margin: -1.25rem 1.875rem 0; }
   #loginform input {

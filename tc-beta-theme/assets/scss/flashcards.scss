@@ -316,6 +316,7 @@ div[role="main"] {
 }
 
 #loginform {
+	@include rem(font-size, 16px);
 	@include rem(margin, -20px 30px 0);
 
 	input {
