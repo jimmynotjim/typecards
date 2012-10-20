@@ -22,7 +22,7 @@
 				}, 20);
 				setTimeout(function(){
 					$('.card').removeClass('flipped')
-				}, 300);
+				}, 20);
 			}
 		}),
 		cards = document.getElementById('slider').getElementsByTagName('li');
