@@ -20,6 +20,9 @@
 					if( cards[p] != null) cards[p].className = 'card-holder on';
 					if( cards[n] != null) cards[n].className = 'card-holder on';
 				}, 20);
+				setTimeout(function(){
+					$('.card').removeClass('flipped')
+				}, 300);
 			}
 		}),
 		cards = document.getElementById('slider').getElementsByTagName('li');
