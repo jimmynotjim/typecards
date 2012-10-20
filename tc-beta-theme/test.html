@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Type Cards</title>
+	<meta name="description" content="Master the finer details of typography">
+
+	<meta name="viewport" content="width=device-width">
+	<meta name="viewport" content="initial-scale=1">
+	<meta name="viewport" content="user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<link href="http://beta.typecardsapp.com/wp-content/themes/tc-beta-theme/assets/img/iphone-splash.png" media="(device-width: 320px)" rel="apple-touch-startup-image">
+	<link href="http://beta.typecardsapp.com/wp-content/themes/tc-beta-theme/assets/img/iphone-splash.png" media="(device-width: 320px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+	<link rel="apple-touch-icon-precomposed" sizes="57x57" href="assets/img/icons/typecards-icon-114.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/img/icons/typecards-icon-144.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/img/icons/typecards-icon-114.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/img/icons/typecards-icon-144.png" />
+
+		<!-- styles -->
+	<link rel="stylesheet" href="http://beta.typecardsapp.com/wp-content/themes/tc-beta-theme/assets/css/jquery.mobile.structure-1.1.1.min.css" />
+	<link rel="stylesheet" href="http://beta.typecardsapp.com/wp-content/themes/tc-beta-theme/assets/css/style.css" />
+
+		<!-- scripts -->
+	<script src="http://beta.typecardsapp.com/wp-content/themes/tc-beta-theme/assets/js/libs/jquery-1.7.2.min.js"></script>
+	<script src="http://beta.typecardsapp.com/wp-content/themes/tc-beta-theme/assets/js/libs/jquery.mobile-1.1.1.min.js"></script>
+<!--	<script type="text/javascript" charset="utf-8" src="cordova-1.9.0.js"></script>	-->
+	<script src="http://beta.typecardsapp.com/wp-content/themes/tc-beta-theme/assets/js/swipe.js"></script>
+	<script>
+		//function stopScrolling( touchEvent ) { touchEvent.preventDefault(); }
+		//document.addEventListener( 'touchstart' , stopScrolling , false );
+		//document.addEventListener( 'touchmove' , stopScrolling , false );
+		
+		$(document).delegate('#main', 'pageshow', function(){
+			window.mySwipe = new Swipe(document.getElementById('slider'));
+
+			$('.flashcards .card-body').bind('tap', function(event) {
+			    $(this).parents('.card').toggleClass('flipped');
+				$(this).parents('.card').children('.card-back').toggleClass('hidden visible');
+				return false;
+			});
+
+		//	$('a').bind('tap', function(event){
+		//		event.stopPropagation();
+		//	});
+
+			$('a.menu-btn').bind('tap', function(event){
+				$('.top-level-cards').toggleClass('inactive');
+				return false;
+			});
+			
+		});
+	</script>
+
+	<style type="text/css">
+		.slider {
+			visibility: visible;
+		}
+	</style>
+
+</head>
+<body>
+	<div data-role="page" id="main" class="wrap">
+		<nav class="site-nav">
+			<ul>
+				<li><input type="search" class="search-box" placeholder="Search" /></li>
+				<li><a href="allcards.html" class="all-cards">All Cards</a></li>
+				<li><a href="mycards.html" class="my-cards">My Cards</a></li>
+				<li><a href="quiz.html" class="quiz">Quiz</a></li>
+			</ul>
+		</nav>
+		<div class="top-level-cards">
+			<div class="slider" id="slider">
+				<ul class="cards flashcards">
+					<li class="Apex card-holder">
+						<section class="card">
+							<article class="card-front">
+								<div class="card-body">
+									<h1 class="card-title">Type Anatomy</h1>
+									<img width="512" height="512" src="http://beta.typecardsapp.com/wp-content/themes/tc-beta-theme/characters/apex-lg.png" alt="apex" title="apex" />
+								</div>
+								<a href="#" class="menu-btn">Menu</a>
+							</article>
+							<article class="card-back hidden">
+								<div class="card-body">
+									<h1 class="term-title">Apex</h1>
+									<img width="258" height="258" src="http://beta.typecardsapp.com/wp-content/themes/tc-beta-theme/characters/apex-sm.png" alt="apex" title="apex" />
+									<h2 class="meta-title">Definition:</h2>
+									<p>The point at the top of a type character such as the uppercase A where the vertical strokes meet. The apex may be a sharp point, blunt, hallow, extended or rounded.</p>
+									<h2 class="meta-title">Also Known As:</h2>
+									<p>top</p>
+									<h2 class="meta-title">References:</h2>
+									<p><a href="http://desktoppub.about.com/cs/typeanatomy/g/apex.htm" title="http://desktoppub.about.com/cs/typeanatomy/g/apex.htm" class="ref-link">http://desktoppub.about.com/cs/typeanatomy/g/apex.htm</a><a href=" http://www.route1design.com/type_design.html" title=" http://www.route1design.com/type_design.html" class="ref-link"> http://www.route1design.com/type_design.html</a></p>
+								</div>
+								<div class="top-shadow"></div>
+								<div class="bottom-shadow"></div>
+							</article>
+						</section>
+					</li>
+					<li class="Ascender card-holder">
+						<section class="card">
+							<article class="card-front">
+								<div class="card-body">
+									<h1 class="card-title">Type Anatomy</h1>
+									<img width="512" height="512" src="characters/ascender-lg.png" alt="ascender" title="ascender" />
+								</div>
+								<a href="#" class="menu-btn">Menu</a>
+							</article>
+							<article class="card-back hidden">
+								<div class="card-body">
+									<h1 class="term-title">Ascender</h1>
+									<img width="258" height="258" src="characters/ascender-sm.png" alt="ascender" title="ascender" />
+									<h2 class="meta-title">Definition:</h2>
+									<p>In typography, the upward vertical stem on some lowercase letters, such as h and b, that extends above the x-height is the ascender. The height of the ascenders is an identifying characteristic of many typefaces.</p>
+									<p>The ascenders of some letters may touch or almost touch letters in the line above causing awkward or distracting patterns. This is most likely to happen or be obvious when a line of text with tall ascenders is below a line of text with long descenders. To resolve the problem of touching ascenders and descenders you can: Increase the leading (line spacing) between lines of type; Choose a different typeface; For headlines and subheads, some careful editing/re-wording can eliminate the problem; Changing the alignment of the text may also help.</p>
+									<h2 class="meta-title">Also Known As:</h2>
+									<p>extender</p>
+									<h2 class="meta-title">References:</h2>
+									<p><a href="http://desktoppub.about.com/cs/typeanatomy/g/ascender.htm" title="http://desktoppub.about.com/cs/typeanatomy/g/ascender.htm" class="ref-link">http://desktoppub.about.com/cs/typeanatomy/g/ascender.htm</a></p>
+								</div>
+								<div class="top-shadow"></div>
+								<div class="bottom-shadow"></div>
+							</article>
+						</section>
+					</li>
+					<li class="Counter card-holder">
+						<section class="card">
+							<article class="card-front">
+								<div class="card-body">
+									<h1 class="card-title">Type Anatomy</h1>
+									<img width="512" height="512" src="characters/counter-lg.png" alt="counter" title="counter" />
+								</div>
+								<a href="#" class="menu-btn">Menu</a>
+							</article>
+							<article class="card-back hidden">
+								<div class="card-body">
+									<h1 class="term-title">Counter</h1>
+									<img width="258" height="258" src="characters/counter-sm.png" alt="counter" title="counter" />
+									<h2 class="meta-title">Definition:</h2>
+									<p>In typography, the enclosed or partially enclosed circular or curved negative space (white space) of some letters such as d, o, and s is the counter. The term counter may sometimes be used to refer only to closed space, while partially enclosed spaces in m, n, or h are the aperture. The shape and size of the counter and bowl (curved stroke enclosing the counter) can affect readability and is also an identifying factor for some typefaces.</p>
+									<h2 class="meta-title">Also Known As:</h2>
+									<p>aperture, inner space, enclosed space</p>
+									<h2 class="meta-title">Examples:</h2>
+									<p>Fonts with very small or thin counters may not reproduce well at very small font sizes. Depending on the size and the printing method the counters may close up (fill with ink).</p>
+									<h2 class="meta-title">References:</h2>
+									<p><a href="http://desktoppub.about.com/cs/typeanatomy/g/counter.htm" title="http://desktoppub.about.com/cs/typeanatomy/g/counter.htm" class="ref-link">http://desktoppub.about.com/cs/typeanatomy/g/counter.htm</a></p>
+								</div>
+								<div class="top-shadow"></div>
+								<div class="bottom-shadow"></div>
+							</article>
+						</section>
+					</li>
+					<li class="Descender card-holder">
+						<section class="card">
+							<article class="card-front">
+								<div class="card-body">
+									<h1 class="card-title">Type Anatomy</h1>
+									<img width="512" height="512" src="characters/descender-lg.png" alt="descender" title="descender" />
+								</div>
+								<a href="#" class="menu-btn">Menu</a>
+							</article>
+							<article class="card-back hidden">
+								<div class="card-body">
+									<h1 class="term-title">Descender</h1>
+									<img width="258" height="258" src="characters/descender-sm.png" alt="descender" title="descender" />
+									<h2 class="meta-title">Definition:</h2>
+									<p>The portion of some lowercase letters, such as g and y, that extends or descends below the baseline is the descender. The length and shape of the descender can affect readability of lines of type and is an identifying factor for some typefaces.</p>
+									<p>The descenders of some letters may touch or almost touch letters in the line below causing awkward or distracting patterns. This is most likely to happen or be obvious when a line of text with long descenders is above a line of text with tall ascenders and capital letters. Some solutions include: Increase the leading (line spacing) between lines of type; Choose a different typeface; For headlines and subheads, some careful editing/re-wording can eliminate the problem; Changing the alignment of the text may also help.</p>
+									<h2 class="meta-title">Also Known As:</h2>
+									<p>extender, tail, loop</p>
+									<h2 class="meta-title">Examples:</h2>
+									<p>The descender may be a stem (p, q without a loop), a stroke (y without a loop), a loop (double-storey g), or a tail (Q, regular g).</p>
+									<h2 class="meta-title">References:</h2>
+									<p><a href="http://desktoppub.about.com/cs/typeanatomy/g/descender.htm" title="http://desktoppub.about.com/cs/typeanatomy/g/descender.htm" class="ref-link">http://desktoppub.about.com/cs/typeanatomy/g/descender.htm</a></p>
+								</div>
+								<div class="top-shadow"></div>
+								<div class="bottom-shadow"></div>
+							</article>
+						</section>
+					</li>
+					<li class="Aperture card-holder">
+						<section class="card">
+							<article class="card-front">
+								<div class="card-body">
+									<h1 class="card-title">Type Anatomy</h1>
+									<img width="512" height="512" src="http://beta.typecardsapp.com/wp-content/themes/tc-beta-theme/characters/aperture-lg.png" alt="aperture" title="aperture" />
+								</div>
+								<a href="#" class="menu-btn">Menu</a>
+							</article>
+							<article class="card-back hidden">
+								<div class="card-body">
+									<h1 class="term-title">Aperture</h1>
+									<img width="258" height="258" src="http://beta.typecardsapp.com/wp-content/themes/tc-beta-theme/haracters/aperture-sm.png" alt="aperture" title="aperture" />
+									<h2 class="meta-title">Definition:</h2>
+									<p>The aperture is the partially enclosed, somewhat rounded negative space of a partially enclosed letter form or symbol.</p>
+									<h2 class="meta-title">Also Known As:</h2>
+									<p>counter</p>
+									<h2 class="meta-title">Examples:</h2>
+									<p>Letters containing an aperture include c, f, h, i, s etc.</p>
+									<h2 class="meta-title">References:</h2>
+									<p><a href="http://desktoppub.about.com/cs/typeanatomy/g/aperture.htm" title="http://desktoppub.about.com/cs/typeanatomy/g/aperture.htm" class="ref-link">http://desktoppub.about.com/cs/typeanatomy/g/aperture.htm</a><a href=" http://en.wikipedia.org/wiki/Aperture_(typography)" title=" http://en.wikipedia.org/wiki/Aperture_(typography)" class="ref-link"> http://en.wikipedia.org/wiki/Aperture_(typography)</a></p>
+								</div>
+								<div class="top-shadow"></div>
+								<div class="bottom-shadow"></div>
+							</article>
+						</section>
+					</li>
+					<li class="Crossbar card-holder">
+						<section class="card">
+							<article class="card-front">
+								<div class="card-body">
+									<h1 class="card-title">Type Anatomy</h1>
+									<img width="512" height="512" src="characters/crossbar-lg.png" alt="crossbar" title="crossbar" />
+								</div>
+								<a href="#" class="menu-btn">Menu</a>
+							</article>
+							<article class="card-back hidden">
+								<div class="card-body">
+									<h1 class="term-title">Crossbar</h1>
+									<img width="258" height="258" src="characters/crossbar-sm.png" alt="crossbar" title="crossbar" />
+									<h2 class="meta-title">Definition:</h2>
+									<p>The (usually) horizontal stroke across the middle of uppercase A and H is a crossbar. The horizontal or sloping stroke enclosing the bottom of the eye of an e is also a crossbar. Although often used interchangeably, the crossbar differs from an arm and a cross stroke because each end connects to a stem or stroke and doesn&#8217;t (usually) intersect/cross over the stem or stroke. The varying positioning, thickness, and slope of the bar is an identifying feature of many type designs.</p>
+									<h2 class="meta-title">Also Known As:</h2>
+									<p>bar, arm, cross stroke</p>
+									<h2 class="meta-title">Alternate Spelling:</h2>
+									<p>cross bar (two words)</p>
+									<h2 class="meta-title">Examples:</h2>
+									<p>The cross bar connects the diagonal strokes of an uppercase A or the vertical stems of an H. In contrast, the cross stroke intersects the stem of a lowercase t or f while the arms of an uppercase F connect to the stem only at one end.</p>
+									<h2 class="meta-title">References:</h2>
+									<p><a href="http://desktoppub.about.com/cs/typeanatomy/g/crossbar.htm" title="http://desktoppub.about.com/cs/typeanatomy/g/crossbar.htm" class="ref-link">http://desktoppub.about.com/cs/typeanatomy/g/crossbar.htm</a></p>
+								</div>
+								<div class="top-shadow"></div>
+								<div class="bottom-shadow"></div>
+							</article>
+						</section>
+					</li>
+					<li class="Bowl card-holder">
+						<section class="card">
+							<article class="card-front">
+								<div class="card-body">
+									<h1 class="card-title">Type Anatomy</h1>
+									<img width="512" height="512" src="characters/bowl-lg.png" alt="bowl" title="bowl" />
+								</div>
+								<a href="#" class="menu-btn">Menu</a>
+							</article>
+							<article class="card-back hidden">
+								<div class="card-body">
+									<h1 class="term-title">Bowl</h1>
+									<img width="258" height="258" src="characters/bowl-sm.png" alt="bowl" title="bowl" />
+									<h2 class="meta-title">Definition:</h2>
+									<p>In typography, the curved part of the character that encloses the circular or curved parts (counter) of some letters such as d, b, o, D, and B is the bowl. Some sources call any parts of a letter enclosing a space a bowl, including both parts of a double-storey g and the straight stem on a D or B. The curved strokes of a C are sometimes also referred to as bowls although they aren&#8217;t closed.</p>
+									<p>The shape and size of the counter and bowl can affect readability and is also an identifying factor for some typefaces.</p>
+									<p>At small sizes or at low resolution the bowls of some letters may fill in and appear solid. Print at a larger size, higher resolution, or change to a different typeface if this becomes an issue. Heavy typefaces or ones with normally small bowls and counters are especially prone to closing up.</p>
+									<h2 class="meta-title">Examples:</h2>
+									<p>The bowl usually refers to the main, enclosed circular portion of some characters and not usually the curved loops that may be a part of the extenders or other flourishes on letters such as the double-storey g, cursive y, or cursive d.</p>
+									<h2 class="meta-title">References:</h2>
+									<p><a href="http://desktoppub.about.com/od/glossary/g/bowl.htm" title="http://desktoppub.about.com/od/glossary/g/bowl.htm" class="ref-link">http://desktoppub.about.com/od/glossary/g/bowl.htm</a></p>
+								</div>
+								<div class="top-shadow"></div>
+								<div class="bottom-shadow"></div>
+							</article>
+						</section>
+					</li>
+					<li class="Stem card-holder">
+						<section class="card">
+							<article class="card-front">
+								<div class="card-body">
+									<h1 class="card-title">Type Anatomy</h1>
+									<img width="512" height="512" src="characters/stem-lg.png" alt="stem" title="stem" />
+								</div>
+								<a href="#" class="menu-btn">Menu</a>
+							</article>
+							<article class="card-back hidden">
+								<div class="card-body">
+									<h1 class="term-title">Stem</h1>
+									<img width="258" height="258" src="characters/stem-sm.png" alt="stem" title="stem" />
+									<h2 class="meta-title">Definition:</h2>
+									<p>The stem is the main, usually vertical stroke of a letterform excluding any serifs.</p>
+									<p>In some fonts the stem is roughly the same thickness as other parts of the letter. In other fonts, the stem may be a little or a lot thicker.</p>
+									<h2 class="meta-title">Also Known As:</h2>
+									<p>stroke</p>
+									<h2 class="meta-title">Examples:</h2>
+									<p>Not all letters have a stem, such as C or S. The vertical, non-curved portions of L, l, d, B, and p are examples of stems. H, N, and M have two stems each. Some letterforms such as y and A may have a sloped or diagonal stem.</p>
+									<h2 class="meta-title">References:</h2>
+									<p><a href="http://desktoppub.about.com/cs/typeanatomy/g/stem.htm" title="http://desktoppub.about.com/cs/typeanatomy/g/stem.htm" class="ref-link">http://desktoppub.about.com/cs/typeanatomy/g/stem.htm</a></p>					</div>
+								<div class="top-shadow"></div>
+								<div class="bottom-shadow"></div>
+							</article>
+						</section>
+					</li>
+					<li class="Arm card-holder">
+						<section class="card">
+							<article class="card-front">
+								<div class="card-body">
+									<h1 class="card-title">Type Anatomy</h1>
+									<img width="512" height="512" src="characters/arm-lg.png" alt="arm" title="arm" />
+								</div>
+								<a href="#" class="menu-btn">Menu</a>
+							</article>
+							<article class="card-back hidden">
+								<div class="card-body">
+									<h1 class="term-title">Arm</h1>
+									<img width="258" height="258" src="characters/arm-sm.png" alt="arm" title="arm" />
+									<h2 class="meta-title">Definition:</h2>
+									<p>The arm of a letter is the horizontal stroke on some characters that does not connect to a stroke or stem at one or both ends. The top of the capital T and the horizontal strokes of the F and E are examples of arms. Additionally, the diagonal upward stroke on a K is its arm. Sometimes arm is used interchangeably with bar or crossbar or cross stroke.</p>
+									<p>Arm is often also used to describe the mostly horizontal top stroke of C, double-storey a, G, and other glyphs, to include the finial, terminal, spur, or other elements of the stroke.</p>
+									<h2 class="meta-title">Also Known As:</h2>
+									<p>crossbar, cross stroke</p>
+									<h2 class="meta-title">Examples:</h2>
+									<p>The arms of an uppercase F connect to the stem only at one end and the arm of an uppercase T sits at the top of the stem and doesn't connect at either end. In contrast a cross stroke intersects the stem of a lowercase t or f and the cross bar connects the diagonal strokes of an uppercase A or the vertical stems of an H.</p>
+									<h2 class="meta-title">References:</h2>
+									<p><a href="http://desktoppub.about.com/cs/typeanatomy/g/arm.htm" title="http://desktoppub.about.com/cs/typeanatomy/g/arm.htm" class="ref-link">http://desktoppub.about.com/cs/typeanatomy/g/arm.htm</a></p>
+								</div>
+								<div class="top-shadow"></div>
+								<div class="bottom-shadow"></div>
+							</article>
+						</section>
+					</li>
+				</ul>
+				<nav class="card-nav">
+					<a href="#" id="prev" onclick="mySwipe.prev(); return false;">Prev</a>
+					<a href="#" id="next" onclick="mySwipe.next(); return false;">Next</a>
+				</nav>
+			</div>
+		</div>
+	</div><!--main-->
+
+	<!-- custom scripts -->
+<!--	<script src="assets/js/scripts.js"></script>	-->
+
+    
+</body>
+</html>
