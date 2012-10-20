@@ -1,3 +1,42 @@
+jQuery.event.special.tap = {
+    setup: function (a, b) {
+        var c = this,
+            d = jQuery(c);
+        if (window.Touch) {
+            d.bind("touchstart", jQuery.event.special.tap.onTouchStart);
+            d.bind("touchmove", jQuery.event.special.tap.onTouchMove);
+            d.bind("touchend", jQuery.event.special.tap.onTouchEnd)
+        } else {
+            d.bind("click", jQuery.event.special.tap.click)
+        }
+    },
+    click: function (a) {
+        a.type = "tap";
+        jQuery.event.handle.apply(this, arguments)
+    },
+    teardown: function (a) {
+        if (window.Touch) {
+            $elem.unbind("touchstart", jQuery.event.special.tap.onTouchStart);
+            $elem.unbind("touchmove", jQuery.event.special.tap.onTouchMove);
+            $elem.unbind("touchend", jQuery.event.special.tap.onTouchEnd)
+        } else {
+            $elem.unbind("click", jQuery.event.special.tap.click)
+        }
+    },
+    onTouchStart: function (a) {
+        this.moved = false
+    },
+    onTouchMove: function (a) {
+        this.moved = true
+    },
+    onTouchEnd: function (a) {
+        if (!this.moved) {
+            a.type = "tap";
+            jQuery.event.handle.apply(this, arguments)
+        }
+    }
+};
+
 $(document).ready(function(){
 
 // Truncate long links
@@ -27,7 +66,7 @@ for(var i=0;i<a.length;i++) {
 
 $('#slider li:nth-child(1), #slider li:nth-child(2)').addClass('on');
 
-$('.card-body').click(function() {
+$('.card-body').bind('tap', function() {
 	$(this).parents('.card').toggleClass('flipped');
 //	$(this).parents('.card').children('.card-back').toggleClass('hidden visible');
 });
@@ -44,7 +83,7 @@ $('.menu-btn').click(function() {
 });
  */
 
-$('.dismiss').click(function() {
+$('.dismiss').bind('tap', function() {
     $(this).parents('.instructions').toggleClass('hidden');
 }).click(function(event){
     event.stopPropagation();
