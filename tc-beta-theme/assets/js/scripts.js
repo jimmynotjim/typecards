@@ -5,34 +5,34 @@ jQuery.event.special.tap = {
         if (window.Touch) {
             d.bind("touchstart", jQuery.event.special.tap.onTouchStart);
             d.bind("touchmove", jQuery.event.special.tap.onTouchMove);
-            d.bind("touchend", jQuery.event.special.tap.onTouchEnd)
+            d.bind("touchend", jQuery.event.special.tap.onTouchEnd);
         } else {
-            d.bind("click", jQuery.event.special.tap.click)
+            d.bind("click", jQuery.event.special.tap.click);
         }
     },
     click: function (a) {
         a.type = "tap";
-        jQuery.event.handle.apply(this, arguments)
+        jQuery.event.handle.apply(this, arguments);
     },
     teardown: function (a) {
         if (window.Touch) {
             $elem.unbind("touchstart", jQuery.event.special.tap.onTouchStart);
             $elem.unbind("touchmove", jQuery.event.special.tap.onTouchMove);
-            $elem.unbind("touchend", jQuery.event.special.tap.onTouchEnd)
+            $elem.unbind("touchend", jQuery.event.special.tap.onTouchEnd);
         } else {
-            $elem.unbind("click", jQuery.event.special.tap.click)
+            $elem.unbind("click", jQuery.event.special.tap.click);
         }
     },
     onTouchStart: function (a) {
-        this.moved = false
+        this.moved = false;
     },
     onTouchMove: function (a) {
-        this.moved = true
+        this.moved = true;
     },
     onTouchEnd: function (a) {
         if (!this.moved) {
             a.type = "tap";
-            jQuery.event.handle.apply(this, arguments)
+            jQuery.event.handle.apply(this, arguments);
         }
     }
 };
@@ -85,7 +85,7 @@ $('.menu-btn').click(function() {
 
 $('.dismiss').bind('tap', function() {
     $(this).parents('.instructions').toggleClass('hidden');
-}).click(function(event){
+}).bind('tap', function(event){
     event.stopPropagation();
 });
 

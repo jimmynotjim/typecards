@@ -29,7 +29,7 @@
 	</script>
 
 	<!-- custom scripts -->
-	<script src="<?php bloginfo( 'template_url' ); ?>/assets/js/scripts.js?v=1"></script>
+	<script src="<?php bloginfo( 'template_url' ); ?>/assets/js/scripts-ck.js"></script>
 
 
   <?php wp_footer(); ?>
