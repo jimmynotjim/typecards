@@ -68,14 +68,19 @@ $('#slider li:nth-child(1), #slider li:nth-child(2)').addClass('on');
 
 $('.card-body').bind('tap', function() {
 	$(this).parents('.card').toggleClass('flipped');
-//	$(this).parents('.card').children('.card-back').toggleClass('hidden visible');
+	$(this).parents('.card').children('.card-back').toggleClass('hidden visible');
 });
 /*
-$('a').click(function(event){
+$('.card-back.hidden').bind('touchstart', function(event) {
+    event.preventDefault();
+});
+ */
+
+$('a').bind('tap', function(event){
 	event.stopPropagation();
 });
 
-
+/*
 $('.menu-btn').click(function() {
 //	$('.site-nav').toggleClass('inactive');
 	$('.top-level-cards').toggleClass('inactive');

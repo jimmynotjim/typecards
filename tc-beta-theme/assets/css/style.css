@@ -455,12 +455,15 @@ div[role="main"] {
 .card-body {
   margin: 4px 0;
   margin: 0.25rem 0;
-  padding: 22px 30px;
-  padding: 1.375rem 1.875rem;
+  padding: 30px 22px 18px;
+  padding: 1.875rem 1.375rem 1.125rem;
   height: 400px; }
 
 .card-front img {
-  margin-top: 74px; }
+  margin: 68px auto 0;
+  margin: 4.25rem auto 0;
+  display: block;
+  width: 256px; }
 
 .card-back {
   position: relative; }
@@ -503,10 +506,7 @@ div[role="main"] {
     margin: 0 auto 16px;
     width: 50%; }
   .card-back .card-body {
-    height: 450px;
-    overflow: auto; }
-  .card-back.hidden .card-body {
-    overflow-y: hidden; }
+    height: 452px; }
   .card-back.visible .card-body {
     overflow-y: auto; }
 
@@ -515,9 +515,6 @@ div[role="main"] {
   font-size: 1.375rem;
   margin-bottom: 16px;
   margin-bottom: 1rem;
-  padding-bottom: 8px;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid #db0901;
   color: #db0901;
   line-height: 1em;
   text-align: center;
@@ -733,7 +730,7 @@ div[role="main"] {
     height: 488px; }
 
   .card-front img {
-    margin-top: 118px; }
+    margin-top: 112px; }
 
   .card-back .card-body {
     height: 538px; } }
