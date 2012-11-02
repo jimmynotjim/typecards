@@ -11,7 +11,7 @@
 						</div>
 					</div>
 				</article>
-				<article class="card-back">
+				<article class="card-back hidden">
 					<div class="card-body">
 						<h1 class="term-title">Type Anatomy</h1>
 						<p>typecards began as a tool to help me better understand typography. With a little help from some good friends it's grown into a tool I hope you find useful too. Over time it will grow to include more than just Anatomy Terms and hopefully become your goto source on all things type.</p>
@@ -46,7 +46,7 @@
 						?>
 					</div>
 				</article>
-				<article class="card-back">
+				<article class="card-back hidden">
 					<div class="card-body">
 						<h1 class="term-title"><?php the_title(); ?></h1>
 						<?php
@@ -54,27 +54,27 @@
 							echo get_the_post_thumbnail( $post->ID, 'lg' );
 						}
 						?>
-						<h2 class="meta-title">Definition:</h2>
+						<h2 class="meta-title">Definition</h2>
 						<?php
 						the_content();
 
 						if( $aka ) {
-						echo '<h2 class="meta-title">Also Known As:</h2>';
+						echo '<h2 class="meta-title">Also Known As</h2>';
 						echo '<p>'. $aka .'</p>';
 						}
 
 						if( $altSpell ) {
-						echo '<h2 class="meta-title">Alternate Spelling:</h2>';
+						echo '<h2 class="meta-title">Alternate Spelling</h2>';
 						echo '<p>'. $altSpell .'</p>';
 						}
 
 						if( $example ) {
-						echo '<h2 class="meta-title">Examples:</h2>';
+						echo '<h2 class="meta-title">Examples</h2>';
 						echo '<p>'. $example .'</p>';
 						}
 
 						if( $references ) {
-						echo '<h2 class="meta-title">References:</h2>';
+						echo '<h2 class="meta-title">References</h2>';
 						echo '<p>';
 						foreach( $refArray as $reference ):
 							$refURL = preg_replace('/([A-Za-z0-9.]*-http)/', 'http', $reference);

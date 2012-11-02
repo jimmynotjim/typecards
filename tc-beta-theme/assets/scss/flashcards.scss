@@ -128,15 +128,16 @@ div[role="main"] {
 
 .card-body {
 	@include rem(margin, 4px 0);
-	@include rem(padding, 22px 30px);
+	@include rem(padding, 30px 22px 18px);
 
 	height: 400px;
 }
 
-.card-front {
-	img {
-		margin-top: 74px;
-	}
+.card-front img {
+	@include rem(margin, 68px auto 0);
+
+	display: block;
+	width: 256px;
 }
 
 .card-back {
@@ -175,12 +176,11 @@ div[role="main"] {
 	}
 
 	.card-body {
-		height: 450px;
-		overflow: auto;
+		height: 452px;
 	}
 
 	&.hidden .card-body {
-		overflow-y: hidden;
+//		overflow-y: hidden;
 	}
 
 	&.visible .card-body {
@@ -191,9 +191,7 @@ div[role="main"] {
 .card-title, .term-title {
 	@include rem(font-size, 22px);
 	@include rem(margin-bottom, 16px);
-	@include rem(padding-bottom, 8px);
 
-	border-bottom: 2px solid $red;
 	color: $red;
 	line-height: 1em;
 	text-align: center;
@@ -408,7 +406,7 @@ div[role="main"] {
 	}
 
 	.card-front img {
-		margin-top: 118px;
+		margin-top: 112px;
 	}
 	.card-back .card-body {
 		height: 538px;
