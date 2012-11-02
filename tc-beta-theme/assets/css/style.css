@@ -504,7 +504,7 @@ div[role="main"] {
   .card-back img {
     display: block;
     margin: 0 auto 16px;
-    width: 50%; }
+    width: 128px; }
   .card-back .card-body {
     height: 452px; }
   .card-back.visible .card-body {
