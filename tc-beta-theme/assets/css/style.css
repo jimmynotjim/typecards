@@ -367,8 +367,8 @@ body {
   display: block;
   font-size: 20px;
   font-weight: 600;
-  height: 460px;
-  max-width: 320px;
+  height: 100%;
+  max-width: 100%;
   padding: 30px;
   position: fixed;
   z-index: 100; }
@@ -376,20 +376,21 @@ body {
 div[role="main"] {
   background-color: black;
   display: block;
-  height: 460px;
+  height: 100%;
   overflow: hidden;
-  width: 320px; }
+  width: 100%; }
 
 .slider {
   background: transparent;
-  height: 460px;
-  width: 320px;
+  height: 100%;
+  width: 100%;
   overflow: hidden;
   position: absolute; }
 
 .cards {
   *zoom: 1;
   background: transparent;
+  height: 100%;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -410,10 +411,10 @@ div[role="main"] {
   background: transparent;
   float: left;
   position: relative;
-  width: 320px;
-  height: 460px;
+  width: 100%;
+  height: 100%;
   position: relative;
-  width: 320px;
+  width: 100%;
   -webkit-perspective: 800px;
   -moz-perspective: 800px; }
 
@@ -439,7 +440,6 @@ div[role="main"] {
 
 .card article {
   -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
   border-radius: 8px;
   background-color: #f7f7f7;
   cursor: pointer;
@@ -453,17 +453,16 @@ div[role="main"] {
   -moz-transform: rotateY(180deg); }
 
 .card-body {
-  margin: 4px 0;
-  margin: 0.25rem 0;
-  padding: 30px 22px 18px;
-  padding: 1.875rem 1.375rem 1.125rem;
-  height: 400px; }
+  padding: 22px;
+  padding: 1.375rem;
+  height: 100%;
+  overflow-y: auto; }
 
-.card-front img {
-  margin: 68px auto 0;
-  margin: 4.25rem auto 0;
+.character {
   display: block;
-  width: 256px; }
+  margin: 0 auto;
+  max-height: 100%;
+  max-width: 256px; }
 
 .card-back {
   position: relative; }
@@ -477,38 +476,26 @@ div[role="main"] {
     z-index: 10; }
   .card-back:before {
     -webkit-border-radius: 8px 8px 0 0;
-    -moz-border-radius: 8px 8px 0 0;
     border-radius: 8px 8px 0 0;
-    background-color: rgba(247, 247, 246, 0.6);
-    background: transparent -moz-linear-gradient(top, #f7f7f6, rgba(247, 247, 247, 0));
-    background: transparent -ms-linear-gradient(top, #f7f7f6, rgba(247, 247, 247, 0));
-    background: transparent -webkit-gradient(linear, 0 0, 0 100%, from(#f7f7f6), to(rgba(247, 247, 247, 0)));
-    background: transparent -webkit-linear-gradient(top, #f7f7f6, rgba(247, 247, 247, 0));
-    background: transparent -o-linear-gradient(top, #f7f7f6, rgba(247, 247, 247, 0));
-    background: transparent linear-gradient(top, #f7f7f6, rgba(247, 247, 247, 0));
-    background-repeat: repeat-x;
-    top: 4px; }
+    background-image: -webkit-linear-gradient(top, #f7f7f6 0%, #f7f7f6 50%, rgba(247, 247, 247, 0) 100%);
+    background-image: -moz-linear-gradient(top, #f7f7f6 0%, #f7f7f6 50%, rgba(247, 247, 247, 0) 100%);
+    background-image: -ms-linear-gradient(top, #f7f7f6 0%, #f7f7f6 50%, rgba(247, 247, 247, 0) 100%);
+    background-image: -o-linear-gradient(top, #f7f7f6 0%, #f7f7f6 50%, rgba(247, 247, 247, 0) 100%);
+    background-image: linear-gradient(top, #f7f7f6 0%, #f7f7f6 50%, rgba(247, 247, 247, 0) 100%);
+    top: 0; }
   .card-back:after {
     -webkit-border-radius: 0 0 8px 8px;
-    -moz-border-radius: 0 0 8px 8px;
     border-radius: 0 0 8px 8px;
-    background-color: rgba(247, 247, 247, 0.4);
-    background: transparent -moz-linear-gradient(top, rgba(247, 247, 247, 0), #f7f7f7);
-    background: transparent -ms-linear-gradient(top, rgba(247, 247, 247, 0), #f7f7f7);
-    background: transparent -webkit-gradient(linear, 0 0, 0 100%, from(rgba(247, 247, 247, 0)), to(#f7f7f7));
-    background: transparent -webkit-linear-gradient(top, rgba(247, 247, 247, 0), #f7f7f7);
-    background: transparent -o-linear-gradient(top, rgba(247, 247, 247, 0), #f7f7f7);
-    background: transparent linear-gradient(top, rgba(247, 247, 247, 0), #f7f7f7);
-    background-repeat: repeat-x;
-    bottom: 4px; }
+    background-image: -webkit-linear-gradient(top, rgba(247, 247, 247, 0) 0%, #f7f7f6 50%, #f7f7f7 100%);
+    background-image: -moz-linear-gradient(top, rgba(247, 247, 247, 0) 0%, #f7f7f6 50%, #f7f7f7 100%);
+    background-image: -ms-linear-gradient(top, rgba(247, 247, 247, 0) 0%, #f7f7f6 50%, #f7f7f7 100%);
+    background-image: -o-linear-gradient(top, rgba(247, 247, 247, 0) 0%, #f7f7f6 50%, #f7f7f7 100%);
+    background-image: linear-gradient(top, rgba(247, 247, 247, 0) 0%, #f7f7f6 50%, #f7f7f7 100%);
+    bottom: 0; }
   .card-back img {
     display: block;
     margin: 0 auto 16px;
     width: 128px; }
-  .card-back .card-body {
-    height: 452px; }
-  .card-back.visible .card-body {
-    overflow-y: auto; }
 
 .card-title, .term-title {
   font-size: 22px;
@@ -538,7 +525,6 @@ div[role="main"] {
   margin-bottom: 2.625rem; }
 #cover .instructions {
   -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
   border-radius: 6px;
   -webkit-transition: opacity 0.25s;
   -moz-transition: opacity 0.25s;
@@ -550,6 +536,7 @@ div[role="main"] {
   color: #fff;
   display: block;
   font-weight: 400;
+  margin: 0 auto;
   width: 260px; }
   #cover .instructions span {
     display: block; }
@@ -562,7 +549,6 @@ div[role="main"] {
   padding: 1.125rem; }
 #cover .dismiss {
   -webkit-border-radius: 0 0 6px 6px;
-  -moz-border-radius: 0 0 6px 6px;
   border-radius: 0 0 6px 6px;
   font-size: 16px;
   font-size: 1rem;
@@ -589,16 +575,15 @@ div[role="main"] {
 .card-nav {
   display: none; }
 
-.no-touch .card-nav {
+.no-touch:hover .card-nav {
   display: block;
   margin: 20px 0;
   position: absolute;
   top: 150px;
-  width: 320px;
+  width: 100%;
   z-index: 100; }
-  .no-touch .card-nav a {
+  .no-touch:hover .card-nav a {
     -webkit-border-radius: 30px;
-    -moz-border-radius: 30px;
     border-radius: 30px;
     text-indent: 100%;
     white-space: nowrap;
@@ -610,9 +595,9 @@ div[role="main"] {
     opacity: .4;
     text-align: center;
     width: 60px; }
-    .no-touch .card-nav a:hover {
+    .no-touch:hover .card-nav a:hover {
       opacity: .9; }
-  .no-touch .card-nav #prev {
+  .no-touch:hover .card-nav #prev {
     -webkit-transform: scale(-1);
     -moz-transform: scale(-1);
     -ms-transform: scale(-1);
@@ -621,7 +606,7 @@ div[role="main"] {
     left: 0;
     top: 30px;
     position: absolute; }
-  .no-touch .card-nav #next {
+  .no-touch:hover .card-nav #next {
     right: 0;
     top: 30px;
     position: absolute; }
@@ -648,7 +633,6 @@ div[role="main"] {
   .login-username input,
   .login-password input {
     -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
     border-radius: 4px;
     margin: 0 auto 12px;
     margin: 0 auto 0.75rem;
@@ -672,7 +656,6 @@ div[role="main"] {
 
 .login-submit input {
   -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
   border-radius: 4px;
   height: 40px;
   height: 2.5rem;
@@ -689,7 +672,6 @@ div[role="main"] {
   margin: 0 auto; }
   .login-submit input:hover {
     -webkit-box-shadow: 0 1px 2px gray;
-    -moz-box-shadow: 0 1px 2px gray;
     box-shadow: 0 1px 2px gray;
     background-color: #df261e;
     background: transparent -moz-linear-gradient(top, #e23a33, #db0901);
@@ -697,14 +679,13 @@ div[role="main"] {
     background: transparent -webkit-gradient(linear, 0 0, 0 100%, from(#e23a33), to(#db0901));
     background: transparent -webkit-linear-gradient(top, #e23a33, #db0901);
     background: transparent -o-linear-gradient(top, #e23a33, #db0901);
-    background: transparent linear-gradient(top, #e23a33, #db0901);
+    background: transparent linear, top, #e23a33, #db0901;
     background-repeat: repeat-x;
     background-color: #db0901;
     border: 1px solid #ba0700; }
 
 .touch .login-submit input {
   -webkit-box-shadow: 0 1px 2px gray;
-  -moz-box-shadow: 0 1px 2px gray;
   box-shadow: 0 1px 2px gray;
   background-color: #df261e;
   background: transparent -moz-linear-gradient(top, #e23a33, #db0901);
@@ -712,25 +693,7 @@ div[role="main"] {
   background: transparent -webkit-gradient(linear, 0 0, 0 100%, from(#e23a33), to(#db0901));
   background: transparent -webkit-linear-gradient(top, #e23a33, #db0901);
   background: transparent -o-linear-gradient(top, #e23a33, #db0901);
-  background: transparent linear-gradient(top, #e23a33, #db0901);
+  background: transparent linear, top, #e23a33, #db0901;
   background-repeat: repeat-x;
   background-color: #db0901;
   border: 1px solid #ba0700; }
-
-@media screen and (min-height: 500px) {
-  .safari-message {
-    height: 548px; }
-
-  div[role="main"],
-  .slider,
-  .card-holder {
-    height: 548px; }
-
-  .card-body {
-    height: 488px; }
-
-  .card-front img {
-    margin-top: 112px; }
-
-  .card-back .card-body {
-    height: 538px; } }
