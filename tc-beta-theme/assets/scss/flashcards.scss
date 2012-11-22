@@ -1,3 +1,5 @@
+@import 'bourbon';
+
 * {
 	box-sizing: border-box;
 }
@@ -10,8 +12,8 @@ body {
 	display: block;
 	font-size: 20px;
 	font-weight: 600;
-	height: 460px;
-	max-width: 320px;
+	height: 100%;
+	max-width: 100%;
 	padding: 30px;
 //	pointer-events:none;
 	position: fixed;
@@ -21,16 +23,16 @@ body {
 div[role="main"] {
 	background-color: black;
 	display: block;
-	height: 460px;
+	height: 100%;
 	overflow: hidden;
 //	position: relative;
-	width: 320px;
+	width: 100%;
 }
 
 .slider {
 	background: transparent;
-	height: 460px;
-	width: 320px;
+	height: 100%;
+	width: 100%;
 
 	//swipe styles
 	overflow: hidden;
@@ -45,6 +47,7 @@ div[role="main"] {
 	@include clearFix;
 
 	background: transparent;
+	height: 100%;
 	list-style: none;
 	margin: 0;
 	padding: 0;
@@ -68,12 +71,12 @@ div[role="main"] {
 	//swipe styles
 	float: left;
 	position: relative;
-	width: 320px;
+	width: 100%;
 
 	//flip styles
-	height: 460px;
+	height: 100%;
 	position: relative;
-	width: 320px;
+	width: 100%;
 	-webkit-perspective: 800px;
 	-moz-perspective: 800px;
 }
@@ -127,17 +130,17 @@ div[role="main"] {
 }
 
 .card-body {
-	@include rem(margin, 4px 0);
-	@include rem(padding, 30px 22px 18px);
+	@include rem(padding, 22px);
 
-	height: 400px;
+	height: 100%;
+	overflow-y: auto;
 }
 
-.card-front img {
-	@include rem(margin, 68px auto 0);
-
+.character {
 	display: block;
-	width: 256px;
+	margin: 0 auto;
+	max-height: 100%;
+	max-width: 256px;
 }
 
 .card-back {
@@ -155,18 +158,14 @@ div[role="main"] {
 
 		&:before {
 			@include border-radius(8px 8px 0 0);
-
-			@include gradient-vertical(rgba(247,247,246,1), rgba(247,247,247,0));
-//			background-image: -webkit-gradient(linear,left top,left bottom,from(rgba(247,247,247,1)),to(rgba(247,247,247,0)));
-			top: 4px;
+			@include background-image(linear-gradient(rgba(247,247,246,1) 0%, rgba(247,247,246,1) 50%, rgba(247,247,247,0) 100%));
+			top: 0;
 		}
 
 		&:after {
 			@include border-radius(0 0 8px 8px);
-
-			@include gradient-vertical(rgba(247,247,247,0), rgba(247,247,247,1));
-//			background-image: -webkit-gradient(linear,left bottom,left top,from(rgba(247,247,247,1)),to(rgba(247,247,247,.1)));
-			bottom: 4px;
+			@include background-image(linear-gradient(rgba(247,247,247,0) 0%, rgba(247,247,246,1) 50%, rgba(247,247,247,1) 100%));
+			bottom: 0;
 		}
 
 	img {
@@ -175,16 +174,12 @@ div[role="main"] {
 		width: 128px;
 	}
 
-	.card-body {
-		height: 452px;
-	}
-
 	&.hidden .card-body {
 //		overflow-y: hidden;
 	}
 
 	&.visible .card-body {
-		overflow-y: auto;
+//		overflow-y: auto;
 	}
 }
 
@@ -226,6 +221,7 @@ div[role="main"] {
 		color: #fff;
 		display: block;
 		font-weight: 400;
+		margin: 0 auto;
 		width: 260px;
 
 		span {
@@ -273,12 +269,12 @@ div[role="main"] {
 	display: none;
 }
 
-.no-touch .card-nav {
+.no-touch:hover .card-nav {
 	display: block;
 	margin: 20px 0;
 	position: absolute;
 	top: 150px;
-	width: 320px;
+	width: 100%;
 	z-index: 100;
 
 	a {
@@ -389,26 +385,10 @@ div[role="main"] {
 	border: 1px solid shade($red, 15%);
 }
 
-@media screen and (min-height: 500px) {
+@media all and (min-height:304px) {
 
-	.safari-message {
-		height: 548px;
-	}
+.card-front img {
 
-	div[role="main"],
-	.slider,
-	.card-holder {
-		height: 548px;
-	}
+}
 
-	.card-body {
-		height: 488px;
-	}
-
-	.card-front img {
-		margin-top: 112px;
-	}
-	.card-back .card-body {
-		height: 538px;
-	}
 }
