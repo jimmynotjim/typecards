@@ -41,7 +41,8 @@
 					<div class="card-body">
 						<?php
 						if( has_post_thumbnail($post->ID) ) {
-							echo get_the_post_thumbnail( $post->ID, 'lg' );
+							$charImg = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'lg');
+							echo '<img src="'. $charImg[0] .'" class="character" />';
 						}
 						?>
 					</div>
@@ -51,7 +52,8 @@
 						<h1 class="term-title"><?php the_title(); ?></h1>
 						<?php
 						if( has_post_thumbnail($post->ID) ) {
-							echo get_the_post_thumbnail( $post->ID, 'lg' );
+							$charImg = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'lg');
+							echo '<img src="'. $charImg[0] .'" class="character-small" />';
 						}
 						?>
 						<h2 class="meta-title">Definition</h2>
