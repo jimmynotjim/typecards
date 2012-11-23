@@ -24,7 +24,7 @@
 
 	<link rel="shortcut icon" type="image/ico" href="<?php bloginfo( 'template_url' ); ?>/assets/img/icons/favicon.ico" />
 	<link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
-	<link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/assets/css/style.css?v=b0.71" />
+	<link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/assets/css/style.css?v=b0.77" />
 
 	<!-- Scripts -->
 
@@ -36,9 +36,9 @@
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
 	<!-- iOS Detection -->
-	<?php if (!current_user_can( 'manage_options' )) { ?>
+	<?php /*if (is_home() && !current_user_can( 'manage_options' )) { ?>
 	<script>
-		if (window.navigator.userAgent.indexOf('iPhone') != -1) {
+		if (window.navigator.userAgent.indexOf('iPhone') != -1) || (window.navigator.userAgent.indexOf('iPad') != -1) || (window.navigator.userAgent.indexOf('iPod') != -1) {
 			if (window.navigator.standalone == true) {
 				initialize();
 			}else{
@@ -48,7 +48,7 @@
 			document.location.href='http://typecardsapp.com';
 		}
 	</script>
-	<?php } ?>
+	<?php } */?>
 
 	<!-- Google Analytics -->
 	<script type="text/javascript">
