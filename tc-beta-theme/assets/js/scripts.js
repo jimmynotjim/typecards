@@ -128,7 +128,8 @@ $('.menu-btn').click(function() {
 });
  */
 
-$('.dismiss').bind('tap', function() {
+$('.instructions .dismiss').bind('tap', function() {
+	$.cookie('dismissInstructions', 1, { expires: 365 });
 	$(this).parents('.instructions').toggleClass('hidden');
 }).bind('tap', function(event){
 	event.stopPropagation();
