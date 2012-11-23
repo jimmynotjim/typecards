@@ -4,7 +4,7 @@
 			<section class="card">
 				<article class="card-front">
 					<div class="card-body">
-						<h1 class="beta-logo">typecards &beta;1.0</h1>
+						<h1 class="beta-logo">typecards</h1>
 						<div class="instructions">
 							<span class="details">Swipe to navigate through the cards, tap to flip a card and view it's details.</span>
 							<span class="dismiss">Dismiss</span>

@@ -71,6 +71,12 @@ var cardHeight = function(){
 	$('.card-holder').height(vpHeight);
 };
 
+var cardWidth = function(){
+	var vpWidth = $(window).width();
+
+	$('.card-holder').width(vpWidth);
+};
+
 var charMargin = function(){
 	var vpHeight = $(window).height();
 	var margTop = (vpHeight - 300) * 0.5;
@@ -83,8 +89,16 @@ var charMargin = function(){
 };
 
 cardHeight();
+//cardWidth();
 charMargin();
 
+/*
+$(window).bind( 'orientationchange', function(e){
+	cardHeight();
+	cardWidth();
+	charMargin();
+});
+*/
 $(window).resize(function(){
 	cardHeight();
 	charMargin();
