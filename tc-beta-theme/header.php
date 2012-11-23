@@ -36,9 +36,9 @@
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
 	<!-- iOS Detection -->
-	<?php /*if (is_home() && !current_user_can( 'manage_options' )) { ?>
+	<?php if (is_home() && !current_user_can( 'manage_options' )) { ?>
 	<script>
-		if (window.navigator.userAgent.indexOf('iPhone') != -1) || (window.navigator.userAgent.indexOf('iPad') != -1) || (window.navigator.userAgent.indexOf('iPod') != -1) {
+		if ((navigator.userAgent.indexOf('iPhone') != -1) || (navigator.userAgent.indexOf('iPod') != -1) || (navigator.userAgent.indexOf('iPad') != -1)) {
 			if (window.navigator.standalone == true) {
 				initialize();
 			}else{
@@ -48,7 +48,7 @@
 			document.location.href='http://typecardsapp.com';
 		}
 	</script>
-	<?php } */?>
+	<?php } ?>
 
 	<!-- Google Analytics -->
 	<script type="text/javascript">

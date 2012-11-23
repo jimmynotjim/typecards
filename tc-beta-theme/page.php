@@ -4,7 +4,7 @@
 		include_once( 'includes/inc-anatomy-cards.php' );
 	} else {
 		echo '<div class="card-holder"><section class="card"><article>';
-		echo '<h1 class="beta-logo">typecards &beta;</h1>';
+		echo '<h1 class="beta-logo">typecards</h1>';
 		wp_login_form();
 		echo '</article></section></div>';
 	} ?>

@@ -182,8 +182,8 @@ textarea {
  */
 @font-face {
   font-family: 'cala-web';
-  src: url("../fonts/cala/calamed-webfont.woff") format("woff");
-  font-weight: normal;
+  src: url("../fonts/cala/calamed-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/cala/calamed-webfont.woff") format("woff"), url("../fonts/cala/calamed-webfont.ttf") format("truetype"), url("../fonts/cala/calamed-webfont.svg") format("svg");
+  font-weight: 600;
   font-style: normal; }
 
 body {
