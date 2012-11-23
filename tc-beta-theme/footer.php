@@ -1,6 +1,9 @@
 	<!-- jquery -->
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 
+	<!-- jquery cookie -->
+	<script src="<?php bloginfo( 'template_url' ); ?>/assets/js/jquery.cookie.js"></script>
+
 
 	<!-- swipe.js -->
 	<script src="<?php bloginfo( 'template_url' ); ?>/assets/js/swipe.js?v=1"></script>
