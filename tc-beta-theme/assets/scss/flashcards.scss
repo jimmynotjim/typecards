@@ -132,6 +132,8 @@ div[role="main"] {
 	@include rem(padding, 22px);
 
 	height: 100%;
+	margin: 0 auto;
+	max-width: 620px;
 	overflow-y: auto;
 }
 
@@ -256,7 +258,7 @@ div[role="main"] {
 .beta-logo {
 	@include serif;
 	@include rem(font-size, 65px);
-	@include rem(margin, 22px auto 38px);
+	@include rem(margin, 10px auto 18px);
 
 	line-height: 1.3em;
 	text-align: center;
@@ -343,7 +345,7 @@ div[role="main"] {
 	}
 }
 .login-remember {
-	@include rem(margin-bottom, 30px);
+	@include rem(margin-bottom, 10px);
 	@include rem(margin-left, 73px);
 
 	input {
@@ -384,10 +386,67 @@ div[role="main"] {
 	border: 1px solid shade($red, 15%);
 }
 
-@media all and (min-height:304px) {
+@media all and (min-height:450px) {
 
-.card-front img {
+.beta-logo {
+	@include rem(margin-top, 46px);
+	@include rem(margin-bottom, 46px);
+}
 
+.login-remember {
+	@include rem(margin-bottom, 40px);
+}
+
+}
+
+@media all and (min-height: 540px) {
+
+.beta-logo {
+	@include rem(margin-top, 72px);
+}
+
+}
+
+@media all and (min-width: 600px) {
+.card-body {
+//	@include rem(padding-top, 40px);
+//	@include rem(padding-bottom, 40px);
+}
+
+.term-title {
+	@include rem(font-size, 30px);
+	@include rem(margin-top, 18px);
+	@include rem(margin-bottom, 24px);
+}
+
+.card-back img {
+	@include rem(margin-bottom, 24px);
+}
+
+.beta-logo {
+	@include rem(font-size, 80px);
+	@include rem(margin-bottom, 72px);
+}
+
+#loginform {
+	@include rem(font-size, 20px);
+
+	width: 394px;
+}
+
+.login-username,
+.login-password {
+	label {
+		min-width: 86px;
+	}
+	input {
+		width: 302px;
+	}
+}
+
+.login-remember {
+	@include rem(margin-left, 90px);
+	@include rem(margin-bottom, 64px);
 }
 
 }
