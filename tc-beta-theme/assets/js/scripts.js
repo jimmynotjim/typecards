@@ -64,6 +64,7 @@ for(var i=0;i<a.length;i++) {
 	}
 }
  */
+/*
 
 var cardHeight = function(){
 	var vpHeight = $(window).height();
@@ -99,11 +100,12 @@ $(window).bind( 'orientationchange', function(e){
 	charMargin();
 });
 */
+/*
 $(window).resize(function(){
 	cardHeight();
 	charMargin();
 });
-
+*/
 $('#slider li:nth-child(1), #slider li:nth-child(2)').addClass('on');
 
 $('.card-body').bind('tap', function() {

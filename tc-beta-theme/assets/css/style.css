@@ -448,6 +448,17 @@ div[role="main"] {
   position: absolute;
   width: 100%; }
 
+.card-front .card-body {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  box-align: center;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  box-pack: center; }
+
 .card.flipped {
   -webkit-transform: rotateY(180deg);
   -moz-transform: rotateY(180deg); }
@@ -461,8 +472,6 @@ div[role="main"] {
   overflow-y: auto; }
 
 .character {
-  display: block;
-  margin: 0 auto;
   max-height: 100%;
   max-width: 256px; }
 

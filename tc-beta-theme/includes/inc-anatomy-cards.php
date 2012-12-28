@@ -17,7 +17,7 @@
 					<div class="card-body">
 						<h1 class="term-title">Type Anatomy</h1>
 						<p>typecards began as a tool to help me better understand typography. With a little help from some good friends it's grown into a tool I hope you find useful too. Over time it will grow to include more than just Anatomy Terms and hopefully become your goto source on all things type.</p>
-						<p>This is a beta release, there's sure to be bugs and incomplete information. Please report any inconcistencies to <a href="help@typecardsapp.com">help@typecardsapp.com</a>.</p>
+						<p>This is a beta release, there's sure to be bugs and incomplete information. Please report any inconcistencies to <a href="mailto:help@typecardsapp.com">help@typecardsapp.com</a>.</p>
 					</div>
 				</article>
 			</section>
