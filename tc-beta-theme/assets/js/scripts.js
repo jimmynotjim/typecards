@@ -1,87 +1,34 @@
-jQuery.event.special.tap = {
-	setup: function (a, b) {
-		var c = this,
-			d = jQuery(c);
-		if (window.Touch) {
-			d.bind("touchstart", jQuery.event.special.tap.onTouchStart);
-			d.bind("touchmove", jQuery.event.special.tap.onTouchMove);
-			d.bind("touchend", jQuery.event.special.tap.onTouchEnd);
-		} else {
-			d.bind("click", jQuery.event.special.tap.click);
-		}
-	},
-	click: function (a) {
-		a.type = "tap";
-		jQuery.event.handle.apply(this, arguments);
-	},
-	teardown: function (a) {
-		if (window.Touch) {
-			$elem.unbind("touchstart", jQuery.event.special.tap.onTouchStart);
-			$elem.unbind("touchmove", jQuery.event.special.tap.onTouchMove);
-			$elem.unbind("touchend", jQuery.event.special.tap.onTouchEnd);
-		} else {
-			$elem.unbind("click", jQuery.event.special.tap.click);
-		}
-	},
-	onTouchStart: function (a) {
-		this.moved = false;
-	},
-	onTouchMove: function (a) {
-		this.moved = true;
-	},
-	onTouchEnd: function (a) {
-		if (!this.moved) {
-			a.type = "tap";
-			jQuery.event.handle.apply(this, arguments);
-		}
-	}
-};
-
-
 $(document).ready(function(){
 
-// Truncate long links
-// Borrowed From http://jsfiddle.net/vsujC/
-// --------------------------------------------------------
-$('.ref-link').text(function(index, oldText) {
-	if (oldText.length > 32) {
-		return oldText.substring(0, 32) + '...';
+/* Setup Layout for viewport size */
+
+var slideOffset = function(vpHeight) {
+	var offset = vpHeight * 0.85;
+	var css = '#slider.inactive { -webkit-transform:translate3d(0,-' + offset +'px,0); -moz-transform:translate3d(0,-' + offset +'px,0)}';
+	var head = document.getElementsByTagName('head')[0];
+	var style = document.createElement('style');
+
+	style.type = 'text/css';
+	if (style.styleSheet){
+	style.styleSheet.cssText = css;
+	} else {
+	style.appendChild(document.createTextNode(css));
 	}
-	return oldText;
-});
 
-// Keep internal links in full screen mode, external links in Safari
-// Borrowed From http://stackoverflow.com/a/7390672
-// --------------------------------------------------------
-/*
-var a=document.getElementsByTagName("a");
-for(var i=0;i<a.length;i++) {
-	if(!a[i].onclick && a[i].getAttribute("target") != "_blank") {
-		a[i].onclick=function() {
-				window.location=this.getAttribute("href");
-				return false;
-		}
-	}
-}
- */
-/*
-
-var cardHeight = function(){
-	var vpHeight = $(window).height();
-
-	$('.card-holder').height(vpHeight);
+	head.appendChild(style);
 };
 
-var cardWidth = function(){
-	var vpWidth = $(window).width();
+var cardHeight = function() {
+	var vpHeight = $(window).height();
 
-	$('.card-holder').width(vpWidth);
+	$('.main').height(vpHeight);
+	slideOffset(vpHeight);
 };
 
-var charMargin = function(){
-	var vpHeight = $(window).height();
-	var margTop = (vpHeight - 300) * 0.5;
-	if(vpHeight > 300) { //max .character height + .card-body padding
+var charMargin = function() {
+	var vpHeight	= $(window).height();
+	var margTop		= (vpHeight - 300) * 0.5;
+	if (vpHeight > 300) { //max .character height + .card-body padding
 		$('.character').css('margin-top', margTop);
 	}
 	else { // no margin if .character is less than 100% in height
@@ -90,7 +37,6 @@ var charMargin = function(){
 };
 
 cardHeight();
-//cardWidth();
 charMargin();
 
 /*
@@ -100,37 +46,47 @@ $(window).bind( 'orientationchange', function(e){
 	charMargin();
 });
 */
-/*
-$(window).resize(function(){
+
+$(window).resize(function() {
 	cardHeight();
 	charMargin();
 });
-*/
-$('#slider li:nth-child(1), #slider li:nth-child(2)').addClass('on');
 
-$('.card-body').bind('tap', function() {
-	$(this).parents('.card').toggleClass('flipped');
-	$(this).parents('.card').children('.card-back').toggleClass('hidden visible');
-});
-/*
-$('.card-back.hidden').bind('touchstart', function(event) {
-	event.preventDefault();
-});
- */
+$('.card-body').on('click', function() {
+	var $parCard = $(this).closest('.card');
 
-$('a').bind('tap', function(event){
-	event.stopPropagation();
+	if ( $('#slider').hasClass('inactive') ) {
+		$('#slider').removeClass('inactive');
+	} else {
+		$parCard.toggleClass('flipped');
+		$parCard.find('.card-back').toggleClass('hidden visible');
+	}
 });
 
-/*
-$('.menu-btn').click(function() {
-//	$('.site-nav').toggleClass('inactive');
-	$('.top-level-cards').toggleClass('inactive');
+$('.menu-btn').on('click', function() {
+	$('#slider').toggleClass('inactive');
 	return false;
 });
- */
 
-$('.instructions .dismiss').bind('tap', function() {
+$('#slider.inactive').on('click', function() {
+	$(this).removeClass('inactive');
+	return false;
+});
+
+$('.shortcut').on('click', function() {
+//	var slides = '.card-holder';
+//	var $parSlide = $(this).parents(slides);
+	$('#slider').removeClass('inactive');
+//	$(slides).removeClass('on');
+//	$parSlide.addClass('on');
+
+//	var skipTo = $(this).attr('id');
+//	mySwipe.slide(skipTo, 400);
+
+//	return false;
+});
+
+$('.instructions .dismiss').on('click', function() {
 	$.cookie('dismissInstructions', 1, { expires: 365 });
 	$(this).parents('.instructions').toggleClass('hidden');
 }).bind('tap', function(event){
@@ -142,6 +98,5 @@ $('.phone').mouseenter(function() {
 }).mouseleave(function() {
 	$('.card-nav').removeClass('active');
 });
-
 
 });

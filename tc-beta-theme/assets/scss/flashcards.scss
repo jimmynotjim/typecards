@@ -1,52 +1,42 @@
-@import 'bourbon';
 
-* {
-	box-sizing: border-box;
-}
-body {
-	background-color: black;
-}
-.safari-message {
-	background: rgba(0,0,0,.75);
-	color: white;
-	display: block;
-	font-size: 20px;
-	font-weight: 600;
-	height: 100%;
-	max-width: 100%;
-	padding: 30px;
-//	pointer-events:none;
-	position: fixed;
-	z-index: 100;
-}
+.menu-btn {
+	-webkit-appearance: none;
+	border: none;
 
-div[role="main"] {
-	background-color: black;
-	display: block;
-	height: 100%;
+	text-indent: 150%;
+	white-space: nowrap;
 	overflow: hidden;
-//	position: relative;
+	background: url(../img/menu-btn.png) 50% 50% no-repeat;
+	color: #F7F7F7;
+	display: block;
+	height: 40px;
+	padding: 10px;
 	width: 100%;
 }
 
-.slider {
-	background: transparent;
+
+
+#slider {
+	@include border-radius(8px);
+	@include box-shadow(0 2px 9px #999);
+	@include transition(all 0.5s);
+
 	height: 100%;
+	top: 0;
 	width: 100%;
+	//z-index: 10;
 
 	//swipe styles
-	overflow: hidden;
+	overflow-x: hidden;
 	position: absolute;
 
-	&.inactive {
-//		display: none;
-	}
+	// Inactive styles controled via js set style tags in doc head
 }
 
 .cards {
 	@include clearFix;
 
-	background: transparent;
+	background: black;
 	height: 100%;
 	list-style: none;
 	margin: 0;
@@ -67,6 +57,7 @@ div[role="main"] {
 
 .card-holder {
 	background: transparent;
+	height: 100%;
 
 	//swipe styles
 	float: left;
@@ -74,30 +65,54 @@ div[role="main"] {
 	width: 100%;
 
 	//flip styles
-	height: 100%;
-	position: relative;
-	width: 100%;
 	-webkit-perspective: 800px;
 	-moz-perspective: 800px;
 }
 
 .card-holder.on {
 
+	.card {
+		display: block; // Using the .on class we're only painting the current card and one on either side
+	}
+
 	.card article {
 		//flip styles
 		@include backface-visibility(hidden);
-
-		-webkit-overflow-scrolling: touch;
 	}
+
 	.card-back {
 		//flip styles
 		-webkit-transform: rotateY(180deg);
 		-moz-transform: rotateY(180deg);
+		-webkit-overflow-scrolling: touch;
+
+
+		&:before, &:after {
+			content: '';
+			display: block;
+			height: 12px;
+			left: 0;
+			position: absolute;
+			width: 100%;
+			z-index: 10;
+		}
+
+		&:before {
+			@include border-radius(8px 8px 0 0);
+			@include background-image(linear-gradient(rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 100%));
+			top: 0;
+		}
+
+		&:after {
+			@include border-radius(0 0 8px 8px);
+			@include background-image(linear-gradient(rgba(255,255,255,0) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 100%));
+			bottom: 0;
+		}
 	}
 }
 
 .card {
-	background: transparent;
+	display: none; // This keeps the browser from having to paint every card out of view
 
 	//flip styles
 	height: 100%;
@@ -122,12 +137,6 @@ div[role="main"] {
 	width: 100%;
 }
 
-.card-front .card-body {
-	@include display-box;
-	@include box-align(center);
-	@include box-pack(center);
-}
-
 .card.flipped {
 	//flip styles
 	-webkit-transform: rotateY( 180deg );
@@ -135,15 +144,22 @@ div[role="main"] {
 }
 
 .card-body {
-	@include rem(padding, 22px);
+	@include rem(padding, 22px 10%);
 
-	height: 100%;
-	margin: 0 auto;
-	max-width: 620px;
 	overflow-y: auto;
 }
 
+.card-front .card-body {
+	height: 88%;
+}
+
+.card-back .card-body {
+	height: 100%;
+}
+
 .character {
+	display: block;
+	margin: 0 auto;
 	max-height: 100%;
 	max-width: 256px;
 }
@@ -151,40 +167,10 @@ div[role="main"] {
 .card-back {
 	position: relative;
 
-		&:before, &:after {
-			content: '';
-			display: block;
-			height: 12px;
-			left: 0;
-			position: absolute;
-			width: 100%;
-			z-index: 10;
-		}
-
-		&:before {
-			@include border-radius(8px 8px 0 0);
-			@include background-image(linear-gradient(rgba(247,247,246,1) 0%, rgba(247,247,246,1) 50%, rgba(247,247,247,0) 100%));
-			top: 0;
-		}
-
-		&:after {
-			@include border-radius(0 0 8px 8px);
-			@include background-image(linear-gradient(rgba(247,247,247,0) 0%, rgba(247,247,246,1) 50%, rgba(247,247,247,1) 100%));
-			bottom: 0;
-		}
-
 	img {
 		display: block;
 		margin: 0 auto 16px;
 		width: 128px;
-	}
-
-	&.hidden .card-body {
-//		overflow-y: hidden;
-	}
-
-	&.visible .card-body {
-//		overflow-y: auto;
 	}
 }
 
@@ -205,7 +191,7 @@ div[role="main"] {
 .meta-title {
 	@include rem(font-size, 20px);
 
-	font-weight: 500;
+	font-weight: 600;
 	line-height: 1.25em;
 }
 
@@ -217,55 +203,6 @@ div[role="main"] {
 	.term-title {
 		@include rem(margin-bottom, 42px);
 	}
-	.instructions {
-		@include border-radius(6px);
-		@include transition(opacity .25s);
-
-		background-color: rgba(0,0,0,.8);
-		border: 1px solid #111;
-		color: #fff;
-		display: block;
-		font-weight: 400;
-		margin: 0 auto;
-		width: 260px;
-
-		span {
-			display: block;
-		}
-
-		&.hidden {
-			opacity: 0;
-
-			.dismiss {
-				 pointer-events:none;
-			}
-		}
-	}
-
-	.details {
-		@include rem(padding, 18px);
-	}
-	.dismiss {
-		@include border-radius(0 0 6px 6px);
-		@include rem(font-size, 16px);
-		@include rem(padding, 12px);
-
-		background-color: #222;
-		border-top: 1px solid #111;
-		display: block;
-		text-align: center;
-		text-transform: uppercase;
-		width: 100%;
-	}
-}
-
-.beta-logo {
-	@include serif;
-	@include rem(font-size, 65px);
-	@include rem(margin, 10px auto 18px);
-
-	line-height: 1.3em;
-	text-align: center;
 }
 
 .card-nav {
@@ -390,32 +327,7 @@ div[role="main"] {
 	border: 1px solid shade($red, 15%);
 }
 
-@media all and (min-height:450px) {
-
-.beta-logo {
-	@include rem(margin-top, 46px);
-	@include rem(margin-bottom, 46px);
-}
-
-.login-remember {
-	@include rem(margin-bottom, 40px);
-}
-
-}
-
-@media all and (min-height: 540px) {
-
-.beta-logo {
-	@include rem(margin-top, 72px);
-}
-
-}
-
 @media all and (min-width: 600px) {
-.card-body {
-//	@include rem(padding-top, 40px);
-//	@include rem(padding-bottom, 40px);
-}
 
 .term-title {
 	@include rem(font-size, 30px);
@@ -425,11 +337,6 @@ div[role="main"] {
 
 .card-back img {
 	@include rem(margin-bottom, 24px);
-}
-
-.beta-logo {
-	@include rem(font-size, 80px);
-	@include rem(margin-bottom, 72px);
 }
 
 #loginform {

@@ -23,8 +23,7 @@
 	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php bloginfo( 'template_url' ); ?>/assets/img/icons/typecards-icon-144.png" />
 
 	<link rel="shortcut icon" type="image/ico" href="<?php bloginfo( 'template_url' ); ?>/assets/img/icons/favicon.ico" />
-	<link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
-	<link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/assets/css/style.css?v=b0.77" />
+	<link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/assets/css/style.css?v.74225279" />
 
 	<!-- Scripts -->
 
@@ -36,8 +35,8 @@
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
 	<!-- iOS Detection -->
-	<?php if (is_home() && !current_user_can( 'manage_options' )) { ?>
-	<script>
+	<?php if (!current_user_can( 'manage_options' )) { ?>
+	<script>/*
 		if ((navigator.userAgent.indexOf('iPhone') != -1) || (navigator.userAgent.indexOf('iPod') != -1) || (navigator.userAgent.indexOf('iPad') != -1)) {
 			if (window.navigator.standalone == true) {
 				initialize();
@@ -46,7 +45,7 @@
 			}
 		}else{
 			document.location.href='http://typecardsapp.com';
-		}
+		}*/
 	</script>
 	<?php } ?>
 

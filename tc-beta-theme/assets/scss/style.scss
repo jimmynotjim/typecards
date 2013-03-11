@@ -5,6 +5,8 @@ Author: @jimmynotjim
 Author URI: http://jimmynotjim.com
 */
 
+@import 'bourbon';
+
 // Base CSS
 
 @import "foundation/foundation.scss";
@@ -14,5 +16,8 @@ Author URI: http://jimmynotjim.com
 //@import "custom-styles.scss";
 
 // Flash Card styling
+
+
+@import "app.scss";
 
 @import "flashcards.scss";
