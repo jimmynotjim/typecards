@@ -24,9 +24,11 @@ $red:					#db0901;
 
 // Typography
 $baseFontSize:          $baseLine;
-$baseFontFamily:        'Avenir Next', 'brandon-grotesque', 'Futura', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+$baseFontFamily:        'AvenirNext-Regular', 'brandon-grotesque', 'Futura', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
 $baseLineHeight:        1.4em;
 $textColor:             $black;
+$headingFontFamily:		'AvenirNext-DemiBold', 'brandon-grotesque', 'Futura', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+$linkFontFamily:		'AvenirNext-Medium', 'brandon-grotesque', 'Futura', 'Segoe UI', 'Helvetia Neue', Arial, sans-serif;
 
 // Links
 $linkColor:             $red;

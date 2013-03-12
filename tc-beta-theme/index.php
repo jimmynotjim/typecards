@@ -2,13 +2,20 @@
 <div role="main" class="main">
 	<section class="" id="app-menu">
 		<h1 class="beta-logo">typecards</h1>
-		<nav class="terms-nav">
-			<h2>Anatomy Terms</h2>
-			<div class="scrolling-list">
+		<nav class="app-nav">
+			<button id="search-terms">Find a Term</button>
+			<button id="all-cards">All Cards</button>
+			<button id="text-size">Text Size</button>
+		</nav>
+<!--		<div class="text-size-controls">
+			<button id="size-smaller">Smaller</button>
+			<button id="size-larger">Larger</button>
+		</div>-->
+		<aside class="terms-nav hidden">
+			<nav class="scrolling-list">
 				<ul class="menu">
-					<li><a href="#" id="0" class="shortcut" onclick="mySwipe.slide(0, 400); return false;">Home</a></li>
 				<?php
-					$i = 1;
+					$i = 0;
 					$anatomyArgs = array(
 						'post_type'			=> 'anatomy',
 						'posts_per_page'	=> -1,
@@ -25,8 +32,9 @@
 					wp_reset_query();
 				?>
 				</ul>
-			</div>
-		</nav>
+			</nav>
+			<button class="dismiss">Dismiss</button>
+		</aside>
 		<?php //if( $_COOKIE['dismissInstructions'] != 1 ) { ?>
 		<aside class="instructions">
 			<span class="details">Swipe to navigate through the cards, tap to flip a card and view it's details.</span>

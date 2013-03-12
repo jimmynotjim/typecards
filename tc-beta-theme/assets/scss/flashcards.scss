@@ -19,7 +19,6 @@
 #slider {
 	@include border-radius(8px);
 	@include box-shadow(0 2px 9px #999);
-	@include transition(all 0.5s);
 
 	height: 100%;
 	top: 0;
@@ -33,6 +32,9 @@
 	// Inactive styles controled via js set style tags in doc head
 }
 
+.no-touch #slider {
+	@include transition(all 0.5s);
+}
 .cards {
 	@include clearFix;
 
@@ -48,10 +50,6 @@
 
 	p {
 		@include rem(font-size, 20px);
-
-		a {
-			font-weight: 500;
-		}
 	}
 }
 
@@ -191,7 +189,6 @@
 .meta-title {
 	@include rem(font-size, 20px);
 
-	font-weight: 600;
 	line-height: 1.25em;
 }
 
@@ -211,9 +208,9 @@
 
 .no-touch:hover .card-nav {
 	display: block;
-	margin: 20px 0;
+	margin-top: -60px;
 	position: absolute;
-	top: 150px;
+	top: 50%;
 	width: 100%;
 	z-index: 100;
 
@@ -307,7 +304,6 @@
 	background-color: $red;
 	color: $white;
 	display: block;
-	font-weight: 500;
 	margin: 0 auto;
 
 	&:hover {
@@ -325,6 +321,14 @@
 
 	background-color: $red;
 	border: 1px solid shade($red, 15%);
+}
+
+@media all and (min-height: 600px) {
+
+.card-front .card-body {
+	height: 91%;
+}
+
 }
 
 @media all and (min-width: 600px) {

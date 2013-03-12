@@ -31,7 +31,7 @@
 					var c = pos;
 					var p = c - 1;
 					var n = c + 1;
-					console.log(c, p, n);
+
 					cards[c].className = 'card-holder on';
 					if( cards[p] != null) cards[p].className = 'card-holder on';
 					if( cards[n] != null) cards[n].className = 'card-holder on';
@@ -45,7 +45,7 @@
 	</script>
 
 	<!-- custom scripts -->
-	<script src="<?php bloginfo( 'template_url' ); ?>/assets/js/scripts.js"></script>
+	<script src="<?php bloginfo( 'template_url' ); ?>/assets/js/scripts-ck.js"></script>
 
 
   <?php wp_footer(); ?>

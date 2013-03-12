@@ -207,7 +207,7 @@ textarea {
 
 body {
   color: #1a1a1a;
-  font-family: "Avenir Next", "brandon-grotesque", "Futura", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  font-family: "AvenirNext-Regular", "brandon-grotesque", "Futura", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   font-size: 20px;
   line-height: 1.4em;
   margin: 0;
@@ -236,8 +236,7 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Avenir Next", "brandon-grotesque", "Futura", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  font-weight: normal;
+  font-family: "AvenirNext-DemiBold", "brandon-grotesque", "Futura", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   font-weight: 600;
 }
 
@@ -305,6 +304,7 @@ p {
 
 a {
   color: #db0901;
+  font-family: "AvenirNext-Medium", "brandon-grotesque", "Futura", "Segoe UI", "Helvetia Neue", Arial, sans-serif;
   text-decoration: none;
 }
 a:hover {
@@ -429,8 +429,8 @@ body {
   background: rgba(0, 0, 0, 0.75);
   color: white;
   display: block;
+  font-family: "AvenirNext-DemiBold", "brandon-grotesque", "Futura", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   font-size: 20px;
-  font-weight: 600;
   height: 100%;
   max-width: 100%;
   padding: 30px;
@@ -451,7 +451,6 @@ body {
   border: 1px solid #111111;
   color: #fff;
   display: block;
-  font-weight: 400;
   left: 50%;
   margin-left: -130px;
   position: absolute;
@@ -463,8 +462,6 @@ body {
 }
 .instructions.hidden {
   opacity: 0;
-}
-.instructions.hidden .dismiss {
   pointer-events: none;
 }
 .instructions .details {
@@ -485,7 +482,7 @@ body {
   border-top: 1px solid #111111;
   color: #fff;
   display: block;
-  font-family: "Avenir Next", "brandon-grotesque", "Futura", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  font-family: "AvenirNext-DemiBold", "brandon-grotesque", "Futura", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   text-align: center;
   text-transform: uppercase;
   width: 100%;
@@ -518,49 +515,6 @@ div[role="main"]:after {
   text-align: center;
 }
 
-@media all and (min-height: 300px) {
-  .beta-logo {
-    padding-top: 55px;
-    padding-top: 3.4375rem;
-  }
-
-  .instructions {
-    top: 30%;
-  }
-}
-@media all and (min-height: 400px) {
-  .beta-logo {
-    padding-top: 75px;
-    padding-top: 4.6875rem;
-  }
-
-  .instructions {
-    top: 50%;
-  }
-
-  .login-remember {
-    margin-bottom: 40px;
-    margin-bottom: 2.5rem;
-  }
-}
-@media all and (min-height: 520px) {
-  .beta-logo {
-    padding-top: 90px;
-    padding-top: 5.625rem;
-  }
-}
-@media all and (min-width: 600px) {
-  .beta-logo {
-    font-size: 80px;
-    font-size: 5rem;
-  }
-}
-@media all and (min-height: 600px) {
-  .beta-logo {
-    padding-top: 110px;
-    padding-top: 6.875rem;
-  }
-}
 #app-menu {
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
@@ -570,38 +524,61 @@ div[role="main"]:after {
   width: 100%;
 }
 
-.terms-nav {
-  display: none;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  border-radius: 8px;
-  background-color: #fafafa;
-  height: 100%;
-  padding: 66px 30px 30px;
-  position: absolute;
-  top: 0;
-  width: 100%;
+.app-nav {
+  margin: 40px auto 0;
+  width: 210px;
 }
-.terms-nav h2 {
-  bottom: 190px;
+.app-nav button {
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: none;
+  color: #db0901;
   display: block;
-  left: 30px;
-  font-weight: 500;
-  text-align: center;
-  position: absolute;
-  right: 30px;
+  font-family: "AvenirNext-Medium", "brandon-grotesque", "Futura", "Segoe UI", "Helvetia Neue", Arial, sans-serif;
+  font-size: 22px;
 }
 
-.scrolling-list {
+.terms-nav {
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
   border-radius: 6px;
+  -webkit-transition: opacity 0.25s;
+  -moz-transition: opacity 0.25s;
+  -ms-transition: opacity 0.25s;
+  -o-transition: opacity 0.25s;
+  transition: opacity 0.25s;
+  left: 50%;
+  margin-left: -130px;
+  top: 22%;
+  width: 260px;
+  position: absolute;
+}
+.terms-nav.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+.terms-nav .dismiss {
+  -webkit-appearance: none;
+  border: none;
+  -webkit-border-radius: 0 0 6px 6px;
+  -moz-border-radius: 0 0 6px 6px;
+  border-radius: 0 0 6px 6px;
+  background-color: #4d4d4d;
+  color: #fff;
+  display: block;
+  font-family: "AvenirNext-DemiBold", "brandon-grotesque", "Futura", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  padding: 10px 0;
+  width: 100%;
+}
+
+.scrolling-list {
+  -webkit-border-radius: 6px 6px 0 0;
+  -moz-border-radius: 6px 6px 0 0;
+  border-radius: 6px 6px 0 0;
   background: #fff;
   border: 1px solid #dddddd;
-  bottom: 30px;
-  left: 30px;
-  position: absolute;
-  right: 30px;
+  position: relative;
+  width: 100%;
 }
 .scrolling-list:before, .scrolling-list:after {
   content: '';
@@ -637,12 +614,57 @@ div[role="main"]:after {
 .menu {
   -webkit-overflow-scrolling: touch;
   list-style: none;
-  height: 100px;
+  height: 110px;
   margin: 0;
   padding: 10px 20px;
   overflow-y: auto;
 }
 
+@media all and (min-height: 300px) {
+  .beta-logo {
+    padding-top: 55px;
+    padding-top: 3.4375rem;
+  }
+
+  .instructions,
+  .terms-nav {
+    top: 30%;
+  }
+}
+@media all and (min-height: 400px) {
+  .beta-logo {
+    padding-top: 75px;
+    padding-top: 4.6875rem;
+  }
+
+  .instructions,
+  .terms-nav {
+    top: 40%;
+  }
+
+  .login-remember {
+    margin-bottom: 40px;
+    margin-bottom: 2.5rem;
+  }
+}
+@media all and (min-height: 520px) {
+  .beta-logo {
+    padding-top: 90px;
+    padding-top: 5.625rem;
+  }
+}
+@media all and (min-width: 600px) {
+  .beta-logo {
+    font-size: 80px;
+    font-size: 5rem;
+  }
+}
+@media all and (min-height: 600px) {
+  .beta-logo {
+    padding-top: 110px;
+    padding-top: 6.875rem;
+  }
+}
 .menu-btn {
   -webkit-appearance: none;
   border: none;
@@ -664,16 +686,19 @@ div[role="main"]:after {
   -webkit-box-shadow: 0 2px 9px #999999;
   -moz-box-shadow: 0 2px 9px #999999;
   box-shadow: 0 2px 9px #999999;
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -ms-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s;
   height: 100%;
   top: 0;
   width: 100%;
   overflow-x: hidden;
   position: absolute;
+}
+
+.no-touch #slider {
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 .cards {
@@ -696,9 +721,6 @@ div[role="main"]:after {
 .cards p {
   font-size: 20px;
   font-size: 1.25rem;
-}
-.cards p a {
-  font-weight: 500;
 }
 
 .card-holder {
@@ -834,7 +856,6 @@ div[role="main"]:after {
 .meta-title {
   font-size: 20px;
   font-size: 1.25rem;
-  font-weight: 600;
   line-height: 1.25em;
 }
 
@@ -853,9 +874,9 @@ div[role="main"]:after {
 
 .no-touch:hover .card-nav {
   display: block;
-  margin: 20px 0;
+  margin-top: -60px;
   position: absolute;
-  top: 150px;
+  top: 50%;
   width: 100%;
   z-index: 100;
 }
@@ -900,7 +921,7 @@ div[role="main"]:after {
   width: 276px;
 }
 #loginform input {
-  font-family: "Avenir Next", "brandon-grotesque", "Futura", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  font-family: "AvenirNext-Regular", "brandon-grotesque", "Futura", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   font-weight: normal;
 }
 
@@ -959,7 +980,6 @@ div[role="main"]:after {
   background-color: #db0901;
   color: white;
   display: block;
-  font-weight: 500;
   margin: 0 auto;
 }
 .login-submit input:hover {
@@ -994,6 +1014,11 @@ div[role="main"]:after {
   border: 1px solid #ba0700;
 }
 
+@media all and (min-height: 600px) {
+  .card-front .card-body {
+    height: 91%;
+  }
+}
 @media all and (min-width: 600px) {
   .term-title {
     font-size: 30px;
