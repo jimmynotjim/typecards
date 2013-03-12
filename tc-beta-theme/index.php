@@ -5,7 +5,7 @@
 		<nav class="app-nav">
 			<button id="search-terms">Find a Term</button>
 			<button id="all-cards">All Cards</button>
-			<button id="text-size">Text Size</button>
+			<!--<button id="text-size">Text Size</button>-->
 		</nav>
 <!--		<div class="text-size-controls">
 			<button id="size-smaller">Smaller</button>
