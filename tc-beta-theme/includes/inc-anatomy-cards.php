@@ -45,7 +45,7 @@
 						echo '<h2 class="meta-title">Examples</h2>';
 						echo '<p>'. $example .'</p>';
 						}
-
+/*
 						if( $references ) {
 						echo '<h2 class="meta-title">References</h2>';
 						echo '<p>';
@@ -56,6 +56,7 @@
 						endforeach;
 						echo '</p>';
 						}
+*/
 						?>
 					</div>
 				</article>
