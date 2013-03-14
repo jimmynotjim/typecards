@@ -1,8 +1,11 @@
 	<!-- jquery -->
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
 	<!-- jquery cookie -->
 	<script src="<?php bloginfo( 'template_url' ); ?>/assets/js/jquery.cookie.js"></script>
+
+	<script src="http://rawgithub.com/twitter/typeahead.js/master/dist/typeahead.js"></script>
+	<script src="http://twitter.github.com/hogan.js/builds/2.0.0/hogan-2.0.0.js"></script>
 
 	<script src="<?php bloginfo('template_url'); ?>/assets/js/FastClick.js"></script>
 	<script>
@@ -47,6 +50,38 @@
 	<!-- custom scripts -->
 	<script src="<?php bloginfo( 'template_url' ); ?>/assets/js/scripts-ck.js"></script>
 
+	<script>
+		$('.search').typeahead({
+			template: [
+				'<p onclick="mySwipe.slide({{id}}, 400);">{{value}}</p>'
+			],
+			engine: Hogan,
+			local: [
+				{
+					value: 'Arm',
+					tokens: ['Arm', 'Crossbar', 'Cross stroke'],
+					id: 0
+				},
+				{
+					value: 'Crossbar',
+					tokens: ['Crossbar', 'bar', 'arm', 'cross stroke'],
+					id: 1
+				},
+				{
+					value: 'Spur',
+					tokens: ['Spur', 'barb', 'cats ear'],
+					id: 2
+				}
+			]
+		});
+		$(document).ready( function() {
+			$(window).click( function(e) {
+				if( $(e.toElement).parent('.tt-suggestion').length ) {
+					$('#slider').css('-webkit-transform', 'translate3d(0,0,0)').css('-webkit-transition', 500).removeClass('inactive');
+				}
+			});
+		});
+	</script>
 
   <?php wp_footer(); ?>
 
