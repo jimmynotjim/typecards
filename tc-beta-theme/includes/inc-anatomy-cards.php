@@ -1,4 +1,4 @@
-<div class="slider swipe inactive" id="slider">
+<div class="slider swipe inactive" id="anatomy_slider">
 	<ul class="cards swipe-wrap">
 	<?php
 		$c = 1;
@@ -80,7 +80,7 @@
 		?>
 	</ul>
 	<nav class="card-nav">
-		<a href="#" id="prev" onclick="mySwipe.prev(); return false;">Prev</a>
-		<a href="#" id="next" onclick="mySwipe.next(); return false;">Next</a>
+		<a href="#" id="prev" onclick="anatomySwipe.prev(); return false;">Prev</a>
+		<a href="#" id="next" onclick="anatomySwipe.next(); return false;">Next</a>
 	</nav>
 </div>

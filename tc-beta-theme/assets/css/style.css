@@ -679,7 +679,7 @@ div[role="main"]:after {
   width: 100%;
 }
 
-#slider {
+.slider {
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
   border-radius: 8px;
@@ -693,7 +693,7 @@ div[role="main"]:after {
   position: absolute;
 }
 
-.no-touch #slider {
+.no-touch .slider {
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   -ms-transition: all 0.5s;
@@ -733,7 +733,7 @@ div[role="main"]:after {
   -moz-perspective: 800px;
 }
 
-.card-holder.on .card {
+#anatomy_slider .card-holder.on .card {
   display: block;
 }
 .card-holder.on .card article {
@@ -780,7 +780,6 @@ div[role="main"]:after {
 }
 
 .card {
-  display: none;
   height: 100%;
   position: absolute;
   width: 100%;
@@ -788,6 +787,9 @@ div[role="main"]:after {
   -moz-transform-style: preserve-3d;
   -webkit-transition: -webkit-transform 1s;
   -moz-transition: -moz-transform 1s;
+}
+#anatomy_slider .card {
+  display: none;
 }
 
 .card article {

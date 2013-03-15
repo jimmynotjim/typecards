@@ -16,7 +16,7 @@
 
 
 
-#slider {
+.slider {
 	@include border-radius(8px);
 	@include box-shadow(0 2px 9px #999);
 
@@ -32,7 +32,7 @@
 	// Inactive styles controled via js set style tags in doc head
 }
 
-.no-touch #slider {
+.no-touch .slider {
 	@include transition(all 0.5s);
 }
 .cards {
@@ -69,8 +69,10 @@
 
 .card-holder.on {
 
-	.card {
-		display: block; // Using the .on class we're only painting the current card and one on either side
+	#anatomy_slider & {
+		.card {
+			display: block; // Using the .on class we're only painting the current card and one on either side
+		}
 	}
 
 	.card article {
@@ -110,7 +112,10 @@
 }
 
 .card {
-	display: none; // This keeps the browser from having to paint every card out of view
+
+	#anatomy_slider & {
+		display: none; // This keeps the browser from having to paint every card out of view
+	}
 
 	//flip styles
 	height: 100%;

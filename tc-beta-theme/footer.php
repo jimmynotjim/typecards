@@ -21,11 +21,11 @@
 	<!-- swipe.js -->
 	<script src="<?php bloginfo( 'template_url' ); ?>/assets/js/swipe.js?v=1"></script>
 	<script>
-		window.mySwipe = new Swipe(document.getElementById('slider'), {
+		window.anatomySwipe = new Swipe(document.getElementById('anatomy_slider'), {
 			gutter: 10,
 			callback: function() { //swap transform and backface styles on current, previous and next cards to prevent crashing
 				setTimeout(function(){ //timeout needed to prevent stuttering while swiping cards
-					var pos = mySwipe.getPos();
+					var pos = anatomySwipe.getPos();
 
 					var i = cards.length;
 					while (i--) {
@@ -44,16 +44,20 @@
 				}, 5);
 			}
 		}),
-		cards = document.getElementsByClassName('card-holder');
+		cards = $('#anatomy_slider').find('.card-holder');
+
+		window.appSwipe = new Swipe(document.getElementById('app_slider'), {
+			gutter: 10
+		});
 	</script>
 
 	<!-- custom scripts -->
 	<script src="<?php bloginfo( 'template_url' ); ?>/assets/js/scripts-ck.js"></script>
 
 	<script>
-		$('.search').typeahead({
+		$('.search-terms').typeahead({
 			template: [
-				'<p onclick="mySwipe.slide({{id}}, 400);">{{value}}</p>'
+				'<p onclick="anatomySwipe.slide({{id}}, 400);">{{value}}</p>'
 			],
 			engine: Hogan,
 			local: [
@@ -77,7 +81,7 @@
 		$(document).ready( function() {
 			$(window).click( function(e) {
 				if( $(e.toElement).parent('.tt-suggestion').length ) {
-					$('#slider').css('-webkit-transform', 'translate3d(0,0,0)').css('-webkit-transition', 500).removeClass('inactive');
+					$('#anatomy_slider').css('-webkit-transform', 'translate3d(0,0,0)').css('-webkit-transition', 500).removeClass('inactive');
 				}
 			});
 		});
