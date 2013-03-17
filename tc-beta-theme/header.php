@@ -24,7 +24,7 @@
 
 	<link rel="shortcut icon" type="image/ico" href="<?php bloginfo( 'template_url' ); ?>/assets/img/icons/favicon.ico" />
 	<link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/assets/css/style.css?v=b0.78" />
-	<link rel="stylesheet" href="http://rawgithub.com/twitter/typeahead.js/master/src/css/typeahead.css" />
+<!--	<link rel="stylesheet" href="http://rawgithub.com/twitter/typeahead.js/master/src/css/typeahead.css" /> -->
 
 	<!-- Scripts -->
 

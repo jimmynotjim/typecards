@@ -78,13 +78,6 @@
 				}
 			]
 		});
-		$(document).ready( function() {
-			$(window).click( function(e) {
-				if( $(e.toElement).parent('.tt-suggestion').length ) {
-					$('#anatomy_slider').css('-webkit-transform', 'translate3d(0,0,0)').css('-webkit-transition', 500).removeClass('inactive');
-				}
-			});
-		});
 	</script>
 
   <?php wp_footer(); ?>
