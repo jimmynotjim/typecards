@@ -788,7 +788,7 @@ div[role="main"]:after {
   -moz-perspective: 800px;
 }
 
-#anatomy_slider .card-holder.on .card {
+#anatomy_slider .card-holder.on .card-back {
   display: block;
 }
 .card-holder.on .card article {
@@ -834,6 +834,10 @@ div[role="main"]:after {
   bottom: 0;
 }
 
+#anatomy_slider .card-back {
+  display: none;
+}
+
 .card {
   height: 100%;
   position: absolute;
@@ -842,9 +846,6 @@ div[role="main"]:after {
   -moz-transform-style: preserve-3d;
   -webkit-transition: -webkit-transform 1s;
   -moz-transition: -moz-transform 1s;
-}
-#anatomy_slider .card {
-  display: none;
 }
 
 .card article {

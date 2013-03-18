@@ -70,7 +70,7 @@
 .card-holder.on {
 
 	#anatomy_slider & {
-		.card {
+		.card-back {
 			display: block; // Using the .on class we're only painting the current card and one on either side
 		}
 	}
@@ -111,12 +111,11 @@
 	}
 }
 
+#anatomy_slider .card-back {
+	display: none; // This keeps the browser from having to paint every card out of view
+}
+
 .card {
-
-	#anatomy_slider & {
-		display: none; // This keeps the browser from having to paint every card out of view
-	}
-
 	//flip styles
 	height: 100%;
 	position: absolute;

@@ -41,13 +41,8 @@
 					while (i--) {
 						cards[i].className = 'card-holder';
 					}
-					var c = pos;
-					var p = c - 1;
-					var n = c + 1;
 
-					cards[c].className = 'card-holder on';
-					if( cards[p] != null) cards[p].className = 'card-holder on';
-					if( cards[n] != null) cards[n].className = 'card-holder on';
+					cards[pos].className = 'card-holder on';
 				}, 20);
 				setTimeout(function(){
 					$('.card').removeClass('flipped')
