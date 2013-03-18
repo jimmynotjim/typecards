@@ -122,7 +122,9 @@ $( 'body' ).on( 'click', function( e ) {
 	} else if (  $(e.toElement).parent('.tt-suggestion').length ) {
 		$('#anatomy_slider').css('-webkit-transform',transClosed).css('-webkit-transition',speed).removeClass('inactive');
 		navOpen = false;
-		$('.search-terms').blur();
+		$('.search-terms').blur().val('');
+	} else {
+		$('.tt-dropdown-menu').removeClass('tt-is-open');
 	}
 
 });

@@ -1,6 +1,3 @@
-	<!-- jquery -->
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-
 	<!-- jquery cookie -->
 	<script src="<?php bloginfo( 'template_url' ); ?>/assets/js/jquery.cookie.js"></script>
 
@@ -56,31 +53,15 @@
 
 	<script>
 		$('.search-terms').typeahead({
+			name: 'anatomy-terms',
 			template: [
 				'<p onclick="anatomySwipe.slide({{id}}, 400);">{{value}}</p>'
 			],
 			engine: Hogan,
-			local: [
-				{
-					value: 'Arm',
-					tokens: ['Arm', 'Crossbar', 'Cross stroke'],
-					id: 0
-				},
-				{
-					value: 'Crossbar',
-					tokens: ['Crossbar', 'bar', 'arm', 'cross stroke'],
-					id: 1
-				},
-				{
-					value: 'Spur',
-					tokens: ['Spur', 'barb', 'cats ear'],
-					id: 2
-				}
-			]
+			prefetch: 'http://beta.typecardsapp.com/api/'
 		});
 	</script>
-
-  <?php wp_footer(); ?>
+	<?php wp_footer(); ?>
 
 </body>
 </html>

@@ -28,6 +28,9 @@
 
 	<!-- Scripts -->
 
+	<!-- jquery -->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
 	<!-- Modernizr -->
 	<script src="<?php bloginfo( 'template_url' ); ?>/assets/js/libs/modernizr-2.5.2.min.js"></script>
 

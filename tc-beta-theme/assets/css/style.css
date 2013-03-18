@@ -532,7 +532,7 @@ div[role="main"]:after {
 }
 
 .app-nav {
-  margin: 40px auto 0;
+  margin: 20px auto 0;
   width: 210px;
 }
 .app-nav button {
@@ -546,12 +546,14 @@ div[role="main"]:after {
 }
 
 .search-terms {
+  -webkit-appearance: none;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
   border-radius: 6px;
   border: 1px solid #dddddd;
   font-family: "AvenirNext-Regular", "brandon-grotesque", "Futura", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   padding: 5px 10px;
+  width: 210px;
 }
 .search-terms:focus {
   box-shadow: 0 0 3px 1px #db0901;
@@ -578,6 +580,7 @@ div[role="main"]:after {
   padding: 5px 10px;
   position: absolute !important;
   top: 0 !important;
+  width: 210px;
 }
 
 .tt-dropdown-menu {
@@ -619,6 +622,10 @@ div[role="main"]:after {
 .tt-suggestion {
   display: block;
   cursor: pointer;
+}
+.tt-suggestion p {
+  margin-bottom: 0;
+  padding-bottom: 5px;
 }
 
 .scrolling-list {

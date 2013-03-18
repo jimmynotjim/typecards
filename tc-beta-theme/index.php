@@ -7,7 +7,7 @@
 					<article>
 						<h1 class="beta-logo">typecards</h1>
 						<nav class="app-nav">
-							<input class="search-terms" type="text" placeholder="Search Terms">
+							<input class="search-terms" type="text" placeholder="Search Terms" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
 							<button id="all-cards">All Cards</button>
 							<button onclick="appSwipe.slide(1, 400); return false;">Settings</button>
 							<button onclick="appSwipe.slide(1, 400); return false;">Instructions</button>
