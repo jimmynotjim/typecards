@@ -45,18 +45,6 @@
 						echo '<h2 class="meta-title">Examples</h2>';
 						echo '<p>'. $example .'</p>';
 						}
-/*
-						if( $references ) {
-						echo '<h2 class="meta-title">References</h2>';
-						echo '<p>';
-						foreach( $refArray as $reference ):
-							$refURL = preg_replace('/([A-Za-z0-9.]*-http)/', 'http', $reference);
-							$refTitle = preg_replace('/(-http[A-Za-z0-9.:\/\(\)\_\-)]*)/', '', $reference);
-							echo '<a href="'. $refURL .'" title="'. $refTitle. '" class="ref-link">'. $refTitle .'</a>';
-						endforeach;
-						echo '</p>';
-						}
-*/
 						?>
 					</div>
 				</article>

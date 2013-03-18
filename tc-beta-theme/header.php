@@ -1,10 +1,5 @@
 <!doctype html>
-<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!-->
 <html class="no-js" lang="en">
-<!--<![endif]-->
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -24,7 +19,6 @@
 
 	<link rel="shortcut icon" type="image/ico" href="<?php bloginfo( 'template_url' ); ?>/assets/img/icons/favicon.ico" />
 	<link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/assets/css/style.css?v=b0.8" />
-<!--	<link rel="stylesheet" href="http://rawgithub.com/twitter/typeahead.js/master/src/css/typeahead.css" /> -->
 
 	<!-- Scripts -->
 
@@ -37,21 +31,6 @@
 	<!-- Typkit Code -->
 	<script type="text/javascript" src="http://use.typekit.com/fhw4ytw.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-
-	<!-- iOS Detection -->
-	<?php if (!current_user_can( 'manage_options' )) { ?>
-	<script>/*
-		if ((navigator.userAgent.indexOf('iPhone') != -1) || (navigator.userAgent.indexOf('iPod') != -1) || (navigator.userAgent.indexOf('iPad') != -1)) {
-			if (window.navigator.standalone == true) {
-				initialize();
-			}else{
-				document.write('<p class="safari-message">Im a web app still in beta, please add me to your home screen to enjoy me in full screen mode</p>');
-			}
-		}else{
-			document.location.href='http://typecardsapp.com';
-		}*/
-	</script>
-	<?php } ?>
 
 	<!-- Google Analytics -->
 	<script type="text/javascript">

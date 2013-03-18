@@ -1,9 +1,22 @@
 	<!-- jquery cookie -->
 	<script src="<?php bloginfo( 'template_url' ); ?>/assets/js/jquery.cookie.js"></script>
 
+	<!-- typeahead stuff -->
 	<script src="<?php bloginfo( 'template_url' ); ?>/assets/js/libs/typeahead.js"></script>
 	<script src="<?php bloginfo( 'template_url' ); ?>/assets/js/libs/hogan-2.0.0.min.js"></script>
+	<script>
+		$('.search-terms').typeahead({
+			name: 'anatomy-terms',
+			limit: 4,
+			template: [
+				'<p onclick="anatomySwipe.slide({{id}}, 400);">{{value}}</p>'
+			],
+			engine: Hogan,
+			prefetch: 'http://beta.typecardsapp.com/api/'
+		});
+	</script>
 
+	<!-- FastClick stuff -->
 	<script src="<?php bloginfo('template_url'); ?>/assets/js/FastClick.js"></script>
 	<script>
 		if(window.addEventListener) {
@@ -42,26 +55,11 @@
 			}
 		}),
 		cards = $('#anatomy_slider').find('.card-holder');
-
-/*		window.appSwipe = new Swipe(document.getElementById('app_slider'), {
-			gutter: 10
-		});
-*/	</script>
+	</script>
 
 	<!-- custom scripts -->
 	<script src="<?php bloginfo( 'template_url' ); ?>/assets/js/scripts-ck.js"></script>
 
-	<script>
-		$('.search-terms').typeahead({
-			name: 'anatomy-terms',
-			limit: 4,
-			template: [
-				'<p onclick="anatomySwipe.slide({{id}}, 400);">{{value}}</p>'
-			],
-			engine: Hogan,
-			prefetch: 'http://beta.typecardsapp.com/api/'
-		});
-	</script>
 	<?php wp_footer(); ?>
 
 </body>
