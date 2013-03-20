@@ -54,19 +54,6 @@ $(window).resize(function() {
 	charMargin();
 });
 
-/*
-$('.shortcut').on('click', function() {
-//	var slides = '.card-holder';
-//	var $parSlide = $(this).parents(slides);
-//	$(slides).removeClass('on');
-//	$parSlide.addClass('on');
-
-//	var skipTo = $(this).attr('id');
-//	mySwipe.slide(skipTo, 400);
-
-//	return false;
-});
-*/
 $('.instructions .dismiss').on('click', function() {
 	$.cookie('dismissInstructions', 1, { expires: 365 });
 	$('.instructions').toggleClass('hidden');
