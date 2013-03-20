@@ -54,16 +54,6 @@ $(window).resize(function() {
 	charMargin();
 });
 
-$('.card-body').on('click', function() {
-	var $parCard = $(this).closest('.card');
-
-	if ( $('#anatomy_slider').hasClass('inactive') ) {
-		$('#anatomy_slider').removeClass('inactive');
-	} else {
-		$parCard.toggleClass('flipped');
-		$parCard.find('.card-back').toggleClass('hidden visible');
-	}
-});
 /*
 $('.shortcut').on('click', function() {
 //	var slides = '.card-holder';
@@ -84,10 +74,6 @@ $('.instructions .dismiss').on('click', function() {
 	event.stopPropagation();
 });
 
-$('.terms-nav .dismiss').on('click', function() {
-	$('.terms-nav').toggleClass('hidden');
-});
-
 $('.phone').mouseenter(function() {
 	$('.card-nav').addClass('active');
 }).mouseleave(function() {
@@ -102,13 +88,15 @@ var speedSet	= 500;
 var speed		= speedSet + 'ms';
 var hfSpeed		= (speedSet * 0.5) + 'ms';
 var navOpen		= true;
-var triggers	= $('.menu-btn, #all-cards, .shortcut');
+var triggers	= $('.menu-btn, #all-cards');
 
 $( 'body' ).on( 'click', function( e ) {
 	var target		= $( e.target );
-	var is_trigger	= target.closest( triggers ).length;
+	var is_slideTrigger	= target.closest( triggers ).length;
+	var is_flipTrigger = target.closest('.card-body').length;
+	var is_searchTrigger = target.closest('.tt-suggestion').length;
 
-	if ( is_trigger ) {
+	if ( is_slideTrigger ) {
 		if (navOpen === true) {
 			$('#anatomy_slider').css('-webkit-transform',transClosed).css('-webkit-transition',speed).removeClass('inactive');
 			navOpen = false;
@@ -116,15 +104,21 @@ $( 'body' ).on( 'click', function( e ) {
 			$('#anatomy_slider').css('-webkit-transform',transOpen).css('-webkit-transition',speed).addClass('inactive');
 			navOpen = true;
 		}
-
 		return false;
-	} else if (  $(e.toElement).parent('.tt-suggestion').length ) {
+
+	} else if (  is_searchTrigger ) {
 		$('#anatomy_slider').css('-webkit-transform',transClosed).css('-webkit-transition',speed).removeClass('inactive');
 		navOpen = false;
+
+	} else if ( is_flipTrigger ) {
+		var $parCard = $(target).closest('.card');
+
+		$parCard.toggleClass('flipped');
+		$parCard.find('.card-back').toggleClass('hidden visible');
+
 	} else {
 		$('.tt-dropdown-menu').removeClass('tt-is-open');
 	}
-
 });
 
 $('.search-terms').on('keypress', function(e) {
