@@ -104,7 +104,6 @@ var hfSpeed		= (speedSet * 0.5) + 'ms';
 var navOpen		= true;
 var triggers	= $('.menu-btn, #all-cards, .shortcut');
 
-
 $( 'body' ).on( 'click', function( e ) {
 	var target		= $( e.target );
 	var is_trigger	= target.closest( triggers ).length;
@@ -122,11 +121,17 @@ $( 'body' ).on( 'click', function( e ) {
 	} else if (  $(e.toElement).parent('.tt-suggestion').length ) {
 		$('#anatomy_slider').css('-webkit-transform',transClosed).css('-webkit-transition',speed).removeClass('inactive');
 		navOpen = false;
-		$('.search-terms').blur().val('');
 	} else {
 		$('.tt-dropdown-menu').removeClass('tt-is-open');
 	}
 
+});
+
+$('.search-terms').on('keypress', function(e) {
+	if (e.keyCode === 13) {
+		$('#anatomy_slider').css('-webkit-transform',transClosed).css('-webkit-transition',speed).removeClass('inactive');
+		navOpen = false;
+	}
 });
 
 $('.shortcut').on('click', function() {

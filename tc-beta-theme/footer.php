@@ -5,14 +5,29 @@
 	<script src="<?php bloginfo( 'template_url' ); ?>/assets/js/libs/typeahead.js"></script>
 	<script src="<?php bloginfo( 'template_url' ); ?>/assets/js/libs/hogan-2.0.0.min.js"></script>
 	<script>
+		var termsArray = <?php json_function(); ?>;
 		$('.search-terms').typeahead({
 			name: 'anatomy-terms',
 			limit: 4,
 			template: [
-				'<p onclick="anatomySwipe.slide({{id}}, 400);">{{value}}</p>'
+				'<p>{{value}}</p>'
 			],
 			engine: Hogan,
-			prefetch: 'http://beta.typecardsapp.com/api/'
+			local: termsArray
+
+		}).on('typeahead:selected', function($e) {
+			var selectedValue = $($e.target).val();
+			var getFirstIndex = function(val) {
+				var index = null;
+				$.each(termsArray, function(i, v) {
+					if (v.value === val) {
+						index = i; return false;
+					}
+				});
+				return index;
+			}
+			var selectedIndex = getFirstIndex(selectedValue);
+			anatomySwipe.slide(selectedIndex, 400);
 		});
 	</script>
 
