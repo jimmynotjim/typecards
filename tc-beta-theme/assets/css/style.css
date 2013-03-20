@@ -596,12 +596,12 @@ div[role="main"]:after {
   background: #fff;
   border: 1px solid #d1d1d1;
   display: none;
-  left: 50%;
+  left: 50% !important;
   list-style-type: none;
   margin: 0 0 0 -130px;
   padding: 10px;
   position: absolute;
-  top: 110%;
+  top: 110% !important;
   width: 260px;
   z-index: 100;
 }
