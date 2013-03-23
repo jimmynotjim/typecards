@@ -17,7 +17,7 @@
 
 		}).on('typeahead:selected', function($e) {
 			var selectedValue = $($e.target).val();
-			var getFirstIndex = function(val) {
+			var getSelectedIndex = function(val) {
 				var index = null;
 				$.each(termsArray, function(i, v) {
 					if (v.value === val) {
@@ -26,7 +26,7 @@
 				});
 				return index;
 			}
-			var selectedIndex = getFirstIndex(selectedValue);
+			var selectedIndex = getSelectedIndex(selectedValue);
 			anatomySwipe.slide(selectedIndex, 400);
 		});
 	</script>
