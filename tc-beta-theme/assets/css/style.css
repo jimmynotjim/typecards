@@ -128,6 +128,13 @@ textarea {
   vertical-align: top;
 }
 
+/*
+@mixin box-shadow($shadow: 0 1px 3px rgba(0,0,0,.25)) {
+  -webkit-box-shadow: $shadow;
+     -moz-box-shadow: $shadow;
+          box-shadow: $shadow;
+}
+*/
 /*.pubDetails {
 	.clearfix;
 	font-size: @baseLine*.8;
@@ -525,7 +532,7 @@ div[role="main"]:after {
 }
 
 .app-nav {
-  margin: 40px auto 0;
+  margin: 20px auto 0;
   width: 210px;
 }
 .app-nav button {
@@ -538,37 +545,87 @@ div[role="main"]:after {
   font-size: 22px;
 }
 
-.terms-nav {
+.search-terms {
+  -webkit-appearance: none;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
   border-radius: 6px;
+  border: 1px solid #dddddd;
+  font-family: "AvenirNext-Regular", "brandon-grotesque", "Futura", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  padding: 5px 10px;
+  width: 210px;
+}
+.search-terms:focus {
+  box-shadow: 0 0 3px 1px #db0901;
+  border-color: #db0901;
+  outline: none;
+}
+
+.twitter-typeahead {
+  display: inline-block !important;
+  position: relative !important;
+}
+
+.tt-query {
+  background-color: transparent !important;
+  position: relative !important;
+  vertical-align: top !important;
+}
+
+.tt-hint {
+  border: 1px solid transparent !important;
+  color: #ccc;
+  font-family: "AvenirNext-Regular", "brandon-grotesque", "Futura", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  left: 0 !important;
+  padding: 5px 10px;
+  position: absolute !important;
+  top: 0 !important;
+  width: 210px;
+}
+
+.tt-dropdown-menu {
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  box-shadow: 0 3px 9px -2px rgba(0, 0, 0, 0.2);
   -webkit-transition: opacity 0.25s;
   -moz-transition: opacity 0.25s;
   -ms-transition: opacity 0.25s;
   -o-transition: opacity 0.25s;
   transition: opacity 0.25s;
-  left: 50%;
-  margin-left: -130px;
-  top: 22%;
-  width: 260px;
+  background: #fff;
+  border: 1px solid #d1d1d1;
+  display: none;
+  left: 50% !important;
+  list-style-type: none;
+  margin: 0 0 0 -130px;
+  padding: 10px;
   position: absolute;
+  top: 110% !important;
+  width: 260px;
+  z-index: 100;
 }
-.terms-nav.hidden {
-  opacity: 0;
-  pointer-events: none;
-}
-.terms-nav .dismiss {
-  -webkit-appearance: none;
-  border: none;
-  -webkit-border-radius: 0 0 6px 6px;
-  -moz-border-radius: 0 0 6px 6px;
-  border-radius: 0 0 6px 6px;
-  background-color: #4d4d4d;
-  color: #fff;
+.tt-dropdown-menu.tt-is-open {
   display: block;
-  font-family: "AvenirNext-DemiBold", "brandon-grotesque", "Futura", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  padding: 10px 0;
-  width: 100%;
+}
+.tt-dropdown-menu.tt-is-empty {
+  display: none;
+}
+
+.tt-suggestions,
+.tt-suggestion {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.tt-suggestion {
+  display: block;
+  cursor: pointer;
+}
+.tt-suggestion p {
+  margin-bottom: 0;
+  padding-bottom: 5px;
 }
 
 .scrolling-list {
@@ -679,13 +736,12 @@ div[role="main"]:after {
   width: 100%;
 }
 
-#slider {
+.slider {
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
   border-radius: 8px;
-  -webkit-box-shadow: 0 2px 9px #999999;
-  -moz-box-shadow: 0 2px 9px #999999;
   box-shadow: 0 2px 9px #999999;
+  background: black;
   height: 100%;
   top: 0;
   width: 100%;
@@ -693,7 +749,7 @@ div[role="main"]:after {
   position: absolute;
 }
 
-.no-touch #slider {
+.no-touch .slider {
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   -ms-transition: all 0.5s;
@@ -703,7 +759,6 @@ div[role="main"]:after {
 
 .cards {
   *zoom: 1;
-  background: black;
   height: 100%;
   list-style: none;
   margin: 0;
@@ -733,7 +788,7 @@ div[role="main"]:after {
   -moz-perspective: 800px;
 }
 
-.card-holder.on .card {
+#anatomy_slider .card-holder.on .card-back {
   display: block;
 }
 .card-holder.on .card article {
@@ -779,8 +834,11 @@ div[role="main"]:after {
   bottom: 0;
 }
 
-.card {
+#anatomy_slider .card-back {
   display: none;
+}
+
+.card {
   height: 100%;
   position: absolute;
   width: 100%;
@@ -983,8 +1041,6 @@ div[role="main"]:after {
   margin: 0 auto;
 }
 .login-submit input:hover {
-  -webkit-box-shadow: 0 1px 2px gray;
-  -moz-box-shadow: 0 1px 2px gray;
   box-shadow: 0 1px 2px gray;
   background-color: #df261e;
   background: transparent -moz-linear-gradient(top, #e23a33, #db0901);
@@ -999,8 +1055,6 @@ div[role="main"]:after {
 }
 
 .touch .login-submit input {
-  -webkit-box-shadow: 0 1px 2px gray;
-  -moz-box-shadow: 0 1px 2px gray;
   box-shadow: 0 1px 2px gray;
   background-color: #df261e;
   background: transparent -moz-linear-gradient(top, #e23a33, #db0901);

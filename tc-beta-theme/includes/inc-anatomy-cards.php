@@ -1,4 +1,4 @@
-<div class="slider swipe inactive" id="slider">
+<div class="slider swipe inactive" id="anatomy_slider">
 	<ul class="cards swipe-wrap">
 	<?php
 		$c = 1;
@@ -45,18 +45,6 @@
 						echo '<h2 class="meta-title">Examples</h2>';
 						echo '<p>'. $example .'</p>';
 						}
-/*
-						if( $references ) {
-						echo '<h2 class="meta-title">References</h2>';
-						echo '<p>';
-						foreach( $refArray as $reference ):
-							$refURL = preg_replace('/([A-Za-z0-9.]*-http)/', 'http', $reference);
-							$refTitle = preg_replace('/(-http[A-Za-z0-9.:\/\(\)\_\-)]*)/', '', $reference);
-							echo '<a href="'. $refURL .'" title="'. $refTitle. '" class="ref-link">'. $refTitle .'</a>';
-						endforeach;
-						echo '</p>';
-						}
-*/
 						?>
 					</div>
 				</article>
@@ -80,7 +68,7 @@
 		?>
 	</ul>
 	<nav class="card-nav">
-		<a href="#" id="prev" onclick="mySwipe.prev(); return false;">Prev</a>
-		<a href="#" id="next" onclick="mySwipe.next(); return false;">Next</a>
+		<a href="#" id="prev" onclick="anatomySwipe.prev(); return false;">Prev</a>
+		<a href="#" id="next" onclick="anatomySwipe.next(); return false;">Next</a>
 	</nav>
 </div>

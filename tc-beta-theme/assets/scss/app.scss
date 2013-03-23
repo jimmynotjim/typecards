@@ -93,7 +93,7 @@ div[role="main"] {
 }
 
 .app-nav {
-	margin: 40px auto 0;
+	margin: 20px auto 0;
 	width: 210px;
 
 	button {
@@ -108,34 +108,86 @@ div[role="main"] {
 	}
 }
 
-.terms-nav {
+.search-terms {
+	-webkit-appearance: none;
+
 	@include border-radius(6px);
+
+	border: 1px solid #ddd;
+	font-family: $baseFontFamily;
+	padding: 5px 10px;
+	width: 210px;
+
+	&:focus {
+		@include box-shadow(0 0 3px 1px $red);
+
+		border-color: $red;
+		outline: none;
+	}
+}
+
+.twitter-typeahead {
+	display: inline-block !important;
+	position: relative !important;
+}
+
+.tt-query {
+	background-color: transparent !important;
+	position: relative !important;
+	vertical-align: top !important;
+}
+
+.tt-hint {
+	border: 1px solid transparent !important;
+	color: #ccc;
+	font-family: $baseFontFamily;
+	left: 0 !important;
+	padding: 5px 10px;
+	position: absolute !important;
+	top: 0 !important;
+	width: 210px;
+}
+
+.tt-dropdown-menu {
+	@include border-radius(6px);
+	@include box-shadow(0 3px 9px -2px rgba(0, 0, 0, 0.2));
 	@include transition(opacity .25s);
 
-//	display: none;
-	left: 50%;
-	margin-left: -130px;
-	top: 22%;
-	width: 260px;
+	background: #fff;
+	border: 1px solid #D1D1D1;
+	display: none;
+	left: 50% !important;
+	list-style-type: none;
+	margin: 0 0 0 -130px;
+	padding: 10px;
 	position: absolute;
+	top: 110% !important;
+	width: 260px;
+	z-index: 100;
 
-	&.hidden {
-		opacity: 0;
-		pointer-events: none;
+	&.tt-is-open {
+		display: block;
 	}
 
-	.dismiss {
-		-webkit-appearance: none;
-		border: none;
+	&.tt-is-empty {
+		display: none;
+	}
+}
 
-		@include border-radius(0 0 6px 6px);
+.tt-suggestions,
+.tt-suggestion {
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+}
 
-		background-color: $grayDark;
-		color: #fff;
-		display: block;
-		font-family: $headingFontFamily;
-		padding: 10px 0;
-		width: 100%;
+.tt-suggestion {
+	display: block;
+	cursor: pointer;
+
+	p {
+		margin-bottom: 0;
+		padding-bottom: 5px;
 	}
 }
 
