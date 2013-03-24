@@ -1,4 +1,4 @@
-<div class="slider swipe inactive" id="anatomy_slider">
+<div class="slider swipe" id="anatomy_slider">
 	<ul class="cards swipe-wrap">
 	<?php
 		$c = 1;
@@ -57,7 +57,7 @@
 						}
 						?>
 					</div>
-					<button href="#" class="menu-btn">Menu</button>
+					<button href="#" class="menu-btn"><span>Menu</span></button>
 				</article>
 			</section>
 		</li>

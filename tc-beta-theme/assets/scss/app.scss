@@ -65,10 +65,9 @@ body {
 	}
 }
 
-div[role="main"] {
+.main {
 	@include clearfix;
 
-	height: 100%;
 //	overflow: hidden;
 //	position: relative;
 	width: 100%;
