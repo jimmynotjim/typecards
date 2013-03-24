@@ -28,6 +28,7 @@
 			}
 			var selectedIndex = getSelectedIndex(selectedValue);
 			anatomySwipe.slide(selectedIndex, 400);
+			tc.close(0.4);
 		});
 	</script>
 
@@ -69,6 +70,13 @@
 
 	<!-- custom scripts -->
 	<script src="<?php bloginfo( 'template_url' ); ?>/assets/js/scripts-ck.js"></script>
+
+	<script src="<?php bloginfo( 'template_url' ); ?>/assets/js/app.js"></script>
+	<script>
+		var tc = $.typecards();
+		tc.on();
+		console.log('figured out init and card height, now set char margins')
+	</script>
 
 	<?php wp_footer(); ?>
 
