@@ -6,19 +6,30 @@
 	text-indent: 150%;
 	white-space: nowrap;
 	overflow: hidden;
-	background: url(../img/menu-btn.png) 50% 50% no-repeat;
+	background: transparent;
 	color: #F7F7F7;
 	display: block;
 	height: 40px;
 	padding: 10px;
 	width: 100%;
+
+	span {
+		@include box-shadow(0 1px 0 #ddd, 0 -1px 0 #eee);
+
+		border-top: 1px solid #ddd;
+		border-bottom: 1px solid #eee;
+		display: block;
+		height: 5px;
+		margin: 0 auto;
+		width: 40px;
+	}
 }
 
 
 
 .slider {
 	@include border-radius(8px);
-	@include box-shadow(0 2px 9px #999);
+	@include box-shadow(0 2px 9px rgba(#000, 0.5));
 
 	background: black;
 	height: 100%;

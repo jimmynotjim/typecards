@@ -495,16 +495,15 @@ body {
   width: 100%;
 }
 
-div[role="main"] {
+.main {
   *zoom: 1;
-  height: 100%;
   width: 100%;
 }
-div[role="main"]:before, div[role="main"]:after {
+.main:before, .main:after {
   content: " ";
   display: table;
 }
-div[role="main"]:after {
+.main:after {
   clear: both;
 }
 
@@ -728,19 +727,28 @@ div[role="main"]:after {
   text-indent: 150%;
   white-space: nowrap;
   overflow: hidden;
-  background: url(../img/menu-btn.png) 50% 50% no-repeat;
+  background: transparent;
   color: #F7F7F7;
   display: block;
   height: 40px;
   padding: 10px;
   width: 100%;
 }
+.menu-btn span {
+  box-shadow: 0 1px 0 #dddddd, 0 -1px 0 #eeeeee;
+  border-top: 1px solid #dddddd;
+  border-bottom: 1px solid #eeeeee;
+  display: block;
+  height: 5px;
+  margin: 0 auto;
+  width: 40px;
+}
 
 .slider {
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
   border-radius: 8px;
-  box-shadow: 0 2px 9px #999999;
+  box-shadow: 0 2px 9px rgba(0, 0, 0, 0.5);
   background: black;
   height: 100%;
   top: 0;
