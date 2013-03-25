@@ -166,7 +166,7 @@
 				tc.initiateTouchListeners();
 				setTimeout(function() {
 					tc.openMenu(0.5);
-				}, 300);
+				}, 100);
 			}
 		};
 

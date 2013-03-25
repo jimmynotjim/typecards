@@ -36,8 +36,8 @@
 				return index;
 			}
 			var selectedIndex = getSelectedIndex(selectedValue);
-			anatomySwipe.slide(selectedIndex, 400);
-			tc.close(0.4);
+			anatomySwipe.slide(selectedIndex, 0);
+			tc.close(0.6);
 		});
 	</script>
 
