@@ -13,13 +13,6 @@
 			offSet:	function() {
 				return (tc.vpHeight() < 600) ? tc.vpHeight() * 0.85 : tc.vpHeight() * 0.90;
 			},
-			setCardHeight: function() {
-				$('.main').height( tc.vpHeight() );
-			},
-			setCharMargin: function() {
-				var margTop	= (tc.vpHeight() > 300) ? ( tc.vpHeight() - 300 ) * 0.5 : 0;
-				$('.character').css('margin-top', margTop);
-			},
 			setAppStyles: function() {
 				var css = '.main{height:' + tc.vpHeight() +'px;} .character{margin-top:' + tc.margTop() + 'px;}';
 
@@ -31,8 +24,6 @@
 			},
 			initiateResizeListener: function() {
 				$(window).resize(function() {
-//					tc.setCardHeight();
-//					tc.setCharMargin();
 					tc.setAppStyles();
 				});
 			},
