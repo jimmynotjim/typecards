@@ -1,4 +1,4 @@
-<div class="slider swipe" id="anatomy_slider">
+<div class="slider swipe" id="anatomy_slider" style="visibility: hidden;">
 	<ul class="cards swipe-wrap">
 	<?php
 		$c = 1;
@@ -16,7 +16,7 @@
 		$references = get_post_meta( $post->ID, 'anatomy-references', true );
 		$refArray = explode( ',', $references );
 	?>
-		<li class="card-holder<?php if ($c == 1 || $c == 2) { echo ' on'; } ?>" id="<?php the_title(); ?>">
+		<li class="card-holder<?php if ($c == 1) { echo ' on'; } ?>" id="<?php the_title(); ?>">
 			<section class="card">
 				<article class="card-back hidden">
 					<div class="card-body">

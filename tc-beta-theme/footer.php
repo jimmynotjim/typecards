@@ -1,6 +1,14 @@
 	<!-- jquery cookie -->
 	<script src="<?php bloginfo( 'template_url' ); ?>/assets/js/jquery.cookie.js"></script>
 
+	<!-- app init -->
+	<script src="<?php bloginfo( 'template_url' ); ?>/assets/js/app.js"></script>
+	<script>
+		var tc = $.typecards();
+		tc.on();
+		console.log('figured out init and card height, now set char margins')
+	</script>
+
 	<!-- typeahead stuff -->
 	<script src="<?php bloginfo( 'template_url' ); ?>/assets/js/libs/typeahead.js"></script>
 	<script src="<?php bloginfo( 'template_url' ); ?>/assets/js/libs/hogan-2.0.0.min.js"></script>
@@ -16,6 +24,7 @@
 			local: termsArray
 
 		}).on('typeahead:selected', function($e) {
+			$('.search-terms').blur();
 			var selectedValue = $($e.target).val();
 			var getSelectedIndex = function(val) {
 				var index = null;
@@ -27,7 +36,8 @@
 				return index;
 			}
 			var selectedIndex = getSelectedIndex(selectedValue);
-			anatomySwipe.slide(selectedIndex, 400);
+			anatomySwipe.slide(selectedIndex, 0);
+			tc.close(0.6);
 		});
 	</script>
 
