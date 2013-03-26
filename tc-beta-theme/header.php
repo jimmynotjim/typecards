@@ -18,7 +18,7 @@
 	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php bloginfo( 'template_url' ); ?>/assets/img/icons/typecards-icon-144.png" />
 
 	<link rel="shortcut icon" type="image/ico" href="<?php bloginfo( 'template_url' ); ?>/assets/img/icons/favicon.ico" />
-	<link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/assets/css/style.css?v=b0.8" />
+	<link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/assets/css/style.css?v=b0.9" />
 
 	<!-- Scripts -->
 
