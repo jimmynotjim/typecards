@@ -424,74 +424,378 @@ cite {
   font-style: normal;
 }
 
+body {
+  background-color: #eeeeee;
+  text-rendering: optimizeLegibility;
+}
+body.app {
+  background-color: #000;
+}
+
+.logo {
+  margin: 40px auto 60px;
+  margin: 2.5rem auto 3.75rem;
+  width: 300px;
+  width: 18.75rem;
+}
+
+.details {
+  margin: 0 auto;
+  width: 80%;
+}
+.details p {
+  margin-bottom: 40px;
+  margin-bottom: 2.5rem;
+}
+
+.logo-type {
+  -moz-font-feature-settings: "liga=1, dlig=1";
+  -moz-font-feature-settings: "liga", "dlig";
+  /* EDIT: new syntax for FF 15+ */
+  -ms-font-feature-settings: "liga", "dlig";
+  -o-font-feature-settings: "liga", "dlig";
+  -webkit-font-feature-settings: "liga", "dlig";
+  font-feature-settings: "liga", "dlig";
+  font-family: "cala-web", "adobe-caslon-pro", serif;
+  font-weight: normal;
+  font-weight: 500;
+  font-size: 72px;
+  font-size: 4.5rem;
+  line-height: 1.125em;
+  text-align: center;
+  width: 100%;
+}
+
+.tag-line {
+  font-size: 14px;
+  font-size: 0.875rem;
+  float: right;
+  font-weight: 400;
+  line-height: 1.125em;
+  position: relative;
+  right: 5px;
+  text-align: right;
+  top: -0.8em;
+  width: 70%;
+}
+
+.phone {
+  margin: 0 auto;
+  margin: 0 auto;
+  background-color: #1a1a1a;
+  max-width: 382px;
+  position: relative;
+  width: 100%;
+}
+.phone .main-app {
+  height: 380px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  width: 320px;
+}
+.phone .beta-logo {
+  font-size: 65px;
+  font-size: 4.0625rem;
+}
+.phone .card-nav {
+  top: 50%;
+  margin: 11px 0 0;
+}
+.phone .card-nav #prev {
+  left: 2px;
+  top: -30px;
+}
+.phone .card-nav #next {
+  right: 2px;
+  top: -30px;
+}
+
+.try {
+  font-family: "felt-tip-roman", "AvenirNext-Regular", "brandon-grotesque", "Futura", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  font-weight: normal;
+  font-size: 24px;
+  font-size: 1.5rem;
+  margin: 20px auto 30px;
+  margin: 1.25rem auto 1.875rem;
+  display: block;
+  font-weight: 800;
+  left: 50px;
+  text-align: center;
+  width: 100%;
+}
+
+.button {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  height: 40px;
+  height: 2.5rem;
+  padding: 6px;
+  padding: 0.375rem;
+  width: 200px;
+  width: 12.5rem;
+  -webkit-appearance: none;
+  border: 1px solid #db0901;
+  background-color: #db0901;
+  color: white;
+  display: block;
+  font-weight: 500;
+  margin: 0 auto;
+  text-align: center;
+}
+.button:hover {
+  box-shadow: 0 1px 2px gray;
+  background-color: #df261e;
+  background: transparent -moz-linear-gradient(top, #e23a33, #db0901);
+  background: transparent -ms-linear-gradient(top, #e23a33, #db0901);
+  background: transparent -webkit-gradient(linear, 0 0, 0 100%, from(#e23a33), to(#db0901));
+  background: transparent -webkit-linear-gradient(top, #e23a33, #db0901);
+  background: transparent -o-linear-gradient(top, #e23a33, #db0901);
+  background: transparent linear, top, #e23a33, #db0901;
+  background-repeat: repeat-x;
+  background-color: #db0901;
+  border: 1px solid #ba0700;
+  color: #fff;
+}
+
+.touch .button {
+  box-shadow: 0 1px 2px gray;
+  background-color: #df261e;
+  background: transparent -moz-linear-gradient(top, #e23a33, #db0901);
+  background: transparent -ms-linear-gradient(top, #e23a33, #db0901);
+  background: transparent -webkit-gradient(linear, 0 0, 0 100%, from(#e23a33), to(#db0901));
+  background: transparent -webkit-linear-gradient(top, #e23a33, #db0901);
+  background: transparent -o-linear-gradient(top, #e23a33, #db0901);
+  background: transparent linear, top, #e23a33, #db0901;
+  background-repeat: repeat-x;
+  background-color: #db0901;
+  border: 1px solid #ba0700;
+}
+
+.signup {
+  margin: 40px auto 80px;
+  margin: 2.5rem auto 5rem;
+  width: 100%;
+}
+.signup .twitter {
+  margin-top: 12px;
+}
+.signup .twitter a {
+  font-weight: 500;
+}
+
+#mc_embed_signup input {
+  font-family: "AvenirNext-Regular", "brandon-grotesque", "Futura", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  font-weight: normal;
+  font-size: 20px;
+  font-size: 1.25rem;
+}
+#mc_embed_signup ::-webkit-input-placeholder {
+  color: #cccccc;
+}
+#mc_embed_signup input:-moz-placeholder {
+  color: #cccccc;
+}
+#mc_embed_signup p {
+  font-size: 20px;
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+  margin-bottom: 0.75rem;
+  line-height: 1.125;
+  text-align: center;
+}
+#mc_embed_signup .email {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  height: 40px;
+  height: 2.5rem;
+  margin: 0 auto 12px;
+  margin: 0 auto 0.75rem;
+  padding: 6px;
+  padding: 0.375rem;
+  width: 280px;
+  width: 17.5rem;
+  border: 1px solid #cccccc;
+  -webkit-appearance: none;
+  display: block;
+  outline-color: #db0901;
+}
+
+.main-footer span {
+  font-size: 18px;
+  font-size: 1.125rem;
+  color: gray;
+  display: block;
+  margin: 0 auto 40px;
+  max-width: 530px;
+  padding: 0 20px;
+  width: 100%;
+}
+.main-footer span a {
+  font-weight: 500;
+}
+
+.boston {
+  display: block;
+  margin: 40px auto;
+  width: 63px;
+}
+
+@media screen and (min-width: 420px) {
+  .phone {
+    background: url("../img/iphone-black.png") no-repeat center center;
+    height: 840px;
+  }
+  .phone #slider {
+    background: #1a1a1a url("../img/bar.png") no-repeat top center;
+    height: 482px;
+    padding-top: 22px;
+    top: 131px;
+  }
+  .phone .main-app {
+    height: 480px;
+    top: 130px;
+  }
+}
+@media screen and (min-width: 820px) {
+  #main {
+    *zoom: 1;
+  }
+  #main:before, #main:after {
+    display: table;
+    content: "";
+  }
+  #main:after {
+    clear: both;
+  }
+
+  .info {
+    float: left;
+    width: 45%;
+  }
+
+  .logo {
+    margin-top: 140px;
+    margin-top: 8.75rem;
+  }
+
+  .phone {
+    margin: 40px 0;
+    margin: 2.5rem 0;
+    float: right;
+    margin-right: 5%;
+  }
+
+  .signup {
+    clear: both;
+    width: 50%;
+  }
+
+  .main-footer {
+    clear: both;
+  }
+}
+@media screen and (min-width: 920px) {
+  .info {
+    margin-left: 5%;
+  }
+
+  .logo,
+  .details {
+    width: 376px;
+    width: 23.5rem;
+  }
+
+  .logo-type {
+    font-size: 92px;
+    font-size: 5.75rem;
+  }
+
+  .tag-line {
+    font-size: 17px;
+    font-size: 1.0625rem;
+  }
+
+  .signup {
+    width: 360px;
+    width: 22.5rem;
+  }
+
+  .main-footer span {
+    float: left;
+  }
+
+  .boston {
+    float: right;
+    margin-top: 0;
+    margin-right: 5%;
+  }
+}
+@media screen and (min-width: 1020px) {
+  .logo,
+  .details {
+    width: 460px;
+    width: 28.75rem;
+  }
+
+  .logo-type {
+    font-size: 112px;
+    font-size: 7rem;
+  }
+
+  .tag-line {
+    font-size: 21px;
+    font-size: 1.3125rem;
+  }
+
+  .signup {
+    width: 450px;
+    width: 28.125rem;
+  }
+}
+@media screen and (min-width: 1130px) {
+  #main {
+    max-width: 1165px;
+    margin: 0 auto;
+  }
+
+  .logo,
+  .details {
+    width: 552px;
+    width: 34.5rem;
+  }
+
+  .logo-type {
+    font-size: 136px;
+    font-size: 8.5rem;
+  }
+
+  .tag-line {
+    font-size: 25px;
+    font-size: 1.5625rem;
+  }
+
+  .signup {
+    width: 530px;
+    width: 33.125rem;
+  }
+}
 * {
   box-sizing: border-box;
 }
 
-body {
+.main-app {
   background-color: black;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
-.safari-message {
-  background: rgba(0, 0, 0, 0.75);
-  color: white;
-  display: block;
-  font-family: "AvenirNext-DemiBold", "brandon-grotesque", "Futura", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  font-size: 20px;
-  height: 100%;
-  max-width: 100%;
-  padding: 30px;
-  position: fixed;
-  z-index: 100;
-}
-
-/*
-.instructions {
-	@include border-radius(6px);
-	@include transition(opacity .25s);
-
-	background-color: rgba(0,0,0,.8);
-	border: 1px solid #111;
-	color: #fff;
-	display: block;
-	left: 50%;
-	margin-left: -130px;
-	position: absolute;
-	top: 20%;
-	width: 260px;
-
-	span {
-		display: block;
-	}
-
-	&.hidden {
-		opacity: 0;
-		pointer-events: none;
-	}
-
-	.details {
-		@include rem(padding, 18px);
-	}
-
-	.dismiss {
-		-webkit-appearance: none;
-		border: none;
-
-		@include border-radius(0 0 6px 6px);
-		@include rem(font-size, 16px);
-		@include rem(padding, 12px);
-
-		background-color: #222;
-		border-top: 1px solid #111;
-		color: #fff;
-		display: block;
-		font-family: $headingFontFamily;
-		text-align: center;
-		text-transform: uppercase;
-		width: 100%;
-	}
-}
-*/
 .app-details dd, .app-details dt,
 .my-details dd,
 .my-details dt {
@@ -838,14 +1142,6 @@ p {
   width: 100%;
   overflow-x: hidden;
   position: absolute;
-}
-
-.no-touch .slider {
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -ms-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s;
 }
 
 .cards {

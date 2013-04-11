@@ -48,4 +48,4 @@
   <?php wp_head(); ?>
 
 </head>
-<body>
+<body <?php if ( is_page('app') ) { echo 'class="app"'; } ?>>

@@ -1,12 +1,18 @@
 	<!-- jquery cookie -->
-	<script src="<?php bloginfo( 'template_url' ); ?>/assets/js/jquery.cookie.js"></script>
+<!--	<script src="<?php bloginfo( 'template_url' ); ?>/assets/js/jquery.cookie.js"></script>	-->
 
 	<!-- app init -->
 	<script src="<?php bloginfo( 'template_url' ); ?>/assets/js/app.js"></script>
 	<script>
 		var tc = $.typecards();
 		tc.on();
-		console.log('figured out init and card height, now set char margins')
+	</script>
+
+	<!-- FitText -->
+	<script src="<?php bloginfo( 'template_url' ); ?>/assets/js/jquery.fittext.js"></script>
+	<script>
+		jQuery('.logo-type').fitText(0.4);
+		jQuery('.tag-line').fitText(1.2);
 	</script>
 
 	<!-- typeahead stuff -->

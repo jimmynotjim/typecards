@@ -43,7 +43,7 @@
 }
 
 .no-touch .slider {
-	@include transition(all 0.5s);
+//	@include transition(all 0.5s);
 }
 .cards {
 	@include clearFix;

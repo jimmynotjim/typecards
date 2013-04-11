@@ -3,18 +3,23 @@
 		var tc = {
 			//setup
 			menuState: 'closed',
-			speed: 0.4,
+			speed: 0.25,
 			vpHeight:	function() {
 				return $(window).height();
 			},
+			conHeight:	function() {
+				var height = $('.main-app').height();
+				if ( height === 0 ) { return tc.vpHeight(); }
+				else { return height; }
+			},
 			margTop: function() {
-				return (tc.vpHeight() > 300) ? ( tc.vpHeight() - 300 ) * 0.5 : 0;
+				return (tc.conHeight() > 300) ? ( tc.conHeight() - 300 ) * 0.5 : 0;
 			},
 			offSet:	function() {
-				return (tc.vpHeight() < 600) ? tc.vpHeight() * 0.85 : tc.vpHeight() * 0.90;
+				return (tc.conHeight() < 600) ? tc.conHeight() * 0.85 : tc.conHeight() * 0.90;
 			},
 			setAppStyles: function() {
-				var css = '.main{height:' + tc.vpHeight() +'px;} .character{margin-top:' + tc.margTop() + 'px;}';
+				var css = '.main{height:' + tc.conHeight() +'px;} .character{margin-top:' + tc.margTop() + 'px;}';
 
 				if ( $('#app-styles').length === 0 ) {
 					$('head').append('<style id="app-styles">' + css + '</style>');
@@ -46,7 +51,7 @@
 				$('#anatomy_slider').attr('style', translate + animations);
 			},
 			addAnimations: function(speed) {
-				return '-webkit-transition: all ' + speed + 's;-moz-transition: all ' + speed + 's;transition:all ' + speed + 's;';
+				return '-webkit-transition: all ' + speed + 's ease-out;-moz-transition: all ' + speed + 's ease-out;transition:all ' + speed + 's ease-out;';
 			},
 			translateOpen: function() {
 				return '-webkit-transform:translate3d(0,-' + tc.offSet() +'px,0); -moz-transform:translate3d(0,-' + tc.offSet() +'px,0); transform:translate3d(0,-' + tc.offSet() +'px,0);';
@@ -153,7 +158,7 @@
 					if (yCur < tc.offSet() && yDif > 0 && tc.menuState === 'open') {
 						css = '-webkit-transform:' + transDis + '; -moz-transform:' + transDis + '; ransform:' + transDis + ';';
 						$('#anatomy_slider').attr('style', css);
-					} else if (yDif < 0 && yCur > (tc.vpHeight() - tc.offSet()) && tc.menuState === 'closed') {
+					} else if (yDif < 0 && yCur > (tc.conHeight() - tc.offSet()) && tc.menuState === 'closed') {
 						css = '-webkit-transform:' + transDis + '; -moz-transform:' + transDis + '; ransform:' + transDis + ';';
 						$('#anatomy_slider').attr('style', css);
 					}

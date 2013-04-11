@@ -1,31 +1,27 @@
-// Custom Styles
+// Landing Page Styles
 // --------------------------------------------------
-
-.safari-message {
-	background: rgba(0,0,0,.6);
-	color: white;
-	display: block;
-	font-size: 20px;
-	font-weight: 600;
-	height: 100%;
-	max-width: 320px;
-	padding: 30px;
-	position: fixed;
-	z-index: 100;
-}
-
 
 body {
 	background-color: $grayLighter;
 	text-rendering:optimizeLegibility;
+
+	&.app {
+		background-color: #000;
+	}
 }
-.touch body {
-	background-color: $black;
-}
+
 .logo {
-	@include rem(font-size, 72px);
-	@include rem(margin, 40px auto);
+	@include rem(margin, 40px auto 60px);
 	@include rem(width, 300px);
+}
+
+.details {
+	margin: 0 auto;
+	width: 80%;
+
+	p {
+		@include rem(margin-bottom, 40px);
+	}
 }
 
 .logo-type {
@@ -47,32 +43,36 @@ body {
 .tag-line {
 	@include rem(font-size, 14px);
 
+	float: right;
 	font-weight: 400;
 	line-height: 1.125em;
 	position: relative;
 	right: 5px;
 	text-align: right;
-	top: -12px;
+	top: -0.8em;
+	width: 70%;
 }
 
 .phone {
-	@include rem(margin, 140px auto 0);
+	@include rem(margin, 0 auto);
 
 	background-color: $black;
 	max-width: 382px;
 	position: relative;
 	width: 100%;
 
-	#slider {
-
-		background-color: $black;
-		border: none;
-		height: 468px;
+	.main-app {
+		height: 380px;
 		margin: 0 auto;
-		padding-top: 4px;
+		overflow: hidden;
 		position: relative;
 		width: 320px;
 	}
+
+	.beta-logo {
+		@include rem(font-size, 65px);
+	}
+
 	.card-nav {
 		top: 50%;
 		margin: 11px 0 0;
@@ -92,27 +92,52 @@ body {
 .try {
 	@include hand;
 	@include rem(font-size, 24px);
-	@include rem(height, 120px);
-	@include rem(width, 260px);
+	@include rem(margin, 20px auto 30px);
 
-	background: url('../img/curved-arrow.png') no-repeat 22px 36px;
+	display: block;
 	font-weight: 800;
 	left: 50px;
-	opacity: .8;
-	position: absolute;;
-	top: -120px;
+	text-align: center;
+	width: 100%;
+}
 
-	&::before {
-		content: 'Tap & Slide to Try Me';
+.button {
+	@include border-radius(4px);
+	@include rem(height, 40px);
+	@include rem(padding, 6px);
+	@include rem(width, 200px);
+
+	//webkit default reset
+	-webkit-appearance: none;
+	border: 1px solid $red;
+
+	background-color: $red;
+	color: $white;
+	display: block;
+	font-weight: 500;
+	margin: 0 auto;
+	text-align: center;
+
+	&:hover {
+		@include box-shadow(0 1px 2px $gray);
+		@include gradient-vertical(tint($red, 20%), $red);
+
+		background-color: $red;
+		border: 1px solid shade($red, 15%);
+		color: #fff;
 	}
 }
 
-.no-touch .try::before {
-	content: 'Click to Flip & Navigate Me';
+.touch .button {
+	@include box-shadow(0 1px 2px $gray);
+	@include gradient-vertical(tint($red, 20%), $red);
+
+	background-color: $red;
+	border: 1px solid shade($red, 15%);
 }
 
 .signup {
-	@include rem(margin, 40px 0 80px);
+	@include rem(margin, 40px auto 80px);
 
 	width: 100%;
 
@@ -158,42 +183,6 @@ body {
 		display: block;
 		outline-color: $red;
 	}
-	div {
-		@include rem(width, 160px);
-
-		margin: 0 auto;
-		vertical-align: top;
-	}
-	.button {
-		@include border-radius(4px);
-		@include rem(height, 40px);
-		@include rem(padding, 6px);
-		@include rem(width, 160px);
-
-		//webkit default reset
-		-webkit-appearance: none;
-		border: 1px solid $red;
-
-		background-color: $red;
-		color: $white;
-		font-weight: 500;
-
-		&:hover {
-			@include box-shadow(0 1px 2px $gray);
-			@include gradient-vertical(tint($red, 20%), $red);
-
-			background-color: $red;
-			border: 1px solid shade($red, 15%);
-		}
-	}
-}
-
-.touch #mc_embed_signup .button {
-	@include box-shadow(0 1px 2px $gray);
-	@include gradient-vertical(tint($red, 20%), $red);
-
-	background-color: $red;
-	border: 1px solid shade($red, 15%);
 }
 
 .main-footer span {
@@ -228,50 +217,39 @@ body {
 		padding-top: 22px;
 		top: 131px;
 	}
+
+	.main-app {
+		height: 480px;
+		top: 130px;
+	}
 }
 
 }
-
 
 @media screen and (min-width: 820px) {
 
 #main {
 	@include clearFix;
 }
-.logo {
-	@include rem(margin-top, 240px);
-
+.info {
 	float: left;
-	margin-left: 10%;
+	width: 45%;
+}
+
+.logo {
+	@include rem(margin-top, 140px);
 }
 
 .phone {
-	@include rem(margin-bottom, 80px);
+	@include rem(margin, 40px 0);
 
 	float: right;
 	margin-right: 5%;
 }
 
-.try {
-	left: -50px;
-}
-
 .signup {
-	@include rem(width, 288px);
-
-	float: left;
-	margin-left: 10%;
-	margin-top: 0;
-
-	#mc_embed_signup {
-		p {
-			text-align: right;
-		}
-
-		.email, div {
-			margin-right: 0;
-		}
-	}
+	clear: both;
+	width: 50%;
 }
 
 .main-footer {
@@ -282,7 +260,12 @@ body {
 
 @media screen and (min-width: 920px) {
 
-.logo {
+.info {
+	margin-left: 5%;
+}
+
+.logo,
+.details {
 	@include rem(width, 376px);
 }
 .logo-type {
@@ -290,8 +273,6 @@ body {
 }
 .tag-line {
 	@include rem(font-size, 17px);
-
-	top: -13px;
 }
 .signup {
 	@include rem(width, 360px);
@@ -310,7 +291,8 @@ body {
 
 @media screen and (min-width: 1020px) {
 
-.logo {
+.logo,
+.details {
 	@include rem(width, 460px);
 }
 .logo-type {
@@ -320,8 +302,6 @@ body {
 
 .tag-line {
 	@include rem(font-size, 21px);
-
-	top: -18px;
 }
 
 .signup {
@@ -332,12 +312,13 @@ body {
 
 @media screen and (min-width: 1130px) {
 
-body {
+#main {
 	max-width: 1165px;
 	margin: 0 auto;
 }
 
-.logo {
+.logo,
+.details {
 	@include rem(width, 552px);
 }
 .logo-type {
@@ -345,7 +326,6 @@ body {
 }
 .tag-line {
 	@include rem(font-size, 25px);
-	top: -19px;
 }
 .signup {
 	@include rem(width, 530px);
