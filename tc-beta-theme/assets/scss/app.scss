@@ -18,7 +18,7 @@ body {
 	position: fixed;
 	z-index: 100;
 }
-
+/*
 .instructions {
 	@include border-radius(6px);
 	@include transition(opacity .25s);
@@ -64,6 +64,53 @@ body {
 		width: 100%;
 	}
 }
+*/
+
+.app-details,
+.my-details {
+
+	dd, dt {
+		float: left;
+	}
+
+	dt {
+		clear: both;
+		font-family: $headingFontFamily;
+		min-width: 75px;
+	}
+
+	dd {
+		margin-left: 0;
+	}
+}
+
+.extras-title {
+	line-height: 42px;
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+.menu-back {
+	-webkit-appearance: none;
+	border: none;
+	background-color: transparent;
+
+	background: url('../img/back-arrow.png') no-repeat 0 50%;
+	color: $red;
+	font-weight: 700;
+	height: 40px;
+	position: absolute;
+	width: 40px;
+
+	span {
+		@include hiddenText;
+		display: block;
+	}
+}
+
+p {
+	clear: both;
+}
 
 .main {
 	@include clearfix;
@@ -77,10 +124,29 @@ body {
 	@include serif;
 	@include rem(font-size, 65px);
 	@include rem(margin, 0 auto 18px);
-	@include rem(padding-top, 35px);
 
 	line-height: 1.3em;
 	text-align: center;
+}
+
+#app_slider article {
+	@include rem(padding-top, 25px);
+}
+
+#app_slider .card-body {
+	-webkit-overflow-scrolling: touch;
+
+	height: 100%;
+	position: relative;
+}
+
+#about,
+#instructions {
+	display: none;
+
+	&.active {
+		display: block;
+	}
 }
 
 #app-menu {
@@ -93,6 +159,7 @@ body {
 
 .app-nav {
 	margin: 20px auto 0;
+	position: relative;
 	width: 210px;
 
 	button {
@@ -104,6 +171,21 @@ body {
 		display: block;
 		font-family: $linkFontFamily;
 		font-size: 22px;
+		padding: 0 13px;
+	}
+}
+
+#clear-search {
+	background: url('../img/close.png') no-repeat 50% 50%;
+	height: 39px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 39px;
+
+	span {
+		@include hiddenText;
+		display: block;
 	}
 }
 
@@ -114,6 +196,7 @@ body {
 
 	border: 1px solid #ddd;
 	font-family: $baseFontFamily;
+	margin-bottom: 6px;
 	padding: 5px 10px;
 	width: 210px;
 
@@ -234,9 +317,11 @@ body {
 
 
 @media all and (min-height: 300px) {
-.beta-logo {
-	@include rem(padding-top, 55px);
+
+#app_slider article {
+	@include rem(padding-top, 45px);
 }
+
 .instructions,
 .terms-nav {
 	top: 30%;
@@ -245,9 +330,8 @@ body {
 
 @media all and (min-height:400px) {
 
-.beta-logo {
-	@include rem(padding-top, 75px);
-//	@include rem(margin-bottom, 46px);
+#app_slider article {
+	@include rem(padding-top, 65px);
 }
 
 .instructions,
@@ -263,22 +347,32 @@ body {
 
 @media all and (min-height: 520px) {
 
-.beta-logo {
-	@include rem(padding-top, 90px);
+#app_slider article {
+	@include rem(padding-top, 80px);
 }
 
 }
 
 @media all and (min-width: 600px) {
+
 .beta-logo {
 	@include rem(font-size, 80px);
 //	@include rem(margin-bottom, 72px);
 }
+
+.app-details,
+.my-details {
+	float: left;
+	width: 50%;
+}
+
 }
 
 @media all and (min-height: 600px) {
-.beta-logo {
-	@include rem(padding-top, 110px);
+
+#app_slider article {
+	@include rem(padding-top, 100px);
 }
+
 }
 

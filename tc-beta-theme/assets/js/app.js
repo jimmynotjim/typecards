@@ -25,6 +25,10 @@
 			initiateResizeListener: function() {
 				$(window).resize(function() {
 					tc.setAppStyles();
+
+					if ( tc.menuState === 'open' ) {
+						tc.openMenu();
+					}
 				});
 			},
 			isOpen: function() {
@@ -79,8 +83,18 @@
 				if ( target.closest(triggers).length ) { return true; }
 				else { return false; }
 			},
+			isInstTrigger: function(target) {
+				var trigger = $('#inst-button');
+				if ( target.closest(trigger).length ) { return true; }
+				else { return false;}
+			},
+			isAboutTrigger: function(target) {
+				var trigger = $('#about-button');
+				if ( target.closest(trigger).length ) { return true; }
+				else { return false;}
+			},
 			isFlipTrigger: function(target) {
-				if ( target.closest('.card-body').length ) { return true; }
+				if ( target.closest('#anatomy_slider .card-body').length ) { return true; }
 				else { return false; }
 			},
 			initiateClickListeners: function() {
@@ -89,6 +103,14 @@
 					if ( tc.isMenuTrigger(target) ) {
 						e.preventDefault();
 						tc.triggerMenu(0.5);
+					} else if ( tc.isInstTrigger(target) ) {
+						e.preventDefault();
+						$('#instructions').addClass('active');
+						$('#about').removeClass('active');
+					} else if ( tc.isAboutTrigger(target) ) {
+						e.preventDefault();
+						$('#about').addClass('active');
+						$('#instructions').removeClass('active');
 					} else if ( tc.isFlipTrigger(target) ) {
 						e.preventDefault();
 
