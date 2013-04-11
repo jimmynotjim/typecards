@@ -24,20 +24,28 @@
 			local: termsArray
 
 		}).on('typeahead:selected', function($e) {
-			$('.search-terms').blur();
 			var selectedValue = $($e.target).val();
 			var getSelectedIndex = function(val) {
 				var index = null;
+
 				$.each(termsArray, function(i, v) {
 					if (v.value === val) {
 						index = i; return false;
 					}
 				});
+
 				return index;
-			}
+			};
 			var selectedIndex = getSelectedIndex(selectedValue);
+
+			$('.search-terms').blur();
 			anatomySwipe.slide(selectedIndex, 0);
 			tc.close(0.6);
+		});
+
+		$('#clear-search').on('click', function() {
+			$('.search-terms').typeahead('setQuery', '');
+			$('.search-terms').focus();
 		});
 	</script>
 
@@ -75,6 +83,10 @@
 			}
 		}),
 		cards = $('#anatomy_slider').find('.card-holder');
+
+		window.appSwipe = new Swipe(document.getElementById('app_slider'), {
+			gutter: 10
+		});
 	</script>
 
 	<!-- custom scripts -->
