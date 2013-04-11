@@ -124,7 +124,6 @@
 			},
 			initiateTouchListeners: function() {
 				var touch, yOrg, yCur, yDif, yDis, yEnd, transDis;
-				var offSetHalf	= tc.offSet() * 0.5;
 				var speedHalf = tc.speed * 0.5;
 
 				$('.menu-btn').on('touchstart', function(e) {
@@ -165,17 +164,14 @@
 				$('.menu-btn').on('touchend', function(){
 					yEnd = yCur;
 
-					if( yEnd === yOrg && tc.menuState === 'closed'){
-						tc.openMenu(tc.speed);
-					} else if( yEnd === yOrg && tc.menuState === 'open' ){
-						tc.closeMenu(tc.speed);
-					} else {
-
-						if(yCur < offSetHalf) {
-							tc.openMenu(speedHalf);
-						} else {
-							tc.closeMenu(speedHalf);
-						}
+					if ( tc.menuState === 'closed') {
+						if ( yEnd === yOrg ) { tc.openMenu(tc.speed); }
+						else if ( yDis > 80 ) { tc.openMenu(speedHalf); }
+						else { tc.closeMenu(speedHalf); }
+					} else if ( tc.menuState === 'open' ) {
+						if ( yEnd === yOrg ) { tc.closeMenu(tc.speed); }
+						else if ( yDis > 80 ) { tc.closeMenu(speedHalf); }
+						else { tc.openMenu(speedHalf); }
 					}
 				});
 			},
