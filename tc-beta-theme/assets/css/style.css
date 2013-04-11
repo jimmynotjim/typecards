@@ -501,7 +501,11 @@ body {
 .my-details dt {
   clear: both;
   font-family: "AvenirNext-DemiBold", "brandon-grotesque", "Futura", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  min-width: 90px;
+  min-width: 75px;
+}
+.app-details dd,
+.my-details dd {
+  margin-left: 0;
 }
 
 .extras-title {

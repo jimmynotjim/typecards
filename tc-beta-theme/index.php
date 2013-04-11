@@ -43,12 +43,12 @@
 							<dl class="app-details">
 								<dt>Web</dt><dd><a href="http://typecardsapp.com">typecardsapp.com</a></dd>
 								<dt>Twitter</dt><dd><a href="http://twitter.com/typecards">@typecards</a></dd>
-								<dt>AppNet</dt><dd><a href="http://alpha.app.net/typecards">@typecards</a></dd>
+								<dt>appnet</dt><dd><a href="http://alpha.app.net/typecards">@typecards</a></dd>
 							</dl>
 							<dl class="my-details">
 								<dt>Web</dt><dd><a href="http://jimmynotjim.com">jimmynotjim.com</a></dd>
 								<dt>Twitter</dt><dd><a href="http://twitter.com/jimmynotjim">@jimmynotjim</a></dd>
-								<dt>AppNet</dt><dd><a href="http://alpha.app.net/jimmynotjim">@jimmynotjim</a></dd>
+								<dt>appnet</dt><dd><a href="http://alpha.app.net/jimmynotjim">@jimmynotjim</a></dd>
 							</dl>
 						</div>
 					</article>

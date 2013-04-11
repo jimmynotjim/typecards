@@ -76,7 +76,11 @@ body {
 	dt {
 		clear: both;
 		font-family: $headingFontFamily;
-		min-width: 90px;
+		min-width: 75px;
+	}
+
+	dd {
+		margin-left: 0;
 	}
 }
 
