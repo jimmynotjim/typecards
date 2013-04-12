@@ -7,7 +7,7 @@
 		</hgroup>
 		<section class="details">
 			<p>typecards is an experiment using html and javascript to create a native app like experience on (almost) any device. It's still considered a work in progress, but feel free to check it out. For best results on iOS, save it to your homescreen.</p>
-			<a href="http://typecardsapp.com/app/" class="button">Grab the App!</a>
+			<a href="http://typecardsapp.com/app/" class="button">Launch the App</a>
 			<span class="try">or <br/>Go ahead and try the demo</span>
 		</section>
 	</div>
