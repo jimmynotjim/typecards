@@ -1256,14 +1256,26 @@ p {
   padding: 22px 10%;
   padding: 1.375rem 10%;
   overflow-y: auto;
+  background-repeat: no-repeat;
+  background-position: right -8px top;
+  background-origin: content-box;
+  background-size: 28px;
 }
 
 .card-front .card-body {
   height: 88%;
+  background-image: url("../img/icon-back.png");
 }
 
 .card-back .card-body {
   height: 100%;
+  background-image: url("../img/icon-front.png");
+}
+
+.flip-icon {
+  display: none;
+  width: 28px;
+  float: right;
 }
 
 .character {
@@ -1273,13 +1285,14 @@ p {
   max-width: 256px;
 }
 
-.card-back {
-  position: relative;
-}
-.card-back img {
+.character-small {
   display: block;
   margin: 0 auto 16px;
   width: 128px;
+}
+
+.card-back {
+  position: relative;
 }
 
 .card-title, .term-title {
@@ -1470,7 +1483,11 @@ p {
     margin-bottom: 1.5rem;
   }
 
-  .card-back img {
+  .app .card-body {
+    background-size: 42px;
+  }
+
+  .character-small {
     margin-bottom: 24px;
     margin-bottom: 1.5rem;
   }

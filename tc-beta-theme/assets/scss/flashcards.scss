@@ -158,14 +158,27 @@
 	@include rem(padding, 22px 10%);
 
 	overflow-y: auto;
+
+	background-repeat: no-repeat;
+	background-position: right -8px top;
+	background-origin: content-box;
+	background-size: 28px;
 }
 
 .card-front .card-body {
 	height: 88%;
+	background-image: url('../img/icon-back.png');
 }
 
 .card-back .card-body {
 	height: 100%;
+	background-image: url('../img/icon-front.png');
+}
+
+.flip-icon {
+	display: none;
+	width: 28px;
+	float: right;
 }
 
 .character {
@@ -175,14 +188,14 @@
 	max-width: 256px;
 }
 
+.character-small {
+	display: block;
+	margin: 0 auto 16px;
+	width: 128px;
+}
+
 .card-back {
 	position: relative;
-
-	img {
-		display: block;
-		margin: 0 auto 16px;
-		width: 128px;
-	}
 }
 
 .card-title, .term-title {
@@ -352,7 +365,11 @@
 	@include rem(margin-bottom, 24px);
 }
 
-.card-back img {
+.app .card-body {
+	background-size: 42px;
+}
+
+.character-small {
 	@include rem(margin-bottom, 24px);
 }
 
