@@ -29,23 +29,9 @@
 			engine: Hogan,
 			local: termsArray
 
-		}).on('typeahead:selected', function($e) {
-			var selectedValue = $($e.target).val();
-			var getSelectedIndex = function(val) {
-				var index = null;
-
-				$.each(termsArray, function(i, v) {
-					if (v.value === val) {
-						index = i; return false;
-					}
-				});
-
-				return index;
-			};
-			var selectedIndex = getSelectedIndex(selectedValue);
-
+		}).on('typeahead:selected', function($e, datum) {
 			$('.search-terms').blur();
-			anatomySwipe.slide(selectedIndex, 0);
+			anatomySwipe.slide(datum.id, 0);
 			tc.close(0.6);
 		});
 
