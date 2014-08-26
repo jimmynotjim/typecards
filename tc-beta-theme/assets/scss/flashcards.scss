@@ -1,50 +1,54 @@
-* {
-	box-sizing: border-box;
-}
-body {
-	background-color: black;
-}
-.safari-message {
-	background: rgba(0,0,0,.75);
-	color: white;
-	display: block;
-	font-size: 20px;
-	font-weight: 600;
-	height: 460px;
-	max-width: 320px;
-	padding: 30px;
-//	pointer-events:none;
-	position: fixed;
-	z-index: 100;
-}
 
-div[role="main"] {
-	background-color: black;
-	display: block;
-	height: 460px;
+.menu-btn {
+	-webkit-appearance: none;
+	border: none;
+
+	text-indent: 150%;
+	white-space: nowrap;
 	overflow: hidden;
-//	position: relative;
-	width: 320px;
-}
-
-.slider {
 	background: transparent;
-	height: 460px;
-	width: 320px;
+	color: #F7F7F7;
+	display: block;
+	height: 40px;
+	padding: 10px;
+	width: 100%;
 
-	//swipe styles
-	overflow: hidden;
-	position: absolute;
+	span {
+		@include box-shadow(0 1px 0 #ddd, 0 -1px 0 #eee);
 
-	&.inactive {
-//		display: none;
+		border-top: 1px solid #ddd;
+		border-bottom: 1px solid #eee;
+		display: block;
+		height: 5px;
+		margin: 0 auto;
+		width: 40px;
 	}
 }
 
+.slider {
+	@include border-radius(8px);
+	@include box-shadow(0 2px 9px rgba(#000, 0.5));
+
+	background: black;
+	height: 100%;
+	top: 0;
+	width: 100%;
+	//z-index: 10;
+
+	//swipe styles
+	overflow-x: hidden;
+	position: absolute;
+
+	// Inactive styles controled via js set style tags in doc head
+}
+
+.no-touch .slider {
+//	@include transition(all 0.5s);
+}
 .cards {
 	@include clearFix;
 
-	background: transparent;
+	height: 100%;
 	list-style: none;
 	margin: 0;
 	padding: 0;
@@ -55,48 +59,72 @@ div[role="main"] {
 
 	p {
 		@include rem(font-size, 20px);
-
-		a {
-			font-weight: 500;
-		}
 	}
 }
 
 .card-holder {
 	background: transparent;
+	height: 100%;
 
 	//swipe styles
 	float: left;
 	position: relative;
-	width: 320px;
+	width: 100%;
 
 	//flip styles
-	height: 460px;
-	position: relative;
-	width: 320px;
 	-webkit-perspective: 800px;
 	-moz-perspective: 800px;
 }
 
 .card-holder.on {
 
+	#anatomy_slider & {
+		.card-back {
+			display: block; // Using the .on class we're only painting the current card and one on either side
+		}
+	}
+
 	.card article {
 		//flip styles
 		@include backface-visibility(hidden);
 	}
+
 	.card-back {
 		//flip styles
 		-webkit-transform: rotateY(180deg);
 		-moz-transform: rotateY(180deg);
-
 		-webkit-overflow-scrolling: touch;
 
+
+		&:before, &:after {
+			content: '';
+			display: block;
+			height: 12px;
+			left: 0;
+			position: absolute;
+			width: 100%;
+			z-index: 10;
+		}
+
+		&:before {
+			@include border-radius(8px 8px 0 0);
+			@include background-image(linear-gradient(rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 100%));
+			top: 0;
+		}
+
+		&:after {
+			@include border-radius(0 0 8px 8px);
+			@include background-image(linear-gradient(rgba(255,255,255,0) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 100%));
+			bottom: 0;
+		}
 	}
 }
 
-.card {
-	background: transparent;
+#anatomy_slider .card-back {
+	display: none; // This keeps the browser from having to paint every card out of view
+}
 
+.card {
 	//flip styles
 	height: 100%;
 	position: absolute;
@@ -127,73 +155,53 @@ div[role="main"] {
 }
 
 .card-body {
-	@include rem(margin, 4px 0);
-	@include rem(padding, 22px 30px);
+	@include rem(padding, 22px 10%);
 
-	height: 400px;
+	overflow-y: auto;
+
+	background-repeat: no-repeat;
+	background-position: top -8px;
+	background-origin: content-box;
+	background-size: 28px;
 }
 
-.card-front {
-	img {
-		margin-top: 74px;
-	}
+.card-front .card-body {
+	height: 88%;
+	background-image: url('../img/icon-back.png');
+}
+
+.card-back .card-body {
+	height: 100%;
+	background-image: url('../img/icon-front.png');
+}
+
+.flip-icon {
+	display: none;
+	width: 28px;
+	float: right;
+}
+
+.character {
+	display: block;
+	margin: 0 auto;
+	max-height: 100%;
+	max-width: 256px;
+}
+
+.character-small {
+	display: block;
+	margin: 0 auto 16px;
+	width: 128px;
 }
 
 .card-back {
 	position: relative;
-
-		&:before, &:after {
-			content: '';
-			display: block;
-			height: 12px;
-			left: 0;
-			position: absolute;
-			width: 100%;
-			z-index: 10;
-		}
-
-		&:before {
-			@include border-radius(8px 8px 0 0);
-
-			@include gradient-vertical(rgba(247,247,246,1), rgba(247,247,247,0));
-//			background-image: -webkit-gradient(linear,left top,left bottom,from(rgba(247,247,247,1)),to(rgba(247,247,247,0)));
-			top: 4px;
-		}
-
-		&:after {
-			@include border-radius(0 0 8px 8px);
-
-			@include gradient-vertical(rgba(247,247,247,0), rgba(247,247,247,1));
-//			background-image: -webkit-gradient(linear,left bottom,left top,from(rgba(247,247,247,1)),to(rgba(247,247,247,.1)));
-			bottom: 4px;
-		}
-
-	img {
-		display: block;
-		margin: 0 auto 16px;
-		width: 50%;
-	}
-
-	.card-body {
-		height: 450px;
-		overflow: auto;
-	}
-
-	&.hidden .card-body {
-		overflow-y: hidden;
-	}
-
-	&.visible .card-body {
-		overflow-y: auto;
-	}
 }
 
 .card-title, .term-title {
 	@include rem(font-size, 22px);
 	@include rem(margin-bottom, 16px);
-	@include rem(padding-bottom, 8px);
 
-	border-bottom: 2px solid $red;
 	color: $red;
 	line-height: 1em;
 	text-align: center;
@@ -207,7 +215,6 @@ div[role="main"] {
 .meta-title {
 	@include rem(font-size, 20px);
 
-	font-weight: 500;
 	line-height: 1.25em;
 }
 
@@ -219,68 +226,18 @@ div[role="main"] {
 	.term-title {
 		@include rem(margin-bottom, 42px);
 	}
-	.instructions {
-		@include border-radius(6px);
-		@include transition(opacity .25s);
-
-		background-color: rgba(0,0,0,.8);
-		border: 1px solid #111;
-		color: #fff;
-		display: block;
-		font-weight: 400;
-		width: 260px;
-
-		span {
-			display: block;
-		}
-
-		&.hidden {
-			opacity: 0;
-
-			.dismiss {
-				 pointer-events:none;
-			}
-		}
-	}
-
-	.details {
-		@include rem(padding, 18px);
-	}
-	.dismiss {
-		@include border-radius(0 0 6px 6px);
-		@include rem(font-size, 16px);
-		@include rem(padding, 12px);
-
-		background-color: #222;
-		border-top: 1px solid #111;
-		display: block;
-		text-align: center;
-		text-transform: uppercase;
-		width: 100%;
-	}
-}
-
-.beta-logo {
-	@include hiddenText;
-
-	background: url('../img/beta-logo.png') no-repeat 0 0;
-	background-size: 256px;
-	display: block;
-	height: 100px;
-	margin: 74px auto 48px;
-	width: 256px;
 }
 
 .card-nav {
 	display: none;
 }
 
-.no-touch .card-nav {
+.no-touch:hover .card-nav {
 	display: block;
-	margin: 20px 0;
+	margin-top: -60px;
 	position: absolute;
-	top: 150px;
-	width: 320px;
+	top: 50%;
+	width: 100%;
 	z-index: 100;
 
 	a {
@@ -317,7 +274,9 @@ div[role="main"] {
 
 #loginform {
 	@include rem(font-size, 16px);
-	@include rem(margin, -20px 30px 0);
+
+	margin: 0 auto;
+	width: 276px;
 
 	input {
 		@include sansSerif;
@@ -345,12 +304,12 @@ div[role="main"] {
 		border: 1px solid $grayLight;
 		-webkit-appearance: none;
 
-		max-width: 180px;
+		width: 202px;
 		outline-color: $red;
 	}
 }
 .login-remember {
-	@include rem(margin-bottom, 30px);
+	@include rem(margin-bottom, 10px);
 	@include rem(margin-left, 73px);
 
 	input {
@@ -371,7 +330,6 @@ div[role="main"] {
 	background-color: $red;
 	color: $white;
 	display: block;
-	font-weight: 500;
 	margin: 0 auto;
 
 	&:hover {
@@ -391,26 +349,49 @@ div[role="main"] {
 	border: 1px solid shade($red, 15%);
 }
 
-@media screen and (min-height: 500px) {
+@media all and (min-height: 600px) {
 
-	.safari-message {
-		height: 548px;
-	}
+.card-front .card-body {
+	height: 91%;
+}
 
-	div[role="main"],
-	.slider,
-	.card-holder {
-		height: 548px;
-	}
+}
 
-	.card-body {
-		height: 488px;
-	}
+@media all and (min-width: 600px) {
 
-	.card-front img {
-		margin-top: 118px;
+.term-title {
+	@include rem(font-size, 30px);
+	@include rem(margin-top, 18px);
+	@include rem(margin-bottom, 24px);
+}
+
+.app .card-body {
+	background-size: 42px;
+}
+
+.character-small {
+	@include rem(margin-bottom, 24px);
+}
+
+#loginform {
+	@include rem(font-size, 20px);
+
+	width: 394px;
+}
+
+.login-username,
+.login-password {
+	label {
+		min-width: 86px;
 	}
-	.card-back .card-body {
-		height: 538px;
+	input {
+		width: 302px;
 	}
+}
+
+.login-remember {
+	@include rem(margin-left, 90px);
+	@include rem(margin-bottom, 64px);
+}
+
 }

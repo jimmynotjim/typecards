@@ -16,7 +16,7 @@ $grayDark:              #4d4d4d;
 $gray:                  #808080;
 $grayLight:             #cccccc;
 $grayLighter:           #eeeeee;
-$white:					#f7f7f7;
+$white:					#fff;
 
 // Accent colors
 $red:					#db0901;
@@ -24,9 +24,11 @@ $red:					#db0901;
 
 // Typography
 $baseFontSize:          $baseLine;
-$baseFontFamily:        'brandon-grotesque', 'Futura', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+$baseFontFamily:        'AvenirNext-Regular', 'brandon-grotesque', 'Futura', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
 $baseLineHeight:        1.4em;
 $textColor:             $black;
+$headingFontFamily:		'AvenirNext-DemiBold', 'brandon-grotesque', 'Futura', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+$linkFontFamily:		'AvenirNext-Medium', 'brandon-grotesque', 'Futura', 'Segoe UI', 'Helvetia Neue', Arial, sans-serif;
 
 // Links
 $linkColor:             $red;

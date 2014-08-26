@@ -1,27 +1,17 @@
-<?php get_header(); ?>
-<div role="main">
-	<?php if ( is_user_logged_in() ) {
-		include_once( 'includes/inc-anatomy-cards.php' );
-	} else {
-		echo '<div class="card-holder"><section class="card"><article>';
-		echo '<h1 class="beta-logo">typecards &beta;</h1>';
-		wp_login_form();
-		echo '</article></section></div>';
-	} ?>
-	<?php
-		if ( is_page( 'anatomy' ) ) {
-			if ( is_user_logged_in() ) {
-				include_once( 'includes/inc-anatomy-cards.php' );
-			} else {
-				echo '<div class="card-holder"><section class="card"><article>';
-				echo '<h1 class="beta-logo">typecards &beta;</h1>';
-				wp_login_form();
-				echo '</article></section></div>';
-			}
-		}
-		else {
-			echo '<p>Nothing here</p>';
-		}
-	?>
-</div><!--main-->
-<?php get_footer(); ?>
+<?php
+	if ( is_page('api') ) :
+		header('Content-Type: application/json; charset=utf8');
+		json_function();
+	else :
+	get_header();
+?>
+
+<div role="main" class="main-app">
+	<?php include_once( 'includes/inc-app-cards.php'); ?>
+	<?php include_once( 'includes/inc-anatomy-cards.php' ); ?>
+</div>
+
+<?php
+	get_footer();
+	endif;
+?>

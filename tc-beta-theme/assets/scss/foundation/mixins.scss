@@ -296,12 +296,13 @@ $px-per-rem: $base-font-size / 1rem;
 }
 
 // Drop shadows
+/*
 @mixin box-shadow($shadow: 0 1px 3px rgba(0,0,0,.25)) {
   -webkit-box-shadow: $shadow;
      -moz-box-shadow: $shadow;
           box-shadow: $shadow;
 }
-
+*/
 // Transitions
 @mixin transition($transition) {
   -webkit-transition: $transition;

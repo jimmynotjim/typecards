@@ -5,14 +5,19 @@ Author: @jimmynotjim
 Author URI: http://jimmynotjim.com
 */
 
+@import 'bourbon';
+
 // Base CSS
 
 @import "foundation/foundation.scss";
 
 // Custom CSS
 
-//@import "custom-styles.scss";
+@import "custom-styles.scss";
 
 // Flash Card styling
+
+
+@import "app.scss";
 
 @import "flashcards.scss";

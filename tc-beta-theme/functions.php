@@ -51,6 +51,7 @@ add_image_size( 'sm', 258,258, true );
 
 require_once ( get_template_directory() . '/cpt_anatomy.php' );
 require_once ( get_template_directory() . '/cpt_quizes.php' );
+require_once ( get_template_directory() . '/json_function.php' );
 
 /* End External Functions */
 
